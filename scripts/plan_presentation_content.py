@@ -625,13 +625,13 @@ def expand_visual_mappings(
                 item["embedded_chart_ids"] = [chart_id]
                 item["embedded_image_ids"] = []
                 expanded.append(item)
-        if image_ids:
+        elif image_ids:
             for image_id in image_ids:
                 item = dict(mapping)
                 item["embedded_chart_ids"] = []
                 item["embedded_image_ids"] = [image_id]
                 expanded.append(item)
-        if not chart_ids and not image_ids:
+        else:
             expanded.append(mapping)
     return expanded
 

@@ -16,6 +16,7 @@ from typing import Any
 
 import yaml
 from PIL import Image
+from lxml import etree
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.dml.color import RGBColor
@@ -832,6 +833,114 @@ def normalize_chart_axis_ids(
     return chart_xml
 
 
+def freeze_source_chart_colors(
+    chart_xml: Any,
+    chart_item: dict[str, Any],
+    project_root: Path,
+) -> Any:
+    """Resolve source Word theme colors before moving the chart into PPT."""
+
+    c_ns = "http://schemas.openxmlformats.org/drawingml/2006/chart"
+    a_ns = "http://schemas.openxmlformats.org/drawingml/2006/main"
+    c = lambda name: f"{{{c_ns}}}{name}"
+    a = lambda name: f"{{{a_ns}}}{name}"
+    assets = {item.get("kind"): item for item in chart_item.get("related_assets", [])}
+    # Some Word/WPS charts do not package a usable themeOverride. In that
+    # case PowerPoint otherwise resolves automatic colors against the PPT
+    # template (orange/green/magenta). Use the approved GF source palette only
+    # as a fallback; explicit RGB series remain untouched below.
+    theme_colors: dict[str, str] = {
+        "accent1": "7C80C8",
+        "accent2": "B8BFE4",
+        "accent3": "D9D9D9",
+        "accent4": "2E3160",
+        "accent5": "AED9FF",
+        "accent6": "397099",
+    }
+
+    palette_slots: list[str] = []
+    colors_asset = assets.get("colors")
+    if colors_asset:
+        colors_xml = parse_xml(
+            (project_root / colors_asset["extracted_path"]).read_bytes()
+        )
+        palette_slots = [
+            node.get("val")
+            for node in colors_xml
+            if etree.QName(node).localname == "schemeClr"
+            and node.get("val") in theme_colors
+        ]
+    if not palette_slots:
+        palette_slots = [
+            slot for slot in (
+                "accent1", "accent2", "accent3",
+                "accent4", "accent5", "accent6",
+            )
+            if slot in theme_colors
+        ]
+    if not palette_slots:
+        return chart_xml
+
+    def ensure_sppr(series: Any) -> Any:
+        sppr = series.find(c("spPr"))
+        if sppr is not None:
+            return sppr
+        sppr = etree.Element(c("spPr"))
+        children = list(series)
+        insert_at = next(
+            (
+                index for index, child in enumerate(children)
+                if child.tag in {
+                    c("marker"), c("dPt"), c("dLbls"),
+                    c("cat"), c("val"), c("xVal"), c("yVal"),
+                }
+            ),
+            len(children),
+        )
+        series.insert(insert_at, sppr)
+        return sppr
+
+    def set_solid(parent: Any, color: str) -> None:
+        for child in list(parent):
+            if child.tag in {
+                a("noFill"), a("solidFill"), a("gradFill"), a("pattFill")
+            }:
+                parent.remove(child)
+        solid = etree.Element(a("solidFill"))
+        etree.SubElement(solid, a("srgbClr"), val=color)
+        parent.insert(0, solid)
+
+    series_index = 0
+    plot_area = chart_xml.find(f".//{c('plotArea')}")
+    if plot_area is None:
+        return chart_xml
+    line_types = {"lineChart", "scatterChart", "radarChart", "stockChart"}
+    for chart_group in list(plot_area):
+        chart_type = etree.QName(chart_group).localname
+        for series in chart_group.findall(c("ser")):
+            sppr = ensure_sppr(series)
+            # Explicit RGB is already source-stable and must remain untouched.
+            if sppr.find(f".//{a('srgbClr')}") is not None:
+                series_index += 1
+                continue
+            color = theme_colors[
+                palette_slots[series_index % len(palette_slots)]
+            ]
+            if chart_type in line_types:
+                line = sppr.find(a("ln"))
+                if line is None:
+                    line = etree.SubElement(sppr, a("ln"))
+                set_solid(line, color)
+            else:
+                set_solid(sppr, color)
+                line = sppr.find(a("ln"))
+                if line is None:
+                    line = etree.SubElement(sppr, a("ln"))
+                set_solid(line, color)
+            series_index += 1
+    return chart_xml
+
+
 def validate_chart_relationships(
     chart_xml: Any,
     chart_part: Any,
@@ -879,6 +988,7 @@ def add_docx_chart(
     chart_xml = parse_xml(chart_path.read_bytes())
     sanitize_chart_extensions(chart_xml)
     normalize_chart_axis_ids(chart_xml)
+    freeze_source_chart_colors(chart_xml, chart_item, project_root)
 
     chart_data = CategoryChartData()
     chart_data.categories = ["原文数据"]
@@ -1093,11 +1203,11 @@ def add_source_visuals(
             image_ids = image_ids or table.get("image_indexes", [])
         if chart_ids:
             visual_items.extend(("chart", charts[index]) for index in chart_ids if index in charts)
-        if image_ids:
+        elif image_ids:
             visual_items.extend(("image", images[index]) for index in image_ids if index in images)
-        if not chart_ids and not image_ids and mapping.get("image_id") in images:
+        elif mapping.get("image_id") in images:
             visual_items.append(("image", images[mapping["image_id"]]))
-        elif not chart_ids and not image_ids and table is not None:
+        elif table is not None:
             visual_items.append(("table", table))
     boxes = split_visual_boxes(box, len(visual_items))
     rendered = 0

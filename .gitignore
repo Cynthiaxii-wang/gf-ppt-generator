@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+output/
+*.pyc
+.DS_Store
+test/input/
+
+test/output/
+
