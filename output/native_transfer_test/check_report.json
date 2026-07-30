@@ -1,0 +1,1408 @@
+{
+  "source_pptx": "搬运规则测试版.pptx",
+  "renderer": "Microsoft PowerPoint PNG export",
+  "slide_count": 33,
+  "rendered_png_count": 33,
+  "overall_status": "fail",
+  "summary": {
+    "pass": 0,
+    "warning": 0,
+    "fail": 33
+  },
+  "checks_performed": [
+    "title bounds and rendered edge clipping",
+    "body bounds, auto-fit, and rendered edge clipping",
+    "table bounds and native editability",
+    "chart placeholder bounds and label",
+    "pairwise element overlap",
+    "PNG dimensions and non-blank content"
+  ],
+  "slides": [
+    {
+      "slide_number": 1,
+      "page_type": "cover",
+      "image": "slide-01.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.7716
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 2,
+      "page_type": "summary",
+      "image": "slide-02.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2177
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 3,
+      "page_type": "section",
+      "image": "slide-03.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.0645
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 4,
+      "page_type": "chart_analysis",
+      "image": "slide-04.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2082
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 5,
+      "page_type": "chart_analysis",
+      "image": "slide-05.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2326
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 6,
+      "page_type": "section",
+      "image": "slide-06.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.0715
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 7,
+      "page_type": "chart_analysis",
+      "image": "slide-07.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2233
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 8,
+      "page_type": "chart_analysis",
+      "image": "slide-08.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2052
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 9,
+      "page_type": "chart_table",
+      "image": "slide-09.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2173
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 10,
+      "page_type": "chart_table",
+      "image": "slide-10.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.3297
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 11,
+      "page_type": "chart_analysis",
+      "image": "slide-11.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2586
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 12,
+      "page_type": "chart_analysis",
+      "image": "slide-12.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2461
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 13,
+      "page_type": "chart_analysis",
+      "image": "slide-13.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2065
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 14,
+      "page_type": "chart_analysis",
+      "image": "slide-14.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2204
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 15,
+      "page_type": "chart_analysis",
+      "image": "slide-15.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.213
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 16,
+      "page_type": "chart_analysis",
+      "image": "slide-16.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2208
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 17,
+      "page_type": "chart_analysis",
+      "image": "slide-17.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2226
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 18,
+      "page_type": "chart_analysis",
+      "image": "slide-18.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2067
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 19,
+      "page_type": "section",
+      "image": "slide-19.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.0743
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 20,
+      "page_type": "chart_analysis",
+      "image": "slide-20.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2679
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 21,
+      "page_type": "chart_analysis",
+      "image": "slide-21.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2128
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 22,
+      "page_type": "chart_table",
+      "image": "slide-22.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.213
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 23,
+      "page_type": "chart_analysis",
+      "image": "slide-23.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.3292
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 24,
+      "page_type": "chart_analysis",
+      "image": "slide-24.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2207
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 25,
+      "page_type": "chart_table",
+      "image": "slide-25.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2444
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 26,
+      "page_type": "chart_analysis",
+      "image": "slide-26.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2219
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 27,
+      "page_type": "section",
+      "image": "slide-27.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.0611
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 28,
+      "page_type": "chart_table",
+      "image": "slide-28.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.3558
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 29,
+      "page_type": "chart_analysis",
+      "image": "slide-29.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.204
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 30,
+      "page_type": "chart_table",
+      "image": "slide-30.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.3591
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 31,
+      "page_type": "chart_table",
+      "image": "slide-31.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.203
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 32,
+      "page_type": "chart_analysis",
+      "image": "slide-32.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.1983
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    },
+    {
+      "slide_number": 33,
+      "page_type": "risk",
+      "image": "slide-33.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1280,
+          "height": 720,
+          "non_background_ratio": 0.2526
+        },
+        "title_bounds": {
+          "status": "fail",
+          "details": "Missing title shape."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "details": "Missing content shape."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Missing title shape.",
+        "Missing content shape."
+      ]
+    }
+  ]
+}

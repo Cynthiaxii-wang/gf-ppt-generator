@@ -1,0 +1,2109 @@
+{
+  "format": "pptx",
+  "file_count": 1,
+  "files": [
+    {
+      "file": "【广发策略】全球流动性走到哪里了？——央.pptx",
+      "slide_count": 27,
+      "slide_width": 12192000,
+      "slide_height": 6858000,
+      "unit": "EMU",
+      "slides": [
+        {
+          "slide_number": 1,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "图片 1",
+              "shape_type": "PICTURE",
+              "shape_type_code": 13,
+              "left": 1050472,
+              "top": 5396863,
+              "width": 2438218,
+              "height": 508635,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": true
+            },
+            {
+              "index": 2,
+              "name": "副标题 2",
+              "shape_type": "AUTO_SHAPE",
+              "shape_type_code": 1,
+              "left": 885190,
+              "top": 3002915,
+              "width": 3813810,
+              "height": 596265,
+              "unit": "EMU",
+              "text": "广发策略",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "副标题 2",
+              "shape_type": "AUTO_SHAPE",
+              "shape_type_code": 1,
+              "left": 945303,
+              "top": 5985597,
+              "width": 3693583,
+              "height": 349673,
+              "unit": "EMU",
+              "text": "2026年6月",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "标题 1",
+              "shape_type": "AUTO_SHAPE",
+              "shape_type_code": 1,
+              "left": 851534,
+              "top": 1156335,
+              "width": 7093586,
+              "height": 1555115,
+              "unit": "EMU",
+              "text": "全球流动性走到哪里了？\n——央行加息步伐与资产定价",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "副标题 2",
+              "shape_type": "AUTO_SHAPE",
+              "shape_type_code": 1,
+              "left": 885190,
+              "top": 3599180,
+              "width": 7157085,
+              "height": 1555115,
+              "unit": "EMU",
+              "text": "刘晨明：首席策略分析师\n陈振威：策略资深分析师",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": [
+            {
+              "name": "图片 1",
+              "left": 1050472,
+              "top": 5396863,
+              "width": 2438218,
+              "height": 508635,
+              "unit": "EMU"
+            }
+          ]
+        },
+        {
+          "slide_number": 2,
+          "shape_count": 3,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "标题 1",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 648000,
+              "top": 576000,
+              "width": 10980000,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "核心结论",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 576000,
+              "top": 1296001,
+              "width": 10980000,
+              "height": 5409600,
+              "unit": "EMU",
+              "text": "除了少数由于AI需求导致景气度爆发的资产，当前全球主要大类资产的核心矛盾之一，仍然聚焦在全球流动性的拐点预期。\n\n美国宏观：5月美国非农显著超预期，CPI绝对水平仍高，但就业结构偏防御、核心通胀暂未失控，说明宏观并非全面过热；隐忧在于职位空缺/失业人数比值回升，若后续工资重新加速，外部通胀冲击可能转向更顽固的内生性通胀。\n\nFOMC信号：6月FOMC的关键信号是“没加息，但更鹰了”。美联储维持利率不变，但点阵图显示年内加息风险上升，声明大幅压缩、前瞻指引弱化，Warsh不提交预测也在降低主席观点对市场定价的锚定。政策框架正在从强预期管理，转向更依赖实时数据、更少提前承诺的模式。\n\nWarsh新政信号与全球央行信号：1）Warsh新政进一步抬升政策不确定性。五个专项工作组聚焦沟通、资产负债表、数据来源、生产率就业与通胀框架，意味着美联储可能进入政策框架重估阶段。短期规则不会立刻改变，但市场需要重新适应更低透明度、更高波动率的政策环境，风险资产和贵金属的风险偏好受到边际扰动。2）海外其他央行也在同步释放再紧缩信号。日本加息至1%，欧央行重启加息并推进缩表，澳大利亚、挪威及部分新兴市场央行亦偏紧，全球流动性宽松周期或已进入尾声。\n\n全球流动性走势及影响：若后续全球流动性收紧超预期，资产定价的核心逻辑将转向更高利率、更强美元和收缩的风险偏好。债券、顺周期商品大概率承压，黄金短期也可能因实际利率上行和流动性冲击而走弱。但资产的反应并非线性：后续AI、半导体等强产业资产仍有基本面支撑，但在利率上行和政策不确定性抬升下，行情可能从单边趋势切换为更高波动、更依赖业绩确认的结构性行情；黄金也取决于紧缩是否触发全球去杠杆和避险交易，同时考虑到已计价较多加息预期，存在反向修复的可能。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6552000,
+              "width": 2743200,
+              "height": 288000,
+              "unit": "EMU",
+              "text": "2",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 3,
+          "shape_count": 2,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "文本框 7",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 8665029,
+              "top": 3733800,
+              "width": 2830285,
+              "height": 2862322,
+              "unit": "EMU",
+              "text": "01",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "标题 3",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 1260566,
+              "top": 1218566,
+              "width": 10047514,
+              "height": 799645,
+              "unit": "EMU",
+              "text": "FOMC会议受瞩目的数据背景\u000b——5月美国非农与CPI回顾",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 4,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "4",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "文本框 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Bureau of Labor Statistics、广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363925,
+              "width": 10947402,
+              "height": 494563,
+              "unit": "EMU",
+              "text": "5月的非农数据显示出就业市场明显回暖的迹象，且先前广泛担忧的AI对就业市场的负向扰动尚未发生。但结构并非全面过热，更偏“防御性就业支撑”。",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "非农超预期，就业尚未全面升温",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "表格 1",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": 685800,
+              "top": 2000790,
+              "width": 10603989,
+              "height": 4320000,
+              "unit": "EMU",
+              "text": "行业/部门\t5月就业变化\t解读\n休闲和酒店业\t70,000\t显著高于过去12个月平均每月+14,000；其中餐饮服务和饮酒场所+48,000。\n地方政府\t55,000\t主要自地方政府（不含教育）+44,000。\n医疗保健\t35,000\t与过去12个月平均每月+38,000基本一致；门诊医疗服务+26,000，医院+6,000。\n社会救助\t12,000\t继续趋势性增加。主要自个人及家庭服务+10,000。\n采矿、采石和油气开采\t5,000\t自2月以来累计增加+10,000。\n金融活动\t-22,000\t保险及相关活动-11,000，商业银行-3,000；自2025年5月高点以来累计-107,000。\n运输仓储\t1,000\t基本持平；其中航空运输-9,000，主要由于Spirit Airlines公司的关闭。",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 5,
+          "shape_count": 6,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "5",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 702380,
+              "unit": "EMU",
+              "text": "美国5月CPI表面高位通胀，但实际上持平预期，已进入定价。\n能源项推升headline CPI，但核心CPI相对温和。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "CPI绝对数值高涨，内部结构相对温和",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Wind，Bureau of Labor Statistics，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 2",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 759453,
+              "top": 2285327,
+              "width": 4833826,
+              "height": 3872030,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            },
+            {
+              "index": 6,
+              "name": "表格 5",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": 6483926,
+              "top": 2285326,
+              "width": 5260767,
+              "height": 3994822,
+              "unit": "EMU",
+              "text": "指标\t5月季调后环比\t5月同比\t相比预期\nHeadline CPI（包括所有项目）\t0.5%\t4.2%\t环比预期：+0.5%；同比预期：+4.2%。实际环比符合预期；实际同比符合预期。\n核心CPI（去除食品和能源项）\t0.2%\t2.9%\t环比预期：+0.3%；同比预期：+2.9%。实际环比低于预期0.1pct；实际同比符合预期。\n能源项\t3.9%\t23.5%\t市场一致预期通常不覆盖该分项\n食品项\t0.2%\t3.1%\t市场一致预期通常不覆盖该分项\n核心CPI中的核心商品项\t-0.1%\t1.1%\t市场一致预期通常不覆盖该分项\n核心CPI中的核心服务项\t0.3%\t3.4%\t市场一致预期通常不覆盖该分项",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 6,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "6",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "虽然本次最新CPI主要受到能源驱使，属于外部冲击，但仍有风险转为更顽固的内生性通胀。\nQ4公布的2026Q3 ECI数据有一定可能转而上行。一旦这一数据拐点出现，工资重新加速，便会坐实通胀压力从外部冲击转向更顽固的内生性通胀，从而迫使美联储考虑加速加息的节奏。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "CPI的隐忧",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：FRED，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 7",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 685800,
+              "top": 2447541,
+              "width": 11064833,
+              "height": 3832609,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 7,
+          "shape_count": 2,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "标题 3",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 1260566,
+              "top": 1218566,
+              "width": 10047514,
+              "height": 799645,
+              "unit": "EMU",
+              "text": "6月17日美联储FOMC：\u000b“没加息，但更鹰了”",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "文本框 7",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 8665029,
+              "top": 3733800,
+              "width": 2830285,
+              "height": 2862322,
+              "unit": "EMU",
+              "text": "02",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 8,
+          "shape_count": 6,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "8",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "6月FOMC会议的利率决议本身并不意外，美联储以12-0全票通过，维持联邦基金目标利率区间在3.50%–3.75%不变。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "利率决议——按兵不动",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Wind，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 1",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 596471,
+              "top": 2080544,
+              "width": 5265378,
+              "height": 4199606,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            },
+            {
+              "index": 6,
+              "name": "图表 2",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 6401580,
+              "top": 2080544,
+              "width": 4969892,
+              "height": 4199606,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 9,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "9",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "更值得关注的是，美联储的沟通方式出现明显变化。此次议息声明篇幅被大幅压缩，接近缩减三分之二，整体表述更加克制，减少了对未来路径的暗示。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "利率决议——按兵不动",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Summary of Economic Projections，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "Picture 1860552750",
+              "shape_type": "PICTURE",
+              "shape_type_code": 13,
+              "left": 3286512,
+              "top": 1727200,
+              "width": 5275206,
+              "height": 4593590,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": true
+            }
+          ],
+          "picture_frames": [
+            {
+              "name": "Picture 1860552750",
+              "left": 3286512,
+              "top": 1727200,
+              "width": 5275206,
+              "height": 4593590,
+              "unit": "EMU"
+            }
+          ]
+        },
+        {
+          "slide_number": 10,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "10",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "记者会上的“Warsh新政”是本次会议后记者会上最关键的增量信息。Warsh在开场声明中宣布成立五个专项工作组。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "FOMC后记者会——Warsh新政",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：美联储官网Warsh记者会开场发言稿，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "表格 1",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": 1278430,
+              "top": 1944146,
+              "width": 9464256,
+              "height": 4262872,
+              "unit": "EMU",
+              "text": "序号\t工作组名称\t核心职能\n工作组1\t美联储沟通工作组\t减少前瞻指引，重事实，轻预期\n工作组2\t资产负债表工作组\t审查充裕流动性框架，考虑其他方案（暗示缩表）\n工作组3\t数据来源工作组\t研究新的调查方法和更实时的信息\n工作组4\t生产率与就业工作组\t调查AI工具对生产率和就业的影响\n工作组5\t通胀框架工作组\t研究通胀的驱动和判定通胀的指标",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 11,
+          "shape_count": 12,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "11",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "短期看，这不会立刻改变政策规则，但会显著提高政策的不确定性；而在通胀本就高于目标的背景下，不确定性本身对风险资产并不友好。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "FOMC后记者会——Warsh新政",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Bloomberg，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "组合 2",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 685800,
+              "top": 2205037,
+              "width": 5203736,
+              "height": 4075113,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "图表 5",
+                  "shape_type": "CHART",
+                  "shape_type_code": 3,
+                  "left": 0,
+                  "top": 0,
+                  "width": 4629150,
+                  "height": 2933700,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 2"
+                },
+                {
+                  "index": 2,
+                  "name": "矩形 7",
+                  "shape_type": "AUTO_SHAPE",
+                  "shape_type_code": 1,
+                  "left": 890588,
+                  "top": 485774,
+                  "width": 85725,
+                  "height": 1828799,
+                  "unit": "EMU",
+                  "text": "",
+                  "is_picture": false,
+                  "parent_group": "组合 2"
+                },
+                {
+                  "index": 3,
+                  "name": "文本框 6",
+                  "shape_type": "TEXT_BOX",
+                  "shape_type_code": 17,
+                  "left": 495301,
+                  "top": 357186,
+                  "width": 1645110,
+                  "height": 455045,
+                  "unit": "EMU",
+                  "text": "美东时间6月17日 14：00，\n利率决议发布",
+                  "is_picture": false,
+                  "parent_group": "组合 2"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "name": "组合 10",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 6336198,
+              "top": 2205037,
+              "width": 5360136,
+              "height": 4075113,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "图表 11",
+                  "shape_type": "CHART",
+                  "shape_type_code": 3,
+                  "left": 0,
+                  "top": 0,
+                  "width": 4714876,
+                  "height": 2881313,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 10"
+                },
+                {
+                  "index": 2,
+                  "name": "矩形 12",
+                  "shape_type": "AUTO_SHAPE",
+                  "shape_type_code": 1,
+                  "left": 881063,
+                  "top": 485775,
+                  "width": 90488,
+                  "height": 1757361,
+                  "unit": "EMU",
+                  "text": "",
+                  "is_picture": false,
+                  "parent_group": "组合 10"
+                },
+                {
+                  "index": 3,
+                  "name": "文本框 9",
+                  "shape_type": "TEXT_BOX",
+                  "shape_type_code": 17,
+                  "left": 504825,
+                  "top": 390482,
+                  "width": 1635586,
+                  "height": 437075,
+                  "unit": "EMU",
+                  "text": "美东时间6月17日 14：00，\n利率决议发布",
+                  "is_picture": false,
+                  "parent_group": "组合 10"
+                }
+              ]
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 12,
+          "shape_count": 6,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "12",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "记者会后续Q&A环节进一步确认了这一鹰派方向。市场同样预期，年末加息（12月9日）概率略大于按兵不动；明年1月FOMC，加息概率进一步升温。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "FOMC后记者会——Warsh新政",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：CME FedWatch，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "Picture 1860552739",
+              "shape_type": "PICTURE",
+              "shape_type_code": 13,
+              "left": 554389,
+              "top": 2540647,
+              "width": 5343382,
+              "height": 3280472,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": true
+            },
+            {
+              "index": 6,
+              "name": "Picture 1860552740",
+              "shape_type": "PICTURE",
+              "shape_type_code": 13,
+              "left": 6248613,
+              "top": 2540646,
+              "width": 5395137,
+              "height": 3280471,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": true
+            }
+          ],
+          "picture_frames": [
+            {
+              "name": "Picture 1860552739",
+              "left": 554389,
+              "top": 2540647,
+              "width": 5343382,
+              "height": 3280472,
+              "unit": "EMU"
+            },
+            {
+              "name": "Picture 1860552740",
+              "left": 6248613,
+              "top": 2540646,
+              "width": 5395137,
+              "height": 3280471,
+              "unit": "EMU"
+            }
+          ]
+        },
+        {
+          "slide_number": 13,
+          "shape_count": 4,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "13",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "整体来看，本次FOMC可概括为“利率不动，框架转鹰”。\n短期内，美联储并未通过加息或缩表直接收紧金融条件，声明中关于充裕准备金的表述也说明资产负债表收缩暂时不是重点。但中长期看，美联储正在弱化过去几年高度透明、强预期管理的政策模式，转向更依赖实时数据、更少提前承诺、并可能重写部分政策框架的新阶段。\n对市场而言，这意味着未来Fed put更不清晰，政策路径更难被提前交易；在通胀仍偏高、年内加息概率上升的背景下，本次会议释放的信号整体偏鹰。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "更鹰的信号",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "图表 1",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 1422400,
+              "top": 3235959,
+              "width": 9799320,
+              "height": 3622041,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 14,
+          "shape_count": 2,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "文本框 7",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 8665029,
+              "top": 3733800,
+              "width": 2830285,
+              "height": 2862322,
+              "unit": "EMU",
+              "text": "03",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "标题 3",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 1260566,
+              "top": 1218566,
+              "width": 10047514,
+              "height": 799645,
+              "unit": "EMU",
+              "text": "世界其他央行加息步伐，\u000b或带来全球流动性收紧",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 15,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "15",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "6月16日的利率决议中，日本央行将政策利率从0.75%上调至1%，创下日本时隔三十一年来最高利率水平。自1995年以来，该行首次重返1%利率时代。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "日本：“加息了，但没能救日元”",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Haver Analytics，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 7",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 685799,
+              "top": 2222852,
+              "width": 11025787,
+              "height": 4057298,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 16,
+          "shape_count": 8,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "16",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "日本央行本次加息，核心是应对日元贬值与通胀内生化的双重压力。日本通胀有所下落，但仍在2%左右；日本春斗加薪率高企。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "日本：“加息了，但没能救日元”",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Wind，日本劳动组合总联合会，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 1",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 535659,
+              "top": 1999012,
+              "width": 5360440,
+              "height": 4321777,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            },
+            {
+              "index": 6,
+              "name": "组合 10",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 6295903,
+              "top": 1999012,
+              "width": 5472027,
+              "height": 4321777,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "图表 11",
+                  "shape_type": "CHART",
+                  "shape_type_code": 3,
+                  "left": 0,
+                  "top": 0,
+                  "width": 4572000,
+                  "height": 2743200,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 10"
+                },
+                {
+                  "index": 2,
+                  "name": "直接箭头连接符 12",
+                  "shape_type": "LINE",
+                  "shape_type_code": 9,
+                  "left": 1814904,
+                  "top": 660808,
+                  "width": 1424246,
+                  "height": 893365,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 10"
+                }
+              ]
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 17,
+          "shape_count": 8,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "17",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "针对加息，市场反应较为清淡，日央行加息对日元汇率和美元指数影响都不大。本次BOJ市场的关注点并不在加息与否，而集中在年内是否会进行新一轮加息、以及记者会上释放的后续加息步伐信号。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "日本：“加息了，但没能救日元”",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Bloomberg，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "组合 2",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 685800,
+              "top": 2131698,
+              "width": 10831195,
+              "height": 4148452,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "图表 5",
+                  "shape_type": "CHART",
+                  "shape_type_code": 3,
+                  "left": 0,
+                  "top": 0,
+                  "width": 4572000,
+                  "height": 2743200,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 2"
+                },
+                {
+                  "index": 2,
+                  "name": "矩形 7",
+                  "shape_type": "AUTO_SHAPE",
+                  "shape_type_code": 1,
+                  "left": 4005263,
+                  "top": 535781,
+                  "width": 55245,
+                  "height": 2000250,
+                  "unit": "EMU",
+                  "text": "",
+                  "is_picture": false,
+                  "parent_group": "组合 2"
+                },
+                {
+                  "index": 3,
+                  "name": "文本框 3",
+                  "shape_type": "TEXT_BOX",
+                  "shape_type_code": 17,
+                  "left": 3595845,
+                  "top": 158315,
+                  "width": 817418,
+                  "height": 348891,
+                  "unit": "EMU",
+                  "text": "6月16日，BOJ加息",
+                  "is_picture": false,
+                  "parent_group": "组合 2"
+                }
+              ]
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 18,
+          "shape_count": 9,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "18",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "另外，日央行宣布从2027年4月起暂停缩减购债，将日本国债每月购买规模维持在约2万亿日元，边际削弱了加息对日元的利好。\n会议过后，OIS定价显示市场倾向于将下一次25bp加息放在年末附近。这个结果对日元并不算强支撑，因此单次25bp并不足以改变汇率趋势。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "日本：“加息了，但没能救日元”",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Bank of Japan，Bloomberg WIRP，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "组合 1",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 535659,
+              "top": 2540647,
+              "width": 5360440,
+              "height": 3780143,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "图表 10",
+                  "shape_type": "CHART",
+                  "shape_type_code": 3,
+                  "left": 0,
+                  "top": 0,
+                  "width": 4572000,
+                  "height": 2743200,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 1"
+                },
+                {
+                  "index": 2,
+                  "name": "直接箭头连接符 11",
+                  "shape_type": "LINE",
+                  "shape_type_code": 9,
+                  "left": 3040063,
+                  "top": 1103313,
+                  "width": 1360487,
+                  "height": 7938,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 1"
+                },
+                {
+                  "index": 3,
+                  "name": "文本框 4",
+                  "shape_type": "TEXT_BOX",
+                  "shape_type_code": 17,
+                  "left": 3000374,
+                  "top": 566739,
+                  "width": 1366838,
+                  "height": 442912,
+                  "unit": "EMU",
+                  "text": "日本央行计划从明年4月开始不再减少购债规模",
+                  "is_picture": false,
+                  "parent_group": "组合 1"
+                }
+              ]
+            },
+            {
+              "index": 6,
+              "name": "图表 13",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 6295902,
+              "top": 2540647,
+              "width": 5248397,
+              "height": 3739503,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 19,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "19",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "欧洲央行在6月11日会议上率先加息25bp，同步上调三大关键利率，是G7中首个重启加息的央行。\n然而会后，欧洲主要股指与成长股指并无下跌，甚至次日有所反弹，体现出预期内加息的“Sell rumors, buy facts”特征。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "欧元区：“G7加息的第一枪”",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Bloomberg，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 2",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 424070,
+              "top": 2280062,
+              "width": 11120230,
+              "height": 4000088,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 20,
+          "shape_count": 7,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "20",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "在滞胀约束下，欧央行选择优先稳住通胀预期，意味着短期政策重心仍将更多放在压制价格压力，而非托底增长。这也是当前全球央行政策优先级的普遍转向。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "欧元区：“G7加息的第一枪”",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Haver Analytics，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "组合 1",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 685800,
+              "top": 2211779,
+              "width": 10685672,
+              "height": 4109011,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "图表 5",
+                  "shape_type": "CHART",
+                  "shape_type_code": 3,
+                  "left": 0,
+                  "top": 0,
+                  "width": 4572000,
+                  "height": 2743200,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 1"
+                },
+                {
+                  "index": 2,
+                  "name": "直接箭头连接符 7",
+                  "shape_type": "LINE",
+                  "shape_type_code": 9,
+                  "left": 3760184,
+                  "top": 406312,
+                  "width": 448161,
+                  "height": 287439,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 1"
+                }
+              ]
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 21,
+          "shape_count": 6,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "21",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "全球流动性风向：央行再紧缩信号升温",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：国际清算银行，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "表格 2",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": 489938,
+              "top": 2092960,
+              "width": 5946421,
+              "height": 3935349,
+              "unit": "EMU",
+              "text": "加息央行：2026年Q2\t\t\t\n央行/货币区\t时间\t累计幅度\t政策利率\n澳大利亚 RBA\t5月6日\t+25bp\t现金利率目标升至4.35%。\n哥伦比亚 BanRep\t4月1日\t+100bp\t政策利率升至11.25%。\n捷克 CNB\t6月18日\t+25bp\t两周回购利率升至3.75%。\n丹麦 Danmarks Nationalbank\t6月11日\t+25bp\t跟随欧央行上调关键政策利率；主要政策利率上调25bp。\n欧元区 ECB\t6月11日\t+25bp\t存款便利利率升至2.25%，主要再融资利率升至2.40%。\n冰岛 Central Bank of Iceland\t5月20日\t+25bp\t关键政策利率升至7.75%。\n印尼 Bank Indonesia\t5月20日\t+50bp\tBI-Rate升至5.25%。\n印尼 Bank Indonesia\t6月9日\t+25bp\t非常规会议加息，BI-Rate升至5.50%。\n印尼 Bank Indonesia\t6月18日\t+25bp\tBI-Rate升至5.75%。\n日本 BOJ\t6月16日\t+25bp\t短期政策利率由0.75%升至1.00%。\n北马其顿 National Bank\t6月16日\t+25bp\t关键利率升至4.25%。\n挪威 Norges Bank\t5月6日\t+25bp\t政策利率由4.00%升至4.25%。\n菲律宾 BSP\t4月23日\t+25bp\t目标逆回购利率升至4.50%。\n菲律宾 BSP\t6月18日\t+25bp\t关键政策利率升至4.75%。\n南非 SARB\t5月28日\t+25bp\t回购利率升至7.00%。",
+              "is_picture": false
+            },
+            {
+              "index": 6,
+              "name": "表格 9",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": 6731000,
+              "top": 2949400,
+              "width": 4872190,
+              "height": 2028998,
+              "unit": "EMU",
+              "text": "降息央行：2026年Q2\t\t\t\n央行/货币区\t时间\t累计幅度\t政策利率\n巴西 BCB\t4月29日\t-25bp\t巴西隔夜基准利率降至14.50%。\n巴西 BCB\t6月17日\t-25bp\t巴西隔夜基准利率降至14.25%；连续第三次降息。\n以色列 Bank of Israel\t5月25日\t-25bp\t政策利率由4.00%降至3.75%。\n哈萨克斯坦 NBK\t6月5日\t-100bp\t基准利率降至17.00%。\n墨西哥 Banxico\t5月7日\t-25bp\t基准利率降至6.50%。\n俄罗斯 CBR\t4月24日\t-50bp\t政策利率降至14.50%。",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 22,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "22",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "在加息周期迫近的背景下，贵金属、工业金属等利率敏感型资产后续可能承压；AI、半导体赛道的权益资产在产业趋势驱动下或仍能保持上行，但在流动性收紧和政策不确定性上升的背景下，行情或从单边趋势交易切换为更慢斜率、更高波动、更依赖业绩确认的结构性行情。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "全球流动性风向：央行再紧缩信号升温",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Bloomberg，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "图表 1",
+              "shape_type": "CHART",
+              "shape_type_code": 3,
+              "left": 685799,
+              "top": 2321626,
+              "width": 10831195,
+              "height": 3958524,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 23,
+          "shape_count": 2,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "标题 3",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 1306286,
+              "top": 1736726,
+              "width": 10047514,
+              "height": 799645,
+              "unit": "EMU",
+              "text": "流动性拐点之际，如何定价大类资产",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "文本框 7",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 8665029,
+              "top": 3733800,
+              "width": 2830285,
+              "height": 2862322,
+              "unit": "EMU",
+              "text": "04",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 24,
+          "shape_count": 5,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "24",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "如果后续全球流动性收紧超预期，会推动美债收益率上行，债券价格相应下跌，长端利率也会重新定价更高的政策利率路径。\n黄金短期通常承压。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "资产边际价格变化",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "表格 2",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": 685800,
+              "top": 2154362,
+              "width": 10947403,
+              "height": 4089753,
+              "unit": "EMU",
+              "text": "资产类别\t价格边际变化\t推演\n美股\t↓\t对现金流稳健的长久期公司而言，定价模型上，企业融资成本上升压制分子，贴现率提高放大分母\n美科技股\t？\t更多定价自身产业趋势。半导体与AI产业趋势仍强，分子端EPS的上行可能快于分母端r的上移\n美债\t↓\t利率抬升，债券价格下降\n美元\t↑\t美元持有回报提升，增加吸引力\n中国股市科技板块\t？\t对美股科技存在映射\n人民币\t？\t人民币兑美元长期升值趋势不改，但升值速度边际放缓\n日债\t↓\t为避免日元进一步下落，市场为增强后续日央行加息预期，利率上升，债券价格下降\n日元\t↓\t若温和加息，加强carry trade,日元贬值。\u000b若超预期过快加息→美股大跌，全球风险偏好崩塌→投资者减杠杆避险→carry trade unwind → 卖美元资产，买回日元还债 → 日元升值。\n油\t↓\t若超预期加息，引发全球需求降温 → 石油是顺周期资产 & 石油以美元计价 → 价格降低\u000b（但是决定石油价格的主导性因素，仍是美伊局势）\n黄金\t短期↓，后续？\t黄金与美元争夺避险资产地位 → 提高黄金持有成本\u000b且若流动性紧张引发抛售黄金 → 会导致黄金价格初期下跌；\u000b但当下黄金与美股相关性增强，若美股在超预期紧缩下 下跌/波动性放大，增量资金可能重新青睐黄金 → 黄金反弹\n铜\t↓\t顺周期资产，且对铜的需求与AI算力中心建设中的电力配电&互联传输模块强关联 → 超预期紧缩带来需求降温 → 铜价下跌",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 25,
+          "shape_count": 10,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "灯片编号占位符 5",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 8801100,
+              "top": 6280150,
+              "width": 2743200,
+              "height": 365125,
+              "unit": "EMU",
+              "text": "25",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 424070,
+              "top": 1363926,
+              "width": 10947402,
+              "height": 957700,
+              "unit": "EMU",
+              "text": "权益资产理论上会在短期受到负向冲击，但半导体与AI产业基本面仍支撑下，短暂下跌可能带来布局机会。\n考虑到美股、尤其是美股科技当下估值已处较高位，后续可能从单边上涨行情切换为更高波、更依赖盈利确认的震荡上行市。",
+              "is_picture": false
+            },
+            {
+              "index": 3,
+              "name": "标题 8",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685800,
+              "top": 537210,
+              "width": 10831195,
+              "height": 607695,
+              "unit": "EMU",
+              "text": "权益市场可能切换为震荡上行市",
+              "is_picture": false
+            },
+            {
+              "index": 4,
+              "name": "文本框 4",
+              "shape_type": "TEXT_BOX",
+              "shape_type_code": 17,
+              "left": 535659,
+              "top": 6280150,
+              "width": 5203736,
+              "height": 277320,
+              "unit": "EMU",
+              "text": "数据来源：Haver，广发证券发展研究中心",
+              "is_picture": false
+            },
+            {
+              "index": 5,
+              "name": "组合 1",
+              "shape_type": "GROUP",
+              "shape_type_code": 6,
+              "left": 685800,
+              "top": 2230434,
+              "width": 10685672,
+              "height": 4090356,
+              "unit": "EMU",
+              "text": null,
+              "is_picture": false,
+              "children": [
+                {
+                  "index": 1,
+                  "name": "组合 5",
+                  "shape_type": "GROUP",
+                  "shape_type_code": 6,
+                  "left": 0,
+                  "top": 0,
+                  "width": 5250431,
+                  "height": 3193092,
+                  "unit": "EMU",
+                  "text": null,
+                  "is_picture": false,
+                  "parent_group": "组合 1",
+                  "children": [
+                    {
+                      "index": 1,
+                      "name": "图表 9",
+                      "shape_type": "CHART",
+                      "shape_type_code": 3,
+                      "left": 0,
+                      "top": 0,
+                      "width": 6223000,
+                      "height": 3568700,
+                      "unit": "EMU",
+                      "text": null,
+                      "is_picture": false,
+                      "parent_group": "组合 5"
+                    },
+                    {
+                      "index": 2,
+                      "name": "直线连接符 6",
+                      "shape_type": "LINE",
+                      "shape_type_code": 9,
+                      "left": 1054100,
+                      "top": 1336773,
+                      "width": 4505035,
+                      "height": 34827,
+                      "unit": "EMU",
+                      "text": null,
+                      "is_picture": false,
+                      "parent_group": "组合 5"
+                    },
+                    {
+                      "index": 3,
+                      "name": "矩形 11",
+                      "shape_type": "AUTO_SHAPE",
+                      "shape_type_code": 1,
+                      "left": 990600,
+                      "top": 457200,
+                      "width": 203200,
+                      "height": 2489200,
+                      "unit": "EMU",
+                      "text": "",
+                      "is_picture": false,
+                      "parent_group": "组合 5"
+                    }
+                  ]
+                },
+                {
+                  "index": 2,
+                  "name": "文本框 7",
+                  "shape_type": "TEXT_BOX",
+                  "shape_type_code": 17,
+                  "left": 686579,
+                  "top": 443572,
+                  "width": 933810,
+                  "height": 295425,
+                  "unit": "EMU",
+                  "text": "1994-1996年",
+                  "is_picture": false,
+                  "parent_group": "组合 1"
+                }
+              ]
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 26,
+          "shape_count": 2,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "标题 1",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 648000,
+              "top": 576000,
+              "width": 10831195,
+              "height": 608330,
+              "unit": "EMU",
+              "text": "风险提示及免责声明",
+              "is_picture": false
+            },
+            {
+              "index": 2,
+              "name": "内容占位符 2",
+              "shape_type": "PLACEHOLDER",
+              "shape_type_code": 14,
+              "left": 685798,
+              "top": 1651453,
+              "width": 10947402,
+              "height": 4901747,
+              "unit": "EMU",
+              "text": "风险提示\n海外通胀及工资压力超预期，美联储加息节奏快于预期；全球央行再紧缩幅度超预期，流动性收缩压制高估值资产；AI产业链资本开支和盈利兑现不及预期；地缘冲突推升能源价格，加剧通胀与增长压力。 \n\n免责声明\n广发证券股份有限公司（以下简称“广发证券”）具备证券投资咨询业务资格。本报告只发送给广发证券重点客户，不对外公开发布，只有接收客户才可以使用，且对于接收客户而言具有相关保密义务。广发证券并不因相关人员通过其他途径收到或阅读本报告而视其为广发证券的客户。本报告的内容、观点或建议并未考虑个别客户的特定状况，不应被视为对特定客户关于特定证券或金融工具的投资建议。本报告发送给某客户是基于该客户被认为有能力独立评估投资风险、独立行使投资决策并独立承担相应风险。\n本报告所载资料的来源及观点的出处皆被广发证券股份有限公司认为可靠，但广发证券不对其准确性或完整性做出任何保证。报告内容仅供参考，报告中的信息或所表达观点不构成所涉证券买卖的出价或询价。广发证券不对因使用本报告的内容而引致的损失承担任何责任，除非法律法规有明确规定。客户不应以本报告取代其独立判断或仅根据本报告做出决策。\n广发证券可发出其它与本报告所载信息不一致及有不同结论的报告。本报告反映研究人员的不同观点、见解及分析方法，并不代表广发证券或其附属机构的立场。报告所载资料、意见及推测仅反映研究人员于发出本报告当日的判断，可随时更改且不予通告。\n本报告旨在发送给广发证券的特定客户及其它专业人士。未经广发证券事先书面许可，任何机构或个人不得以任何形式翻版、复制、刊登、转载和引用，否则由此造成的一切不良后果及法律责任由私自翻版、复制、刊登、转载和引用者承担。",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        },
+        {
+          "slide_number": 27,
+          "shape_count": 1,
+          "shapes": [
+            {
+              "index": 1,
+              "name": "表格 2",
+              "shape_type": "TABLE",
+              "shape_type_code": 19,
+              "left": -863600,
+              "top": 0,
+              "width": 660400,
+              "height": 6858005,
+              "unit": "EMU",
+              "text": "　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　\n　",
+              "is_picture": false
+            }
+          ],
+          "picture_frames": []
+        }
+      ]
+    }
+  ]
+}

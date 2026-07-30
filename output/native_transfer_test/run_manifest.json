@@ -1,0 +1,25 @@
+{
+  "run_timestamp_utc": "2026-07-28T08:46:13.574678+00:00",
+  "input_docx": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/test/input/【广发策略】从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？V3(1).docx",
+  "input_docx_sha256": "2ff793bf6e5480ce94f327ce49b1fd3bce85d387610dc82b9ba9a46b7786f667",
+  "output_pptx": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/搬运规则测试版.pptx",
+  "output_pptx_sha256": "aade38100374c3be7cd4dde9b7cd0dcd862e84f3636360e9abcfee20364b8f06",
+  "planned_slide_count": 33,
+  "generated_slide_count": 33,
+  "intermediate_files": {
+    "doc_structure": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/doc_structure.json",
+    "presentation_plan": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/presentation_plan.json",
+    "presentation_content": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/presentation_content.json",
+    "slide_mapping_snapshot": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/slide_mapping.yaml",
+    "ppt_layout_snapshot": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/ppt_layout.json",
+    "style_config_snapshot": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/style_config.yaml",
+    "layout_debug": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/layout_debug.json",
+    "extracted_images": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/docx_images",
+    "extracted_charts": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/native_transfer_test/docx_charts"
+  },
+  "template_files_unchanged": true,
+  "template_sha256": {
+    "【广发策略】全球流动性走到哪里了？——央.docx": "f975deee5691693ec9aa71f231c4bbd3c974c431bbbc8566a621c35c063dd644",
+    "【广发策略】全球流动性走到哪里了？——央.pptx": "a1757c931e4b16a0d74aa52e98b64733b74aff6d253d60aefd89722e25ba1180"
+  }
+}

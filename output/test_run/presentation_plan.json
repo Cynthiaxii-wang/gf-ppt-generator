@@ -1,0 +1,346 @@
+{
+  "source_document": "【广发策略】位置决定叙事，趋势锚定景气——2026港股&海外大类资产中期策略V2.docx",
+  "planned_slide_count": 40,
+  "planning_metrics": {
+    "heading_1_count": 5,
+    "heading_2_count": 13,
+    "body_character_count": 12822,
+    "table_count": 82,
+    "image_chart_count": 18,
+    "risk_page_count": 1,
+    "section_page_count": 4
+  },
+  "template_compatible_page_types": [
+    "chart_analysis",
+    "chart_table",
+    "cover",
+    "matrix",
+    "risk",
+    "section",
+    "summary",
+    "table_summary",
+    "thanks"
+  ],
+  "slides": [
+    {
+      "slide_number": 1,
+      "section": "封面",
+      "page_type": "cover",
+      "source_heading": "位置决定叙事，趋势锚定景气——2026港股&海外大类资产中期策略",
+      "reason": "模板约束：每份报告固定生成1页封面。",
+      "estimated_content_length": 32
+    },
+    {
+      "slide_number": 2,
+      "section": "核心结论",
+      "page_type": "summary",
+      "source_heading": "全文核心结论",
+      "reason": "模板约束：每份报告固定生成1页摘要；覆盖主要一级标题的核心结论。",
+      "estimated_content_length": 700
+    },
+    {
+      "slide_number": 3,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "section",
+      "source_heading": "一、全球宏观环境：滞胀下的鹰派转向",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 15
+    },
+    {
+      "slide_number": 4,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）海外宏观背景：通胀仍是最大隐忧",
+      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度中高，适度展开。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 800
+    },
+    {
+      "slide_number": 5,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）全球流动性：收紧迹象初显",
+      "reason": "正文信息密度较高，拆分为8页中的第1页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 418
+    },
+    {
+      "slide_number": 6,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）全球流动性：收紧迹象初显",
+      "reason": "正文信息密度较高，拆分为8页中的第2页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 552
+    },
+    {
+      "slide_number": 7,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）全球流动性：收紧迹象初显",
+      "reason": "正文信息密度较高，拆分为8页中的第5页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 875
+    },
+    {
+      "slide_number": 8,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）是否影响AI主线：短期受扰动，中期产业趋势仍延续",
+      "reason": "正文信息密度较高，拆分为8页中的第1页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 478
+    },
+    {
+      "slide_number": 9,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）是否影响AI主线：短期受扰动，中期产业趋势仍延续",
+      "reason": "正文信息密度较高，拆分为8页中的第2页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 719
+    },
+    {
+      "slide_number": 10,
+      "section": "全球宏观环境：滞胀下的鹰派转向",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）是否影响AI主线：短期受扰动，中期产业趋势仍延续",
+      "reason": "正文信息密度较高，拆分为8页中的第6页；包含1个图形容器；本节分配到4个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 391
+    },
+    {
+      "slide_number": 11,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "section",
+      "source_heading": "二、港股流动性压力下半年能否缓解？",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 15
+    },
+    {
+      "slide_number": 12,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）最近两年来，港股市场的多个历史规律被打破",
+      "reason": "正文信息密度较高，拆分为5页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 568
+    },
+    {
+      "slide_number": 13,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）最近两年来，港股市场的多个历史规律被打破",
+      "reason": "正文信息密度较高，拆分为5页中的第4页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 403
+    },
+    {
+      "slide_number": 14,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）产业资本-限售股解禁在7月中旬过后可能会阶段性缓解；回购公司数量出现明显回升",
+      "reason": "正文信息密度较高，拆分为7页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 813
+    },
+    {
+      "slide_number": 15,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_table",
+      "source_heading": "（二）产业资本-限售股解禁在7月中旬过后可能会阶段性缓解；回购公司数量出现明显回升",
+      "reason": "正文信息密度较高，拆分为7页中的第4页；包含1个数据表；本节分配到6个图片/图表资源；内容重要度中高，适度展开。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 474
+    },
+    {
+      "slide_number": 16,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）南向资金-边际走弱：当前港股红利资产的股息率优势大幅下降",
+      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 542
+    },
+    {
+      "slide_number": 17,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）南向资金-边际走弱：当前港股红利资产的股息率优势大幅下降",
+      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 405
+    },
+    {
+      "slide_number": 18,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_table",
+      "source_heading": "（四）外资-海外货币政策转向：关注7-8月的非农就业数据，尤其是世界杯后半段对非农就业的拉动可能减弱，关注加息预期可能会阶段性后移",
+      "reason": "正文信息密度较高，拆分为4页中的第1页；包含1个数据表；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 161
+    },
+    {
+      "slide_number": 19,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）外资-海外货币政策转向：关注7-8月的非农就业数据，尤其是世界杯后半段对非农就业的拉动可能减弱，关注加息预期可能会阶段性后移",
+      "reason": "正文信息密度较高，拆分为4页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 378
+    },
+    {
+      "slide_number": 20,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（五）A股占优还是港股占优？",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 637
+    },
+    {
+      "slide_number": 21,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（六）港股下半年机会可能主要是超跌反弹带来的阶段性行情，难以形成持续性反转行情",
+      "reason": "正文信息密度较高，拆分为7页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 871
+    },
+    {
+      "slide_number": 22,
+      "section": "港股流动性压力下半年能否缓解？",
+      "page_type": "chart_analysis",
+      "source_heading": "（六）港股下半年机会可能主要是超跌反弹带来的阶段性行情，难以形成持续性反转行情",
+      "reason": "正文信息密度较高，拆分为7页中的第3页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。 为满足最大页数约束，与相邻同主题内容合并。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 865
+    },
+    {
+      "slide_number": 23,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "section",
+      "source_heading": "三、大类资产走势复盘与研判",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 11
+    },
+    {
+      "slide_number": 24,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第1页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 517
+    },
+    {
+      "slide_number": 25,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第2页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 812
+    },
+    {
+      "slide_number": 26,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第6页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 451
+    },
+    {
+      "slide_number": 27,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_table",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第7页；包含1个数据表；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 209
+    },
+    {
+      "slide_number": 28,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第8页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 569
+    },
+    {
+      "slide_number": 29,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第11页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 768
+    },
+    {
+      "slide_number": 30,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）权益资产",
+      "reason": "正文信息密度较高，拆分为14页中的第13页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 492
+    },
+    {
+      "slide_number": 31,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）债券资产",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 493
+    },
+    {
+      "slide_number": 32,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）债券资产",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 563
+    },
+    {
+      "slide_number": 33,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）汇市",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 712
+    },
+    {
+      "slide_number": 34,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）大宗商品",
+      "reason": "正文信息密度较高，拆分为7页中的第1页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 753
+    },
+    {
+      "slide_number": 35,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）大宗商品",
+      "reason": "正文信息密度较高，拆分为7页中的第3页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 603
+    },
+    {
+      "slide_number": 36,
+      "section": "大类资产走势复盘与研判",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）大宗商品",
+      "reason": "正文信息密度较高，拆分为7页中的第5页；包含1个图形容器；本节分配到8个图片/图表资源；内容重要度高，保留更多论据与关键数据。 为满足最大页数约束，与相邻同主题内容合并。",
+      "estimated_content_length": 725
+    },
+    {
+      "slide_number": 37,
+      "section": "大类资产配置总结",
+      "page_type": "section",
+      "source_heading": "四、大类资产配置总结",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 8
+    },
+    {
+      "slide_number": 38,
+      "section": "大类资产配置总结",
+      "page_type": "chart_table",
+      "source_heading": "四、大类资产配置总结",
+      "reason": "预计承载约212字；包含1个数据表；内容重要度中高，适度展开。",
+      "estimated_content_length": 212
+    },
+    {
+      "slide_number": 39,
+      "section": "风险提示",
+      "page_type": "risk",
+      "source_heading": "五、风险提示",
+      "reason": "风险提示不生成编号章节页，直接匹配模板风险提示及免责声明页。",
+      "estimated_content_length": 3397
+    },
+    {
+      "slide_number": 40,
+      "section": "致谢",
+      "page_type": "thanks",
+      "source_heading": "模板致谢页",
+      "reason": "模板约束：每份报告固定生成1页致谢页，并始终置于最终页。",
+      "estimated_content_length": 0
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "source_document": "【广发策略】从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？V3(1).docx",
+  "planned_slide_count": 34,
+  "planning_metrics": {
+    "heading_1_count": 5,
+    "heading_2_count": 7,
+    "body_character_count": 6187,
+    "table_count": 37,
+    "image_chart_count": 14,
+    "risk_page_count": 1,
+    "section_page_count": 4
+  },
+  "template_compatible_page_types": [
+    "chart_analysis",
+    "chart_table",
+    "cover",
+    "matrix",
+    "risk",
+    "section",
+    "summary",
+    "table_summary",
+    "thanks"
+  ],
+  "slides": [
+    {
+      "slide_number": 1,
+      "section": "封面",
+      "page_type": "cover",
+      "source_heading": "从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？",
+      "reason": "模板约束：每份报告固定生成1页封面。",
+      "estimated_content_length": 23
+    },
+    {
+      "slide_number": 2,
+      "section": "核心结论",
+      "page_type": "summary",
+      "source_heading": "全文核心结论",
+      "reason": "模板约束：每份报告固定生成1页摘要；覆盖主要一级标题的核心结论。",
+      "estimated_content_length": 700
+    },
+    {
+      "slide_number": 3,
+      "section": "低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "page_type": "section",
+      "source_heading": "一、低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 31
+    },
+    {
+      "slide_number": 4,
+      "section": "低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "page_type": "chart_analysis",
+      "source_heading": "一、低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到1个图片/图表资源。",
+      "estimated_content_length": 369
+    },
+    {
+      "slide_number": 5,
+      "section": "低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "page_type": "chart_analysis",
+      "source_heading": "一、低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到1个图片/图表资源。",
+      "estimated_content_length": 111
+    },
+    {
+      "slide_number": 6,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "section",
+      "source_heading": "二、韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 27
+    },
+    {
+      "slide_number": 7,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）  信用融资杠杆：融资维持高位，下跌或触发追保正反馈",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源。",
+      "estimated_content_length": 373
+    },
+    {
+      "slide_number": 8,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）  信用融资杠杆：融资维持高位，下跌或触发追保正反馈",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源。",
+      "estimated_content_length": 53
+    },
+    {
+      "slide_number": 9,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_table",
+      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
+      "reason": "正文信息密度较高，拆分为5页中的第1页；包含1个数据表；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 282
+    },
+    {
+      "slide_number": 10,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_table",
+      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
+      "reason": "正文信息密度较高，拆分为5页中的第2页；包含1个数据表；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 554
+    },
+    {
+      "slide_number": 11,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
+      "reason": "正文信息密度较高，拆分为5页中的第3页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 291
+    },
+    {
+      "slide_number": 12,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
+      "reason": "正文信息密度较高，拆分为5页中的第4页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 285
+    },
+    {
+      "slide_number": 13,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
+      "reason": "正文信息密度较高，拆分为5页中的第5页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 67
+    },
+    {
+      "slide_number": 14,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（三） 场内衍生品杠杆：外资与机构主导，风险敞口升至历史高位",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 542
+    },
+    {
+      "slide_number": 15,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（三） 场内衍生品杠杆：外资与机构主导，风险敞口升至历史高位",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 61
+    },
+    {
+      "slide_number": 16,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）持仓结构：外资撤、散户接，筹码加速向居民部门转移",
+      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源。",
+      "estimated_content_length": 294
+    },
+    {
+      "slide_number": 17,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）持仓结构：外资撤、散户接，筹码加速向居民部门转移",
+      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源。",
+      "estimated_content_length": 150
+    },
+    {
+      "slide_number": 18,
+      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "page_type": "chart_analysis",
+      "source_heading": "（四）持仓结构：外资撤、散户接，筹码加速向居民部门转移",
+      "reason": "正文信息密度较高，拆分为3页中的第3页；包含1个图形容器；本节分配到6个图片/图表资源。",
+      "estimated_content_length": 39
+    },
+    {
+      "slide_number": 19,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "section",
+      "source_heading": "三、韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 38
+    },
+    {
+      "slide_number": 20,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_analysis",
+      "source_heading": "信用融资：尚未出现2015年A股式的集中出清",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 358
+    },
+    {
+      "slide_number": 21,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_analysis",
+      "source_heading": "信用融资：尚未出现2015年A股式的集中出清",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 400
+    },
+    {
+      "slide_number": 22,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_table",
+      "source_heading": "（二）杠杆ETF：去化幅度接近美股首轮，但出清时间仍短",
+      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个数据表；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 502
+    },
+    {
+      "slide_number": 23,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）杠杆ETF：去化幅度接近美股首轮，但出清时间仍短",
+      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 413
+    },
+    {
+      "slide_number": 24,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）杠杆ETF：去化幅度接近美股首轮，但出清时间仍短",
+      "reason": "正文信息密度较高，拆分为3页中的第3页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 259
+    },
+    {
+      "slide_number": 25,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_table",
+      "source_heading": "（三）历史经验：首轮急降并非终点，完整去化往往持续一年",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个数据表；本节分配到5个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 616
+    },
+    {
+      "slide_number": 26,
+      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）历史经验：首轮急降并非终点，完整去化往往持续一年",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 254
+    },
+    {
+      "slide_number": 27,
+      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "page_type": "section",
+      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 25
+    },
+    {
+      "slide_number": 28,
+      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "page_type": "chart_table",
+      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "reason": "正文信息密度较高，拆分为5页中的第1页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 437
+    },
+    {
+      "slide_number": 29,
+      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "page_type": "chart_analysis",
+      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "reason": "正文信息密度较高，拆分为5页中的第2页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 172
+    },
+    {
+      "slide_number": 30,
+      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "page_type": "chart_table",
+      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "reason": "正文信息密度较高，拆分为5页中的第3页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 183
+    },
+    {
+      "slide_number": 31,
+      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "page_type": "chart_table",
+      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "reason": "正文信息密度较高，拆分为5页中的第4页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 489
+    },
+    {
+      "slide_number": 32,
+      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "page_type": "chart_analysis",
+      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
+      "reason": "正文信息密度较高，拆分为5页中的第5页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 48
+    },
+    {
+      "slide_number": 33,
+      "section": "风险提示",
+      "page_type": "risk",
+      "source_heading": "五、风险提示",
+      "reason": "风险提示不生成编号章节页，直接匹配模板风险提示及免责声明页。",
+      "estimated_content_length": 2992
+    },
+    {
+      "slide_number": 34,
+      "section": "致谢",
+      "page_type": "thanks",
+      "source_heading": "模板致谢页",
+      "reason": "模板约束：每份报告固定生成1页致谢页，并始终置于最终页。",
+      "estimated_content_length": 0
+    }
+  ]
+}

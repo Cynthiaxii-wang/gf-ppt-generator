@@ -1,0 +1,1249 @@
+{
+  "slide_count": 34,
+  "overlap_count": 0,
+  "slides": [
+    {
+      "slide_number": 1,
+      "page_type": "cover",
+      "template_slide_number": 1,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 851534,
+          "top": 1156335,
+          "width": 7093586,
+          "height": 1555115
+        },
+        "content": {
+          "left": 885190,
+          "top": 3002915,
+          "width": 3813810,
+          "height": 596265
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 2,
+      "page_type": "summary",
+      "template_slide_number": 2,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 648000,
+          "top": 576000,
+          "width": 10980000,
+          "height": 607695
+        },
+        "content": {
+          "left": 576000,
+          "top": 1296001,
+          "width": 10980000,
+          "height": 5165999
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6552000,
+          "width": 2743200,
+          "height": 288000
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 3,
+      "page_type": "section",
+      "template_slide_number": 3,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 1260566,
+          "top": 1736726,
+          "width": 10047514,
+          "height": 799645
+        },
+        "content": {
+          "left": 8665029,
+          "top": 3733800,
+          "width": 2830285,
+          "height": 2862322
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 4,
+      "page_type": "chart_analysis",
+      "template_slide_number": 6,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 2447541,
+          "width": 10972800,
+          "height": 3742609
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 5,
+      "page_type": "chart_analysis",
+      "template_slide_number": 8,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 2080544,
+          "width": 5436400,
+          "height": 4109606
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 6,
+      "page_type": "section",
+      "template_slide_number": 3,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 1260566,
+          "top": 1736726,
+          "width": 10047514,
+          "height": 799645
+        },
+        "content": {
+          "left": 8665029,
+          "top": 3733800,
+          "width": 2830285,
+          "height": 2862322
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 7,
+      "page_type": "chart_analysis",
+      "template_slide_number": 9,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 735000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 609600,
+          "top": 2696885,
+          "width": 5436400,
+          "height": 2985306
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 2188926,
+          "width": 5436400,
+          "height": 4001224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 8,
+      "page_type": "chart_analysis",
+      "template_slide_number": 11,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1943926,
+          "width": 10972800,
+          "height": 4246224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 9,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 980000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 609600,
+          "top": 3093069,
+          "width": 5436400,
+          "height": 2437938
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 2433926,
+          "width": 5436400,
+          "height": 3756224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 10,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 3267244,
+          "top": 2285326,
+          "width": 5657511,
+          "height": 3904824
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 11,
+      "page_type": "chart_analysis",
+      "template_slide_number": 12,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 609600,
+          "top": 3561784,
+          "width": 10972800,
+          "height": 1607227
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 12,
+      "page_type": "chart_analysis",
+      "template_slide_number": 13,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 957700
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 13,
+      "page_type": "chart_analysis",
+      "template_slide_number": 15,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 980000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 2433926,
+          "width": 5436400,
+          "height": 3756224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 14,
+      "page_type": "chart_analysis",
+      "template_slide_number": 16,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1943926,
+          "width": 10972800,
+          "height": 4246224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 15,
+      "page_type": "chart_analysis",
+      "template_slide_number": 17,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1943926,
+          "width": 10972800,
+          "height": 4246224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 16,
+      "page_type": "chart_analysis",
+      "template_slide_number": 18,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1813926,
+          "width": 10972800,
+          "height": 4376224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 17,
+      "page_type": "chart_analysis",
+      "template_slide_number": 19,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 2280062,
+          "width": 10972800,
+          "height": 3910088
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 18,
+      "page_type": "chart_analysis",
+      "template_slide_number": 20,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1943926,
+          "width": 10972800,
+          "height": 4246224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 19,
+      "page_type": "section",
+      "template_slide_number": 3,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 1260566,
+          "top": 1736726,
+          "width": 10047514,
+          "height": 799645
+        },
+        "content": {
+          "left": 8665029,
+          "top": 3733800,
+          "width": 2830285,
+          "height": 2862322
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 20,
+      "page_type": "chart_analysis",
+      "template_slide_number": 22,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 609600,
+          "top": 2870673,
+          "width": 5436400,
+          "height": 2770429
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 2321626,
+          "width": 5436400,
+          "height": 3868524
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 21,
+      "page_type": "chart_analysis",
+      "template_slide_number": 25,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1813926,
+          "width": 10972800,
+          "height": 4376224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 22,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 2414989,
+          "top": 2285326,
+          "width": 7362021,
+          "height": 3904824
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 23,
+      "page_type": "chart_analysis",
+      "template_slide_number": 6,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 957700
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 24,
+      "page_type": "chart_analysis",
+      "template_slide_number": 8,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 735000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 2188926,
+          "width": 5436400,
+          "height": 4001224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 25,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 609600,
+          "top": 2608379,
+          "width": 10972800,
+          "height": 3258718
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 26,
+      "page_type": "chart_analysis",
+      "template_slide_number": 9,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 1943926,
+          "width": 10972800,
+          "height": 4246224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 27,
+      "page_type": "section",
+      "template_slide_number": 3,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 1260566,
+          "top": 1736726,
+          "width": 10047514,
+          "height": 799645
+        },
+        "content": {
+          "left": 8665029,
+          "top": 3733800,
+          "width": 2830285,
+          "height": 2862322
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 28,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 1959368,
+          "top": 2285326,
+          "width": 8273264,
+          "height": 3904824
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 29,
+      "page_type": "chart_analysis",
+      "template_slide_number": 11,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 2,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 6146000,
+          "top": 1813926,
+          "width": 5436400,
+          "height": 4376224
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 30,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_image": {
+          "left": 609600,
+          "top": 2512700,
+          "width": 10972800,
+          "height": 3450076
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 31,
+      "page_type": "chart_table",
+      "template_slide_number": 5,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 490000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 2285326,
+          "width": 10972800,
+          "height": 3904824
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 32,
+      "page_type": "chart_analysis",
+      "template_slide_number": 12,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 1,
+      "actual_layout": {
+        "title": {
+          "left": 685800,
+          "top": 537210,
+          "width": 10831195,
+          "height": 607695
+        },
+        "content": {
+          "left": 424070,
+          "top": 1363926,
+          "width": 10947402,
+          "height": 360000
+        },
+        "source": {
+          "left": 535659,
+          "top": 6280150,
+          "width": 5203736,
+          "height": 277320
+        },
+        "page_number": {
+          "left": 8801100,
+          "top": 6280150,
+          "width": 2743200,
+          "height": 365125
+        },
+        "source_docx_chart": {
+          "left": 609600,
+          "top": 2540646,
+          "width": 10972800,
+          "height": 3649504
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 33,
+      "page_type": "risk",
+      "template_slide_number": 26,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {
+        "title": {
+          "left": 648000,
+          "top": 576000,
+          "width": 10831195,
+          "height": 608330
+        },
+        "content": {
+          "left": 685798,
+          "top": 1651453,
+          "width": 10947402,
+          "height": 4901747
+        }
+      },
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    },
+    {
+      "slide_number": 34,
+      "page_type": "thanks",
+      "template_slide_number": 27,
+      "creation_mode": "template_example_clone",
+      "rendered_visual_count": 0,
+      "actual_layout": {},
+      "overlaps": [],
+      "placeholder_prompt_count": 0
+    }
+  ]
+}

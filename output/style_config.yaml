@@ -1,0 +1,190 @@
+source_template: 【广发策略】全球流动性走到哪里了？——央.pptx
+style:
+  font:
+    title_style: Source Han Sans CN Normal
+    cover_title_style: 思源黑体 CN Bold
+    section_title_style: Source Han Sans CN Regular
+    body_style: Source Han Sans CN Medium
+    table_style: 思源黑体 CN Medium
+    chart_style: Arial
+    source_style: Arial
+    footer_style: Source Han Sans CN Regular
+    theme_major_hans: 等线 Light
+    theme_minor_hans: 等线
+  color:
+    title_color: '#353160'
+    body_color: '#353160'
+    emphasis_color: '#C00000'
+    background_color: '#FFFFFF'
+    section_background_color: '#FFFFFF'
+    section_accent_color: '#353160'
+    table_text_color: '#000000'
+    table_fill_color: '#F2F2F2'
+    theme_palette:
+      dk1: '#000000'
+      lt1: '#FFFFFF'
+      dk2: '#0E2841'
+      lt2: '#E8E8E8'
+      accent1: '#156082'
+      accent2: '#E97132'
+      accent3: '#196B24'
+      accent4: '#0F9ED5'
+      accent5: '#A02B93'
+      accent6: '#4EA72E'
+      hlink: '#467886'
+      folHlink: '#96607D'
+  size:
+    cover_title_pt: 38.0
+    section_title_pt: 40.0
+    body_title_pt: 32.0
+    body_text_pt: 14.0
+    table_text_pt: 7.0
+    chart_text_pt: 11.0
+    annotation_pt: 9.0
+    page_number_pt: 9.0
+  spacing:
+    title_to_content_gap_emu: 219021
+    title_to_content_gap_in: 0.24
+    body_line_spacing: 22.0
+    body_space_before_pt: 6.0
+    body_space_after_pt: 6.0
+  layout:
+    slide_width_emu: 12192000
+    slide_height_emu: 6858000
+    slide_width_in: 13.333
+    slide_height_in: 7.5
+    page_margin_left_emu: 424070
+    page_margin_right_emu: 558800
+    page_margin_left_in: 0.464
+    page_margin_right_in: 0.611
+    title_region:
+      left_emu: 685800
+      left_in: 0.75
+      top_emu: 537210
+      top_in: 0.588
+      width_emu: 10831195
+      width_in: 11.845
+      height_emu: 607695
+      height_in: 0.665
+    content_region:
+      left_emu: 424070
+      left_in: 0.464
+      top_emu: 1363926
+      top_in: 1.492
+      width_emu: 10947402
+      width_in: 11.972
+      height_emu: 957700
+      height_in: 1.047
+    chart_region:
+      left_emu: 575430
+      left_in: 0.629
+      top_emu: 2080544
+      top_in: 2.275
+      width_emu: 5270292
+      width_in: 5.764
+      height_emu: 3680772
+      height_in: 4.025
+    table_region:
+      left_emu: 685800
+      left_in: 0.75
+      top_emu: 2092960
+      top_in: 2.289
+      width_emu: 5946421
+      width_in: 6.503
+      height_emu: 4089753
+      height_in: 4.473
+    source_region:
+      left_emu: 535659
+      left_in: 0.586
+      top_emu: 6280150
+      top_in: 6.868
+      width_emu: 5203736
+      width_in: 5.691
+      height_emu: 277320
+      height_in: 0.303
+    footer_region:
+      left_emu: 8801100
+      left_in: 9.625
+      top_emu: 6280150
+      top_in: 6.868
+      width_emu: 2743200
+      width_in: 3.0
+      height_emu: 365125
+      height_in: 0.399
+  element_status:
+    cover_title:
+      font_family: 思源黑体 CN Bold
+      font_candidates:
+      - 思源黑体 CN Bold
+      - Source Han Sans CN Medium
+      font_size_pt: 38.0
+      font_color: '#353160'
+      bold: unknown
+      status: observed
+    section_title:
+      font_family: Source Han Sans CN Regular
+      font_candidates:
+      - Source Han Sans CN Regular
+      font_size_pt: unknown
+      font_color: '#353160'
+      bold: unknown
+      status: partial
+    body_title:
+      font_family: Source Han Sans CN Normal
+      font_candidates:
+      - Arial
+      - Source Han Sans CN Normal
+      - 思源黑体 CN Medium
+      - 思源黑体 CN Bold
+      font_size_pt: 32.0
+      font_color: '#353160'
+      bold: unknown
+      status: observed
+    body:
+      font_family: Source Han Sans CN Medium
+      font_candidates:
+      - Arial
+      - Source Han Sans CN Medium
+      - Source Han Sans CN Normal
+      - Source Han Sans CN Regular
+      - 思源黑体 CN Bold
+      font_size_pt: 14.0
+      font_color: '#353160'
+      bold: false
+      status: observed
+    table:
+      font_family: 思源黑体 CN Medium
+      font_candidates:
+      - 思源黑体 CN Medium
+      font_size_pt: 7.0
+      font_color: '#000000'
+      bold: unknown
+      status: observed
+    chart:
+      font_family: Arial
+      font_candidates:
+      - Arial
+      - 思源黑体 CN Light
+      - 思源黑体 CN Normal
+      font_size_pt: 11.0
+      font_color: '#7C80C8'
+      bold: unknown
+      status: observed
+    source:
+      font_family: Arial
+      font_candidates:
+      - Arial
+      - Source Han Sans CN Regular
+      font_size_pt: 9.0
+      font_color: unknown
+      bold: false
+      status: observed
+    footer:
+      font_family: Source Han Sans CN Regular
+      font_candidates:
+      - Source Han Sans CN Regular
+      font_size_pt: 9.0
+      font_color: theme:tx1
+      bold: unknown
+      status: observed
+  unknown_policy: 无法从模板直接样式、主题或可观测实例可靠解析的字段标记为unknown。

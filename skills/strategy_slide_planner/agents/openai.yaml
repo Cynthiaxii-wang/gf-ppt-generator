@@ -1,0 +1,4 @@
+interface:
+  display_name: "券商策略幻灯片规划"
+  short_description: "将券商研究报告压缩为结构清晰且可追溯的幻灯片内容规划"
+  default_prompt: "Use $strategy-slide-planner to convert a structured broker research report and slide mapping into presentation_content.json."

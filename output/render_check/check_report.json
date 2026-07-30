@@ -1,0 +1,1074 @@
+{
+  "source_pptx": "generated_test.pptx",
+  "renderer": "Microsoft PowerPoint PNG export",
+  "slide_count": 22,
+  "rendered_png_count": 22,
+  "overall_status": "fail",
+  "summary": {
+    "pass": 13,
+    "warning": 4,
+    "fail": 5
+  },
+  "checks_performed": [
+    "title bounds and rendered edge clipping",
+    "body bounds, auto-fit, and rendered edge clipping",
+    "table bounds and native editability",
+    "chart placeholder bounds and label",
+    "pairwise element overlap",
+    "PNG dimensions and non-blank content"
+  ],
+  "slides": [
+    {
+      "slide_number": 1,
+      "page_type": "cover",
+      "image": "slide-01.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0389
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 2,
+      "page_type": "summary",
+      "image": "slide-02.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0352
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 3,
+      "page_type": "section",
+      "image": "slide-03.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0344
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 4,
+      "page_type": "chart_table",
+      "image": "slide-04.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.1598
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0792,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "editable_native_table": true
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 5,
+      "page_type": "chart_analysis",
+      "image": "slide-05.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0406
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 6,
+      "page_type": "table_summary",
+      "image": "slide-06.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.2889
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.2981,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "editable_native_table": true
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+      ]
+    },
+    {
+      "slide_number": 7,
+      "page_type": "chart_analysis",
+      "image": "slide-07.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0513
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.2196,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+      ]
+    },
+    {
+      "slide_number": 8,
+      "page_type": "section",
+      "image": "slide-08.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0256
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 9,
+      "page_type": "chart_analysis",
+      "image": "slide-09.png",
+      "status": "warning",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0457
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "warning",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.1047,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text touches a box edge; inspect for clipping."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text touches a box edge; inspect for clipping."
+      ]
+    },
+    {
+      "slide_number": 10,
+      "page_type": "chart_analysis",
+      "image": "slide-10.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0479
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.322,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+      ]
+    },
+    {
+      "slide_number": 11,
+      "page_type": "chart_analysis",
+      "image": "slide-11.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0455
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.2718,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+      ]
+    },
+    {
+      "slide_number": 12,
+      "page_type": "chart_analysis",
+      "image": "slide-12.png",
+      "status": "warning",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0709
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "warning",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.1149,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text touches a box edge; inspect for clipping."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text touches a box edge; inspect for clipping."
+      ]
+    },
+    {
+      "slide_number": 13,
+      "page_type": "chart_analysis",
+      "image": "slide-13.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0479
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0624,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 14,
+      "page_type": "section",
+      "image": "slide-14.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0316
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 15,
+      "page_type": "chart_analysis",
+      "image": "slide-15.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0443
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0597,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 16,
+      "page_type": "chart_analysis",
+      "image": "slide-16.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0523
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.059,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 17,
+      "page_type": "chart_analysis",
+      "image": "slide-17.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0445
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0079,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 18,
+      "page_type": "chart_table",
+      "image": "slide-18.png",
+      "status": "fail",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.1646
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "fail",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.4106,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "editable_native_table": true
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "label_correct": true
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text strongly touches a box edge; clipping/hidden bullet is likely."
+      ]
+    },
+    {
+      "slide_number": 19,
+      "page_type": "section",
+      "image": "slide-19.png",
+      "status": "warning",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0578
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "warning",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0922,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text touches a box edge; inspect for clipping."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text touches a box edge; inspect for clipping."
+      ]
+    },
+    {
+      "slide_number": 20,
+      "page_type": "matrix",
+      "image": "slide-20.png",
+      "status": "warning",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.2834
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "warning",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0922,
+          "right_edge_ink_ratio": 0.0,
+          "details": "Rendered text touches a box edge; inspect for clipping."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": true,
+          "inside_slide": true,
+          "editable_native_table": true
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": [
+        "Rendered text touches a box edge; inspect for clipping."
+      ]
+    },
+    {
+      "slide_number": 21,
+      "page_type": "risk",
+      "image": "slide-21.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.0365
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    },
+    {
+      "slide_number": 22,
+      "page_type": "risk",
+      "image": "slide-22.png",
+      "status": "pass",
+      "checks": {
+        "image_render": {
+          "status": "pass",
+          "width": 1600,
+          "height": 900,
+          "non_background_ratio": 0.034
+        },
+        "title_bounds": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "body_overflow": {
+          "status": "pass",
+          "inside_slide": true,
+          "powerpoint_auto_fit": true,
+          "bottom_edge_ink_ratio": 0.0534,
+          "right_edge_ink_ratio": 0.0,
+          "details": "No rendered edge clipping detected."
+        },
+        "table_region": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "editable_native_table": false
+        },
+        "chart_placeholder": {
+          "status": "pass",
+          "present": false,
+          "inside_slide": null,
+          "label_correct": null
+        },
+        "overlap": {
+          "status": "pass",
+          "pairs": []
+        }
+      },
+      "issues": []
+    }
+  ]
+}

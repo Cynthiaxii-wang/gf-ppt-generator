@@ -1,0 +1,215 @@
+slides:
+  - slide_number: 1
+    page_type: cover
+    title_shape: "标题 1"
+    content_shape: "副标题 2"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 2
+    page_type: summary
+    title_shape: "标题 1"
+    content_shape: "内容占位符 2"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 3
+    page_type: section
+    title_shape: "标题 3"
+    content_shape: "文本框 7"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 4
+    page_type: table_summary
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape: null
+    table_shape:
+      - "表格 1"
+
+  - slide_number: 5
+    page_type: chart_table
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 2"
+    table_shape:
+      - "表格 5"
+
+  - slide_number: 6
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 7"
+    table_shape: null
+
+  - slide_number: 7
+    page_type: section
+    title_shape: "标题 3"
+    content_shape: "文本框 7"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 8
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 1"
+      - "图表 2"
+    table_shape: null
+
+  - slide_number: 9
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "Picture 1860552750"
+    table_shape: null
+
+  - slide_number: 10
+    page_type: table_summary
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape: null
+    table_shape:
+      - "表格 1"
+
+  - slide_number: 11
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "组合 2/图表 5"
+      - "组合 10/图表 11"
+    table_shape: null
+
+  - slide_number: 12
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "Picture 1860552739"
+      - "Picture 1860552740"
+    table_shape: null
+
+  - slide_number: 13
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 1"
+    table_shape: null
+
+  - slide_number: 14
+    page_type: section
+    title_shape: "标题 3"
+    content_shape: "文本框 7"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 15
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 7"
+    table_shape: null
+
+  - slide_number: 16
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 1"
+      - "组合 10/图表 11"
+    table_shape: null
+
+  - slide_number: 17
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "组合 2/图表 5"
+    table_shape: null
+
+  - slide_number: 18
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "组合 1/图表 10"
+      - "图表 13"
+    table_shape: null
+
+  - slide_number: 19
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 2"
+    table_shape: null
+
+  - slide_number: 20
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "组合 1/图表 5"
+    table_shape: null
+
+  - slide_number: 21
+    page_type: table_summary
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape: null
+    table_shape:
+      - "表格 2"
+      - "表格 9"
+
+  - slide_number: 22
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "图表 1"
+    table_shape: null
+
+  - slide_number: 23
+    page_type: section
+    title_shape: "标题 3"
+    content_shape: "文本框 7"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 24
+    page_type: matrix
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape: null
+    table_shape:
+      - "表格 2"
+
+  - slide_number: 25
+    page_type: chart_analysis
+    title_shape: "标题 8"
+    content_shape: "内容占位符 2"
+    chart_shape:
+      - "组合 1/组合 5/图表 9"
+    table_shape: null
+
+  - slide_number: 26
+    page_type: risk
+    title_shape: "标题 1"
+    content_shape: "内容占位符 2"
+    chart_shape: null
+    table_shape: null
+
+  - slide_number: 27
+    page_type: thanks
+    title_shape: null
+    content_shape: null
+    chart_shape: null
+    table_shape: null

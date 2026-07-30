@@ -1,0 +1,25 @@
+{
+  "run_timestamp_utc": "2026-07-29T08:16:00.840911+00:00",
+  "input_docx": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/test/input/【广发策略】位置决定叙事，趋势锚定景气——2026港股&海外大类资产中期策略V2.docx",
+  "input_docx_sha256": "6f0a6db5626aad1a1462e6a2ed63fe4fc112da755a8bfbf37edc4c87e1703223",
+  "output_pptx": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/test/output/【广发策略】位置决定叙事，趋势锚定景气——2026港股&海外大类资产中期策略.pptx",
+  "output_pptx_sha256": "eef45af62b01221108179b22255072f58bc569e971c77e203c6053f1b29a7003",
+  "planned_slide_count": 40,
+  "generated_slide_count": 40,
+  "intermediate_files": {
+    "doc_structure": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/work/港股中期策略/doc_structure.json",
+    "presentation_plan": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/work/港股中期策略/presentation_plan.json",
+    "presentation_content": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/work/港股中期策略/presentation_content.json",
+    "slide_mapping": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/slide_mapping.yaml",
+    "ppt_layout": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/ppt_layout.json",
+    "style_config": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/style_config.yaml",
+    "layout_debug": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/work/港股中期策略/layout_debug.json",
+    "extracted_images": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/work/港股中期策略/docx_images",
+    "extracted_charts": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/output/work/港股中期策略/docx_charts"
+  },
+  "template_files_unchanged": true,
+  "template_sha256": {
+    "【广发策略】全球流动性走到哪里了？——央.docx": "f975deee5691693ec9aa71f231c4bbd3c974c431bbbc8566a621c35c063dd644",
+    "【广发策略】全球流动性走到哪里了？——央.pptx": "a1757c931e4b16a0d74aa52e98b64733b74aff6d253d60aefd89722e25ba1180"
+  }
+}
