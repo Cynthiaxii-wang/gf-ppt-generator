@@ -1,6 +1,6 @@
 {
   "source_document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
-  "slide_count": 28,
+  "slide_count": 27,
   "slides": [
     {
       "slide_number": 1,
@@ -903,6 +903,7 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 49,
+          "wrapper_group_index": 4,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "非农增长主要来自地方政府、医疗保健等防御性分项支撑。"
@@ -1006,6 +1007,7 @@
             1
           ],
           "visual_order_index": 52,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国5月CPI同比绝对数值较高（10月美国政府停摆导致CPI数据断更）。"
@@ -1054,6 +1056,7 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 54,
+          "wrapper_group_index": 6,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "5月CPI与预期差别不大，主要受能源项推升，核心CPI目前维持温和。"
@@ -1159,6 +1162,7 @@
             2
           ],
           "visual_order_index": 58,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国职位空缺/失业人数比值领先雇佣成本指数。"
@@ -1349,6 +1353,7 @@
             3
           ],
           "visual_order_index": 62,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国GDP增长不减，但通胀显著过热。",
@@ -1400,6 +1405,7 @@
             4
           ],
           "visual_order_index": 62,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国GDP增长不减，但通胀显著过热。",
@@ -1498,6 +1504,7 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 65,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 59,
@@ -1595,6 +1602,7 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 69,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "Warsh宣布成立五个专项工作组。"
@@ -1698,6 +1706,7 @@
             5
           ],
           "visual_order_index": 71,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "FOMC发布会开始后，美债收益率与美元指数直线攀升（T时刻是美东时间6月17日9：30）。",
@@ -1749,6 +1758,7 @@
             6
           ],
           "visual_order_index": 71,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "FOMC发布会开始后，美债收益率与美元指数直线攀升（T时刻是美东时间6月17日9：30）。",
@@ -1853,6 +1863,7 @@
           ],
           "embedded_chart_ids": [],
           "visual_order_index": 73,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "市场同样预期，年末加息（12月9日）概率略大于按兵不动。",
@@ -1904,6 +1915,7 @@
           ],
           "embedded_chart_ids": [],
           "visual_order_index": 73,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "市场同样预期，年末加息（12月9日）概率略大于按兵不动。",
@@ -2115,6 +2127,7 @@
             7
           ],
           "visual_order_index": 84,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 73,
@@ -2216,6 +2229,7 @@
             8
           ],
           "visual_order_index": 87,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "日本通胀有所下落，但仍在2%左右。",
@@ -2267,6 +2281,7 @@
             9
           ],
           "visual_order_index": 87,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "日本通胀有所下落，但仍在2%左右。",
@@ -2367,6 +2382,7 @@
             10
           ],
           "visual_order_index": 90,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 78,
@@ -2464,6 +2480,7 @@
             11
           ],
           "visual_order_index": 95,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 83,
@@ -2563,6 +2580,7 @@
             12
           ],
           "visual_order_index": 99,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 87,
@@ -2660,6 +2678,7 @@
             13
           ],
           "visual_order_index": 104,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 92,
@@ -2757,6 +2776,7 @@
             14
           ],
           "visual_order_index": 108,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 96,
@@ -2839,7 +2859,8 @@
       "table_requirement": {
         "required": true,
         "source_table_indexes": [
-          13
+          13,
+          14
         ],
         "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
       },
@@ -2852,7 +2873,8 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 112,
-          "visual_slot_cost": 2,
+          "wrapper_group_index": 13,
+          "visual_slot_cost": 1,
           "visual_title_candidates": [
             "2026年Q2加息的主要经济体。"
           ],
@@ -2891,56 +2913,7 @@
               }
             }
           ]
-        }
-      ],
-      "source_trace": {
-        "document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
-        "section": "三、世界其他央行加息步伐，或带来全球流动性收紧",
-        "subsection": "（三）全球流动性风向：央行再紧缩信号升温",
-        "paragraph_indexes": [
-          101
-        ],
-        "table_indexes": [
-          13
-        ],
-        "image_indexes": []
-      },
-      "display_source": "资料来源：国际清算银行，广发证券发展研究中心",
-      "source": {
-        "document": "国际清算银行，广发证券发展研究中心",
-        "section": null,
-        "subsection": null,
-        "paragraph_indexes": [
-          101
-        ],
-        "table_indexes": [
-          13
-        ]
-      },
-      "content_mode": "bullets"
-    },
-    {
-      "slide_number": 22,
-      "title": "全球流动性风向：央行再紧缩信号升温",
-      "key_points": [
-        "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。"
-      ],
-      "rich_text": [],
-      "chart_requirement": {
-        "required": false,
-        "source_image_indexes": [],
-        "source_chart_indexes": [],
-        "recommended_type": null,
-        "instruction": null
-      },
-      "table_requirement": {
-        "required": true,
-        "source_table_indexes": [
-          14
-        ],
-        "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
-      },
-      "visual_mappings": [
+        },
         {
           "visual_type": "table",
           "visual_id": 14,
@@ -2949,6 +2922,7 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 113,
+          "wrapper_group_index": 13,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "2026年Q2降息的主要经济体。"
@@ -2994,8 +2968,11 @@
         "document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
         "section": "三、世界其他央行加息步伐，或带来全球流动性收紧",
         "subsection": "（三）全球流动性风向：央行再紧缩信号升温",
-        "paragraph_indexes": [],
+        "paragraph_indexes": [
+          101
+        ],
         "table_indexes": [
+          13,
           14
         ],
         "image_indexes": []
@@ -3005,15 +2982,18 @@
         "document": "国际清算银行，广发证券发展研究中心",
         "section": null,
         "subsection": null,
-        "paragraph_indexes": [],
+        "paragraph_indexes": [
+          101
+        ],
         "table_indexes": [
+          13,
           14
         ]
       },
       "content_mode": "bullets"
     },
     {
-      "slide_number": 23,
+      "slide_number": 22,
       "title": "全球流动性风向：央行再紧缩信号升温",
       "key_points": [
         "在加息周期迫近的背景下，贵金属、工业金属等利率敏感型资产后续可能承压。",
@@ -3046,6 +3026,7 @@
             15
           ],
           "visual_order_index": 116,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": null,
@@ -3094,7 +3075,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 24,
+      "slide_number": 23,
       "title": "流动性拐点之际，如何定价大类资产",
       "key_points": [],
       "rich_text": [],
@@ -3150,7 +3131,7 @@
       "subtitle": null
     },
     {
-      "slide_number": 25,
+      "slide_number": 24,
       "title": "黄金短期通常承压",
       "key_points": [
         "黄金短期通常承压。"
@@ -3179,7 +3160,8 @@
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
           "visual_order_index": 121,
-          "visual_slot_cost": 2,
+          "wrapper_group_index": 15,
+          "visual_slot_cost": 1,
           "visual_title_candidates": [
             "倘若全球超预期紧缩，资产价格的边际变化。"
           ],
@@ -3249,7 +3231,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 26,
+      "slide_number": 25,
       "title": "流动性拐点之际，如何定价大类资产",
       "key_points": [
         "权益资产理论上会在短期受到负向冲击，但半导体与AI产业基本面仍支撑下，短暂下跌可能带来布局机会。后续可能从单边上涨行情切换为更高波、更依赖盈利确认的震荡上行市。"
@@ -3280,6 +3262,7 @@
             16
           ],
           "visual_order_index": 124,
+          "wrapper_group_index": null,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
           "paragraph_index": 110,
@@ -3346,7 +3329,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 27,
+      "slide_number": 26,
       "title": "风险提示",
       "key_points": [
         "海外通胀及工资压力超预期，美联储加息节奏快于预期。",
@@ -3394,7 +3377,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 28,
+      "slide_number": 27,
       "title": "",
       "key_points": [],
       "rich_text": [],

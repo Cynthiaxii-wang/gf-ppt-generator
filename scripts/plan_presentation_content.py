@@ -789,6 +789,8 @@ def map_visuals_to_preceding_summaries(
         titles = visual_titles(item)
         visual_slot_cost = (
             1
+            if item.get("wrapper_group_index") is not None
+            else 1
             if item.get("chart_indexes") or item.get("image_indexes")
             else 1
             if item["type"] == "image"
@@ -807,6 +809,7 @@ def map_visuals_to_preceding_summaries(
                 "embedded_image_ids": item.get("image_indexes", []),
                 "embedded_chart_ids": item.get("chart_indexes", []),
                 "visual_order_index": item.get("order_index"),
+                "wrapper_group_index": item.get("wrapper_group_index"),
                 "visual_slot_cost": visual_slot_cost,
                 "visual_title_candidates": titles,
                 **candidate,

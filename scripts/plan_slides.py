@@ -88,6 +88,8 @@ def item_visual_count(item: dict[str, Any]) -> int:
     if image_indexes:
         return len(image_indexes)
     if item.get("row_count", 0) >= 2 and item.get("column_count", 0) >= 2:
+        if item.get("wrapper_group_index") is not None:
+            return 1
         # Compact tables are intentionally allowed beside one chart, matching
         # the template's chart+table analytical layout. Dense tables still own
         # the full page so their rows remain legible.

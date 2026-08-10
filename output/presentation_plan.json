@@ -1,6 +1,6 @@
 {
   "source_document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
-  "planned_slide_count": 28,
+  "planned_slide_count": 27,
   "planning_metrics": {
     "heading_1_count": 5,
     "heading_2_count": 9,
@@ -272,30 +272,20 @@
       "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_table",
       "source_heading": "（三）全球流动性风向：央行再紧缩信号升温",
-      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 785,
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含2个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 1055,
       "source_order_indexes": [
         111,
-        112
+        112,
+        113
       ]
     },
     {
       "slide_number": 22,
       "section": "世界其他央行加息步伐，或带来全球流动性收紧",
-      "page_type": "table_summary",
-      "source_heading": "（三）全球流动性风向：央行再紧缩信号升温",
-      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 270,
-      "source_order_indexes": [
-        113
-      ]
-    },
-    {
-      "slide_number": 23,
-      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
       "source_heading": "（三）全球流动性风向：央行再紧缩信号升温",
-      "reason": "正文信息密度较高，拆分为3页中的第3页；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
       "estimated_content_length": 179,
       "source_order_indexes": [
         114,
@@ -305,7 +295,7 @@
       ]
     },
     {
-      "slide_number": 24,
+      "slide_number": 23,
       "section": "流动性拐点之际，如何定价大类资产",
       "page_type": "section",
       "source_heading": "四、流动性拐点之际，如何定价大类资产",
@@ -314,7 +304,7 @@
       "source_order_indexes": []
     },
     {
-      "slide_number": 25,
+      "slide_number": 24,
       "section": "流动性拐点之际，如何定价大类资产",
       "page_type": "matrix",
       "source_heading": "四、流动性拐点之际，如何定价大类资产",
@@ -327,7 +317,7 @@
       ]
     },
     {
-      "slide_number": 26,
+      "slide_number": 25,
       "section": "流动性拐点之际，如何定价大类资产",
       "page_type": "chart_analysis",
       "source_heading": "四、流动性拐点之际，如何定价大类资产",
@@ -341,7 +331,7 @@
       ]
     },
     {
-      "slide_number": 27,
+      "slide_number": 26,
       "section": "风险提示",
       "page_type": "risk",
       "source_heading": "五、风险提示",
@@ -350,7 +340,7 @@
       "source_order_indexes": []
     },
     {
-      "slide_number": 28,
+      "slide_number": 27,
       "section": "致谢",
       "page_type": "thanks",
       "source_heading": "模板致谢页",

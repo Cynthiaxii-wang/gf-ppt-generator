@@ -1162,6 +1162,41 @@ def split_visual_boxes(
     ]
 
 
+def grouped_table_boxes(
+    box: dict[str, int],
+    visual_items: list[tuple[str, Any]],
+) -> list[dict[str, int]] | None:
+    if len(visual_items) < 2 or any(kind != "table" for kind, _ in visual_items):
+        return None
+    group_indexes = {item.get("wrapper_group_index") for _, item in visual_items}
+    if len(group_indexes) != 1 or None in group_indexes:
+        return None
+    gap = 100000
+    available_height = box["height"] - gap * (len(visual_items) - 1)
+    row_counts = [max(1, int(item.get("row_count", 1))) for _, item in visual_items]
+    total_rows = sum(row_counts)
+    boxes: list[dict[str, int]] = []
+    top = box["top"]
+    remaining_height = available_height
+    for index, row_count in enumerate(row_counts):
+        height = (
+            remaining_height
+            if index == len(row_counts) - 1
+            else available_height * row_count // total_rows
+        )
+        boxes.append(
+            {
+                "left": box["left"],
+                "top": top,
+                "width": box["width"],
+                "height": height,
+            }
+        )
+        top += height + gap
+        remaining_height -= height
+    return boxes
+
+
 def add_fitted_picture(slide: Any, path: Path, box: dict[str, int]) -> Any:
     with Image.open(path) as image:
         source_width, source_height = image.size
@@ -1209,7 +1244,9 @@ def add_source_visuals(
             visual_items.append(("image", images[mapping["image_id"]]))
         elif table is not None:
             visual_items.append(("table", table))
-    boxes = split_visual_boxes(box, len(visual_items))
+    boxes = grouped_table_boxes(box, visual_items) or split_visual_boxes(
+        box, len(visual_items)
+    )
     rendered = 0
     for (kind, item), item_box in zip(visual_items, boxes):
         if kind == "chart":
