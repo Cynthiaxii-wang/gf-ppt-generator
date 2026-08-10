@@ -438,6 +438,14 @@ def build_plan(document: dict[str, Any], min_pages: int = 0, max_pages: int = 0)
         for unit in units:
             score = importance_score(unit["title"], unit["items"])
             chunks = split_items(unit["title"], unit["items"], image_pressure)
+            # Production rule: analytical body pages must contain at least one
+            # source chart, image, or table.  Pure-text subsections are already
+            # represented in the summary and must not become sparse body pages.
+            chunks = [
+                chunk
+                for chunk in chunks
+                if any(item_visual_count(item) for item in chunk)
+            ]
             for part, chunk in enumerate(chunks, start=1):
                 page_type = page_type_for(chunk)
                 add_page(

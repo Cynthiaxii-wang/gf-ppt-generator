@@ -22,6 +22,7 @@ from scripts.generate_ppt import (
     order_generation_plans,
     resolve_template_path,
     replace_risk_content,
+    replace_summary_text,
     select_template_mapping,
     table_cell_style,
     title_style_for_page,
@@ -214,6 +215,48 @@ class PlannerHeadingTests(unittest.TestCase):
                 for paragraph in summary["rich_text"]
                 for run in paragraph["runs"]
             )
+        )
+
+    def test_summary_renderer_keeps_blank_paragraphs_between_points(self) -> None:
+        presentation = Presentation()
+        slide = presentation.slides.add_slide(presentation.slide_layouts[6])
+        shape = slide.shapes.add_textbox(
+            Inches(1), Inches(1), Inches(10), Inches(5)
+        )
+        shape.text_frame.text = "模板要点一\n\n模板要点二\n\n模板要点三"
+        replace_summary_text(shape, ["甲", "乙", "丙"])
+        paragraphs = shape.text_frame.paragraphs
+        self.assertEqual([paragraphs[index].text for index in (0, 2, 4)], ["甲", "乙", "丙"])
+        self.assertEqual([paragraphs[index].text for index in (1, 3)], ["", ""])
+        self.assertEqual(paragraphs[1].line_spacing, 1.5)
+
+    def test_planner_omits_visual_free_body_pages(self) -> None:
+        document = {
+            "file": "sample.docx",
+            "title": "示例报告",
+            "images": [],
+            "tables": [],
+            "content_order": [
+                {"type": "heading_1", "text": "一、正文", "order_index": 1},
+                {"type": "heading_2", "text": "（一）只有文字", "order_index": 2},
+                {"type": "body", "text": "这一小节没有任何视觉素材。", "order_index": 3},
+                {"type": "heading_2", "text": "（二）包含图表", "order_index": 4},
+                {"type": "body", "text": "图表对应的结论。", "order_index": 5},
+                {"type": "chart", "index": 1, "chart_indexes": [1], "order_index": 6},
+            ],
+        }
+        plan = build_plan(document)
+        analytical = [
+            slide
+            for slide in plan["slides"]
+            if slide["page_type"]
+            not in {"cover", "summary", "section", "risk", "thanks"}
+        ]
+        self.assertEqual(len(analytical), 1)
+        self.assertIn(6, analytical[0]["source_order_indexes"])
+        self.assertNotIn(
+            "（一）只有文字",
+            [slide["source_heading"] for slide in analytical],
         )
 
     def test_visual_mapping_stops_at_previous_visual_boundary(self) -> None:

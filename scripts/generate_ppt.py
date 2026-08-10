@@ -1540,6 +1540,11 @@ def replace_summary_text(
     frame.auto_size = None
     paragraphs = frame.paragraphs
     bullet_properties = deepcopy(paragraphs[0]._p.get_or_add_pPr())
+    spacer_properties = (
+        deepcopy(paragraphs[1]._p.get_or_add_pPr())
+        if len(paragraphs) > 1 and not paragraphs[1].text.strip()
+        else None
+    )
     for paragraph in paragraphs:
         paragraph.clear()
     source_paragraphs = rich_text or [
@@ -1550,18 +1555,21 @@ def replace_summary_text(
         for point in points
     ]
     for point_index, source_paragraph in enumerate(source_paragraphs):
-        paragraph_index = point_index
+        # The normative summary layout alternates a bullet paragraph and one
+        # genuinely blank paragraph.  Recreate that rhythm instead of relying
+        # on a small ``space_after`` value, which is rendered too tightly by
+        # PowerPoint when a bullet wraps onto multiple lines.
+        paragraph_index = point_index * 2
         while paragraph_index >= len(frame.paragraphs):
             frame.add_paragraph()
         paragraph = frame.paragraphs[paragraph_index]
         if paragraph._p.pPr is not None:
             paragraph._p.remove(paragraph._p.pPr)
         paragraph._p.insert(0, deepcopy(bullet_properties))
-        # Keep the requested 12 pt typography while removing the template's
-        # blank spacer rows and 1.5-line leading, which otherwise clips the
-        # complete Word front-page summary.
+        # Keep compact leading inside each bullet; the following paragraph
+        # supplies the template's separate blank-line rhythm.
         paragraph.line_spacing = 1.15
-        paragraph.space_after = Pt(8)
+        paragraph.space_after = Pt(0)
         runs = source_paragraph.get("runs") or [
             {"text": source_paragraph.get("text", ""), "bold": False}
         ]
@@ -1580,6 +1588,19 @@ def replace_summary_text(
             target_run.font.color.rgb = RGBColor.from_string(
                 "C00000" if emphasized else "000000"
             )
+        if point_index < len(source_paragraphs) - 1:
+            spacer_index = paragraph_index + 1
+            while spacer_index >= len(frame.paragraphs):
+                frame.add_paragraph()
+            spacer = frame.paragraphs[spacer_index]
+            spacer.clear()
+            if spacer._p.pPr is not None:
+                spacer._p.remove(spacer._p.pPr)
+            if spacer_properties is not None:
+                spacer._p.insert(0, deepcopy(spacer_properties))
+            spacer.line_spacing = 1.5
+            spacer.space_before = Pt(0)
+            spacer.space_after = Pt(0)
 
 
 def _replace_paragraph_text(
