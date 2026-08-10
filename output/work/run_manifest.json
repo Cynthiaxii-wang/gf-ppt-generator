@@ -1,9 +1,9 @@
 {
-  "run_timestamp_utc": "2026-07-30T02:36:41.315565+00:00",
+  "run_timestamp_utc": "2026-07-31T05:41:37.128835+00:00",
   "input_docx": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/test/input/【广发策略】从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？V3(1).docx",
   "input_docx_sha256": "2ff793bf6e5480ce94f327ce49b1fd3bce85d387610dc82b9ba9a46b7786f667",
   "output_pptx": "/Users/cynthiaxii427/Desktop/广发/ppt_generator/test/output/【广发策略】从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？.pptx",
-  "output_pptx_sha256": "eebc64f53410b91d2f69c91abafbae4bacc4da94cdd1536857a37abf09596777",
+  "output_pptx_sha256": "c9d0bbc1e2de8ca7fa96e7c8439a872597da39cc82a713af64f27efb7ccbaf12",
   "planned_slide_count": 34,
   "generated_slide_count": 34,
   "intermediate_files": {

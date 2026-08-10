@@ -281,7 +281,47 @@ def split_section_title(text: str) -> tuple[str, str | None]:
 
 def normalize_cover_title(text: str) -> str:
     """Preserve the report title while normalizing accidental whitespace."""
-    return re.sub(r"[ \t]+", " ", text.replace("\r", "").replace("\n", "")).strip()
+    normalized = re.sub(
+        r"[ \t]+", " ", text.replace("\r", "").replace("\n", "")
+    ).strip()
+    if "——" in normalized and len(normalized) >= 24:
+        title, subtitle = normalized.split("——", 1)
+        if title.strip() and subtitle.strip():
+            return f"{title.strip()}\n——{subtitle.strip()}"
+    return normalized
+
+
+def compact_summary_paragraphs(
+    paragraphs: list[dict[str, Any]],
+    maximum: int = 5,
+) -> list[dict[str, Any]]:
+    """Keep the template's five-point summary rhythm without losing claims."""
+
+    compacted = [dict(paragraph) for paragraph in paragraphs]
+    while len(compacted) > maximum:
+        candidate_indexes = range(1, len(compacted) - 2) if len(compacted) > 3 else range(len(compacted) - 1)
+        index = min(
+            candidate_indexes,
+            key=lambda position: len(compacted[position].get("text", ""))
+            + len(compacted[position + 1].get("text", "")),
+        )
+        left, right = compacted[index], compacted[index + 1]
+        left_text = str(left.get("text", "")).rstrip("。；; ")
+        right_text = str(right.get("text", "")).lstrip()
+        separator = "；" if left_text and right_text else ""
+        merged_runs = [
+            *left.get("runs", [{"text": left_text, "bold": False}]),
+            *([{"text": separator, "bold": False}] if separator else []),
+            *right.get("runs", [{"text": right_text, "bold": False}]),
+        ]
+        compacted[index : index + 2] = [
+            {
+                **left,
+                "text": left_text + separator + right_text,
+                "runs": merged_runs,
+            }
+        ]
+    return compacted
 
 
 def is_risk_section(section: dict[str, Any]) -> bool:
@@ -495,6 +535,9 @@ METHOD_STATEMENT_PATTERN = re.compile(
     r"^针对.+(?:构建|搭建|选取)|"
     r"(?:具体而言|如下所示)$"
 )
+INCOMPLETE_CAPTION_PATTERN = re.compile(
+    r"^(?:倘若|如果|若).+[，,].*(?:变化|方向|影响)。?$"
+)
 
 
 def exact_marker_overlap(left: str, right: str) -> float:
@@ -541,6 +584,7 @@ def score_candidate(
     ambiguity_penalty = 12.0 if AMBIGUOUS_REFERENCE_PATTERN.search(text) else 0.0
     method_penalty = 12.0 if METHOD_STATEMENT_PATTERN.search(text) else 0.0
     question_penalty = 12.0 if re.search(r"[?？]", text) else 0.0
+    fragment_penalty = 15.0 if INCOMPLETE_CAPTION_PATTERN.search(text) else 0.0
     total = max(
         0.0,
         min(
@@ -552,7 +596,8 @@ def score_candidate(
             + completeness_score
             - ambiguity_penalty
             - method_penalty
-            - question_penalty,
+            - question_penalty
+            - fragment_penalty,
         ),
     )
     return {
@@ -566,6 +611,7 @@ def score_candidate(
         "ambiguity_penalty": round(ambiguity_penalty, 4),
         "method_penalty": round(method_penalty, 4),
         "question_penalty": round(question_penalty, 4),
+        "fragment_penalty": round(fragment_penalty, 4),
     }
 
 
@@ -623,6 +669,11 @@ def visual_candidates(
                 sentences.append(bold_text)
         for sentence in sentences:
             sentence = sentence.rstrip("。") + "。"
+            sentence = re.sub(
+                r"^(?:图|表)\s*\d+\s*[：:]\s*",
+                "",
+                sentence,
+            )
             normalized_sentence = re.sub(
                 r"[\W_]+", "", sentence, flags=re.UNICODE
             )
@@ -758,6 +809,17 @@ def map_visuals_to_preceding_summaries(
         candidate, evidence = choose_visual_text(candidates)
         visual_type, visual_id = visual_mapping_id(item)
         titles = visual_titles(item)
+        visual_slot_cost = (
+            1
+            if item.get("chart_indexes") or item.get("image_indexes")
+            else 1
+            if item["type"] == "image"
+            else 1
+            if item["type"] == "table"
+            and item.get("row_count", 0) <= 8
+            and item.get("column_count", 0) <= 5
+            else 2
+        )
         mappings.append(
             {
                 "visual_type": visual_type,
@@ -767,6 +829,7 @@ def map_visuals_to_preceding_summaries(
                 "embedded_image_ids": item.get("image_indexes", []),
                 "embedded_chart_ids": item.get("chart_indexes", []),
                 "visual_order_index": item.get("order_index"),
+                "visual_slot_cost": visual_slot_cost,
                 "visual_title_candidates": titles,
                 **candidate,
                 "conclusion_text": candidate["paragraph_text"],
@@ -823,6 +886,44 @@ def visual_points_for_slide(
     return conclusions[:2]
 
 
+def takeaway_title_for_unit(
+    unit: dict[str, Any],
+    visual_mappings: list[dict[str, Any]],
+    points: list[str],
+    fallback: str,
+) -> str:
+    """Use a specific claim title for unheaded multi-page analytical units."""
+
+    if unit.get("subsection") is not None or unit.get("parts", 1) <= 1:
+        return fallback
+    candidates = [
+        *[
+            str(mapping.get("conclusion_text") or "")
+            for mapping in visual_mappings
+        ],
+        *[
+            str(title)
+            for mapping in visual_mappings
+            for title in mapping.get("visual_title_candidates", [])
+        ],
+        *points,
+    ]
+    for candidate in candidates:
+        candidate = re.sub(
+            r"^(?:图|表)\s*\d+\s*[：:]\s*",
+            "",
+            re.sub(r"\s+", " ", candidate).strip(),
+        ).rstrip("。")
+        condition = re.match(r"^(?:倘若|如果|若).+?[，,](.+)$", candidate)
+        if condition:
+            candidate = condition.group(1).strip()
+        candidate = candidate.replace("资产价格的边际变化", "资产边际价格变化")
+        first_clause = re.split(r"[；;]", candidate, maxsplit=1)[0].strip()
+        if 8 <= len(re.sub(r"\s+", "", first_clause)) <= 32:
+            return first_clause
+    return fallback
+
+
 def expand_visual_mappings(
     mappings: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
@@ -867,6 +968,7 @@ def expand_visual_mappings(
                 item = dict(mapping)
                 item["embedded_chart_ids"] = [chart_id]
                 item["embedded_image_ids"] = []
+                item["visual_slot_cost"] = 1
                 if len(titles) == len(chart_ids):
                     use_atomic_title(item, titles[index])
                 expanded.append(item)
@@ -875,6 +977,7 @@ def expand_visual_mappings(
                 item = dict(mapping)
                 item["embedded_chart_ids"] = []
                 item["embedded_image_ids"] = [image_id]
+                item["visual_slot_cost"] = 1
                 if len(titles) == len(image_ids):
                     use_atomic_title(item, titles[index])
                 expanded.append(item)
@@ -973,7 +1076,22 @@ def page_units_from_planned_headings(
     """Build content units from the planner's source-heading decisions."""
 
     if not section["subsections"]:
-        groups = partition(section["items"], len(content_indexes))
+        planned_groups = [
+            set(mappings[index].get("source_order_indexes") or [])
+            for index in content_indexes
+        ]
+        groups = (
+            [
+                [
+                    item
+                    for item in section["items"]
+                    if item.get("order_index") in order_indexes
+                ]
+                for order_indexes in planned_groups
+            ]
+            if all(planned_groups)
+            else partition(section["items"], len(content_indexes))
+        )
         return [
             {
                 "title": strip_numbering(section["title"]),
@@ -997,10 +1115,29 @@ def page_units_from_planned_headings(
         key = heading_key(str(mappings[index].get("source_heading") or ""))
         page_counts[key] = page_counts.get(key, 0) + 1
 
-    item_groups = {
-        key: partition(subsection["items"], page_counts.get(key, 1))
-        for key, subsection in subsection_by_key.items()
-    }
+    item_groups: dict[str, list[list[dict[str, Any]]]] = {}
+    for key, subsection in subsection_by_key.items():
+        matching_indexes = [
+            index
+            for index in content_indexes
+            if heading_key(str(mappings[index].get("source_heading") or "")) == key
+        ]
+        planned_groups = [
+            set(mappings[index].get("source_order_indexes") or [])
+            for index in matching_indexes
+        ]
+        item_groups[key] = (
+            [
+                [
+                    item
+                    for item in subsection["items"]
+                    if item.get("order_index") in order_indexes
+                ]
+                for order_indexes in planned_groups
+            ]
+            if planned_groups and all(planned_groups)
+            else partition(subsection["items"], page_counts.get(key, 1))
+        )
     cursors: dict[str, int] = {}
     units: list[dict[str, Any]] = []
     for index in content_indexes:
@@ -1114,12 +1251,7 @@ def assign_visual_mappings_to_units(
             )
         if owner is None:
             raise ValueError("Visual mapping has no available content page")
-        is_native_table = bool(
-            mapping.get("table_id") is not None
-            and not mapping.get("embedded_chart_ids")
-            and not mapping.get("embedded_image_ids")
-        )
-        slots = 2 if is_native_table else len(batch)
+        slots = sum(int(item.get("visual_slot_cost", 1)) for item in batch)
         owner_heading = page_units[owner].get("subsection")
         candidate_indexes = [
             index
@@ -1442,7 +1574,10 @@ def build_plan(document: dict[str, Any], mappings: list[dict[str, Any]]) -> dict
             for section in non_risk_sections:
                 source_items.extend(section["items"])
             metadata = document.get("report_metadata", {})
-            summary_paragraphs = metadata.get("summary_paragraphs") or []
+            summary_paragraphs = compact_summary_paragraphs(
+                metadata.get("summary_paragraphs") or [],
+                maximum=5,
+            )
             if summary_paragraphs:
                 points = [paragraph["text"] for paragraph in summary_paragraphs]
             else:
@@ -1530,6 +1665,12 @@ def build_plan(document: dict[str, Any], mappings: list[dict[str, Any]]) -> dict
                         minimum=1,
                         maximum=3,
                     )
+                title = takeaway_title_for_unit(
+                    unit,
+                    visual_mappings,
+                    points,
+                    title,
+                )
             planned_slide = make_slide(
                 mapping,
                 title,

@@ -33,6 +33,7 @@ from scripts.parse_templates import (
 )
 from scripts.plan_presentation_content import (
     build_plan as build_content_plan,
+    compact_summary_paragraphs,
     display_source,
     extract_document_conclusions,
     map_visuals_to_preceding_summaries,
@@ -197,7 +198,10 @@ class PlannerHeadingTests(unittest.TestCase):
             for slide in content["slides"]
             if page_types[slide["slide_number"]] == "summary"
         )
-        expected = document["report_metadata"]["summary_paragraphs"]
+        expected = compact_summary_paragraphs(
+            document["report_metadata"]["summary_paragraphs"],
+            maximum=5,
+        )
         self.assertEqual(summary["rich_text"], expected)
         self.assertEqual(
             summary["key_points"],
@@ -425,7 +429,10 @@ class PlannerHeadingTests(unittest.TestCase):
             for slide in content["slides"]
             if planned_by_number[slide["slide_number"]]["page_type"] == "summary"
         )
-        expected_summary = document["report_metadata"]["summary_paragraphs"]
+        expected_summary = compact_summary_paragraphs(
+            document["report_metadata"]["summary_paragraphs"],
+            maximum=5,
+        )
         self.assertEqual(
             summary["key_points"],
             [paragraph["text"] for paragraph in expected_summary],

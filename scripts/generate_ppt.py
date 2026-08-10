@@ -1174,7 +1174,7 @@ def add_fitted_picture(slide: Any, path: Path, box: dict[str, int]) -> Any:
     shape = slide.shapes.add_picture(
         str(path),
         Emu(box["left"] + (box["width"] - width) // 2),
-        Emu(box["top"] + (box["height"] - height) // 2),
+        Emu(box["top"]),
         Emu(width),
         Emu(height),
     )
@@ -1891,9 +1891,12 @@ def build_presentation(
                     if shape is not None
                 },
             )
+            section_display_title = content["title"]
+            if content.get("subtitle"):
+                section_display_title += f"\n——{content['subtitle']}"
             replace_shape_text(
                 title_shape,
-                content["title"],
+                section_display_title,
                 font_name=fonts["section_title_style"],
                 font_size=numeric(sizes["section_title_pt"], 40),
                 color=title_color,
@@ -1904,7 +1907,7 @@ def build_presentation(
                 # titles (slide 23) and a higher box for two-line titles
                 # (slide 3). Preserve that distinction while retaining the
                 # fixed section background/decorations from slide 3.
-                if len(re.sub(r"\s+", "", content["title"])) <= 20:
+                if len(re.sub(r"\s+", "", section_display_title)) <= 20:
                     title_shape.top = Emu(1736726)
                     title_shape.height = Emu(799645)
                 else:
@@ -1976,18 +1979,11 @@ def build_presentation(
             replace_shape_text(
                 title_shape,
                 content["title"],
-                font_name="思源黑体 CN Normal",
-                font_size=fitted_title_size,
-                color=title_color,
-                bold=False,
             )
             replace_shape_text(
                 content_shape,
                 "\n".join(points),
                 bullet=content.get("content_mode") != "disclaimer",
-                font_name=fonts["body_style"],
-                font_size=body_size,
-                color=body_color,
             )
             replace_shape_text(
                 source_shape,
@@ -1996,11 +1992,16 @@ def build_presentation(
             replace_shape_text(page_number_shape, str(plan["slide_number"]))
             visual_mappings = content.get("visual_mappings", [])
             if content_shape is not None and visual_mappings:
-                estimated_lines = max(
-                    len(points),
-                    sum(max(1, math.ceil(len(point) / 44)) for point in points),
+                required_body_height, estimated_lines = estimate_text_height(
+                    "\n".join(points),
+                    int(content_shape.width),
+                    body_size,
+                    bullet=True,
                 )
-                body_height = min(1250000, max(360000, estimated_lines * 245000))
+                body_height = min(
+                    1450000,
+                    max(360000, required_body_height),
+                )
                 content_shape.height = Emu(body_height)
                 visual_top = max(
                     visual_box["top"],

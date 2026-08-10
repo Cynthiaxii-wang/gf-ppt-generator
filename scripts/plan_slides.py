@@ -41,6 +41,10 @@ IMPORTANCE_TERMS = {
     "政策": 1,
 }
 MAX_VISUALS_PER_SLIDE = 2
+SOURCE_LINE_PATTERN = re.compile(r"^(?:数据|资料)来源[:：]", re.I)
+POST_VISUAL_CONCLUSION_PATTERN = re.compile(
+    r"^(?:因此|这表明|表明|说明|意味着|由此可见|总体来看|整体来看)"
+)
 
 
 def strip_numbering(text: str) -> str:
@@ -84,8 +88,23 @@ def item_visual_count(item: dict[str, Any]) -> int:
     if image_indexes:
         return len(image_indexes)
     if item.get("row_count", 0) >= 2 and item.get("column_count", 0) >= 2:
-        return MAX_VISUALS_PER_SLIDE
+        # Compact tables are intentionally allowed beside one chart, matching
+        # the template's chart+table analytical layout. Dense tables still own
+        # the full page so their rows remain legible.
+        return (
+            1
+            if item.get("row_count", 0) <= 8
+            and item.get("column_count", 0) <= 5
+            else MAX_VISUALS_PER_SLIDE
+        )
     return 0
+
+
+def is_source_line(item: dict[str, Any]) -> bool:
+    return bool(
+        item.get("type") == "body"
+        and SOURCE_LINE_PATTERN.match(re.sub(r"\s+", " ", item.get("text", "")).strip())
+    )
 
 
 def table_is_matrix(item: dict[str, Any]) -> bool:
@@ -191,30 +210,73 @@ def split_items(
     chunks: list[list[dict[str, Any]]] = []
     current: list[dict[str, Any]] = []
     current_length = 0
-    for item in items:
+    current_visuals = 0
+    source_seen_after_visual = False
+
+    def flush() -> None:
+        nonlocal current, current_length, current_visuals, source_seen_after_visual
+        if current:
+            chunks.append(current)
+        current = []
+        current_length = 0
+        current_visuals = 0
+        source_seen_after_visual = False
+
+    for item_index, item in enumerate(items):
         length = item_length(item)
-        is_table = item["type"] == "table"
-        has_table = any(existing["type"] == "table" for existing in current)
-        should_break = bool(
+        visual_slots = item_visual_count(item)
+        source_line = is_source_line(item)
+        body_text = re.sub(r"\s+", " ", item.get("text", "")).strip()
+
+        next_visual = next(
+            (
+                candidate
+                for candidate in items[item_index + 1 :]
+                if item_visual_count(candidate)
+            ),
+            None,
+        )
+        pairs_chart_with_compact_table = bool(
+            current_visuals == 1
+            and next_visual is not None
+            and next_visual["type"] == "table"
+            and not next_visual.get("chart_indexes")
+            and not next_visual.get("image_indexes")
+            and item_visual_count(next_visual) == 1
+        )
+        starts_new_argument = bool(
             current
+            and current_visuals
+            and item["type"] == "body"
+            and not source_line
+            and not pairs_chart_with_compact_table
             and (
-                current_length + length > target
-                or (is_table and has_table)
-                or (is_table and length > target * 0.7)
+                source_seen_after_visual
+                or not POST_VISUAL_CONCLUSION_PATTERN.match(body_text)
             )
         )
+        exceeds_capacity = bool(
+            current and visual_slots and current_visuals + visual_slots > MAX_VISUALS_PER_SLIDE
+        )
+        splits_long_text_only_unit = bool(
+            current
+            and not current_visuals
+            and not visual_slots
+            and current_length + length > target
+        )
+        should_break = bool(
+            starts_new_argument
+            or exceeds_capacity
+            or splits_long_text_only_unit
+        )
         if should_break:
-            chunks.append(current)
-            current = []
-            current_length = 0
+            flush()
         current.append(item)
         current_length += length
-        if is_table and length >= target:
-            chunks.append(current)
-            current = []
-            current_length = 0
-    if current:
-        chunks.append(current)
+        current_visuals += visual_slots
+        if source_line and current_visuals:
+            source_seen_after_visual = True
+    flush()
     chunks = chunks or [[]]
 
     # Text-length splitting alone is insufficient for chart-heavy reports.
@@ -295,6 +357,7 @@ def add_page(
     source_heading: str,
     reason: str,
     content_length: int,
+    source_items: list[dict[str, Any]] | None = None,
 ) -> None:
     if page_type not in SUPPORTED_PAGE_TYPES:
         raise ValueError(f"Unsupported page type: {page_type}")
@@ -306,6 +369,11 @@ def add_page(
             "source_heading": source_heading,
             "reason": reason,
             "estimated_content_length": content_length,
+            "source_order_indexes": [
+                item["order_index"]
+                for item in (source_items or [])
+                if item.get("order_index") is not None
+            ],
         }
     )
 
@@ -386,6 +454,7 @@ def build_plan(document: dict[str, Any], min_pages: int = 0, max_pages: int = 0)
                         image_pressure,
                     ),
                     estimated_length(chunk),
+                    chunk,
                 )
 
     risk_items = [item for section in risk_sections for item in section["items"]]
@@ -459,6 +528,14 @@ def build_plan(document: dict[str, Any], min_pages: int = 0, max_pages: int = 0)
         _, index = min(merge_candidates)
         left, right = pages[index], pages[index + 1]
         left["estimated_content_length"] += right["estimated_content_length"]
+        left["source_order_indexes"] = list(
+            dict.fromkeys(
+                [
+                    *left.get("source_order_indexes", []),
+                    *right.get("source_order_indexes", []),
+                ]
+            )
+        )
         if left["page_type"] != right["page_type"]:
             left["page_type"] = "chart_table"
         left["reason"] += " 为满足最大页数约束，与相邻同主题内容合并。"
