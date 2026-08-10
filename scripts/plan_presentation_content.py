@@ -317,6 +317,14 @@ def parse_sections(document: dict[str, Any]) -> list[dict[str, Any]]:
             section["subsections"].append(subsection)
         elif kind in {"body", "table", "image", "chart"} and section is not None:
             normalized = dict(item)
+            # Preserve the semantic ownership that is otherwise lost when
+            # headings are removed from the flat item stream.  Visual/text
+            # matching must never borrow a conclusion from a neighbouring
+            # subsection merely because it happens to be close in Word.
+            normalized["section_title"] = section["title"]
+            normalized["subsection_title"] = (
+                subsection["title"] if subsection is not None else None
+            )
             section["items"].append(normalized)
             if subsection is not None:
                 subsection["items"].append(normalized)
@@ -409,28 +417,95 @@ def is_summary_sentence(text: str) -> bool:
     )
 
 
-def paragraph_window(
+def is_visual_item(item: dict[str, Any]) -> bool:
+    """Return whether an ordered source item starts a visual boundary."""
+
+    return bool(
+        item["type"] == "table"
+        or item.get("chart_indexes")
+        or (
+            item["type"] == "image"
+            and item.get("parent_type") != "table"
+        )
+    )
+
+
+def same_argument_unit(
+    visual: dict[str, Any],
+    candidate: dict[str, Any],
+) -> bool:
+    """Keep matching inside the source heading/subheading when available."""
+
+    for key in ("section_title", "subsection_title"):
+        visual_value = visual.get(key)
+        candidate_value = candidate.get(key)
+        if visual_value is not None or candidate_value is not None:
+            if visual_value != candidate_value:
+                return False
+    return True
+
+
+def argument_unit_window(
     items: list[dict[str, Any]],
     visual_position: int,
+    maximum_characters: int = 600,
 ) -> list[tuple[dict[str, Any], str, int]]:
+    """Collect nearby prose without crossing a heading or another visual.
+
+    Word research reports commonly follow ``claim -> figure -> explanation``.
+    A fixed paragraph count can cross into the preceding or following figure's
+    claim, so visual boundaries take precedence and the character limit is only
+    a final guardrail.
+    """
+
     window: list[tuple[dict[str, Any], str, int]] = []
+    visual = items[visual_position]
     before_distance = 0
+    before_characters = 0
     for item in reversed(items[:visual_position]):
+        if not same_argument_unit(visual, item) or is_visual_item(item):
+            break
         if item["type"] != "body":
             continue
         before_distance += 1
-        if before_distance > 3:
+        before_characters += normalized_text_length(item.get("text", ""))
+        if before_characters > maximum_characters and before_distance > 1:
             break
         window.append((item, "before", before_distance))
     after_distance = 0
+    after_characters = 0
     for item in items[visual_position + 1 :]:
+        if not same_argument_unit(visual, item) or is_visual_item(item):
+            break
         if item["type"] != "body":
             continue
         after_distance += 1
-        if after_distance > 2:
+        after_characters += normalized_text_length(item.get("text", ""))
+        if after_characters > maximum_characters and after_distance > 1:
             break
         window.append((item, "after", after_distance))
     return window
+
+
+AMBIGUOUS_REFERENCE_PATTERN = re.compile(
+    r"^(?:因此[，,]?\s*)?(?:这|其|两者|上述|前者|后者|该指标|这种情况)"
+)
+METHOD_STATEMENT_PATTERN = re.compile(
+    r"(?:本文|我们)(?:进一步)?(?:选取|选择|构建|使用|采用|将|进行)|"
+    r"^针对.+(?:构建|搭建|选取)|"
+    r"(?:具体而言|如下所示)$"
+)
+
+
+def exact_marker_overlap(left: str, right: str) -> float:
+    """Score shared numbers and Latin indicator names on a 0-12 scale."""
+
+    pattern = r"[A-Za-z]+(?:-\d+)?|\d+(?:\.\d+)?%?"
+    left_markers = {value.lower() for value in re.findall(pattern, left)}
+    right_markers = {value.lower() for value in re.findall(pattern, right)}
+    if not left_markers or not right_markers:
+        return 0.0
+    return 12.0 * len(left_markers & right_markers) / len(left_markers | right_markers)
 
 
 def score_candidate(
@@ -438,26 +513,59 @@ def score_candidate(
     semantic_score: float,
     direction: str,
     distance: int,
+    text: str = "",
+    reference_text: str = "",
 ) -> dict[str, Any]:
-    priority = {
-        "visual_title": 4,
-        "summary_sentence": 4,
-        "semantic_body": 3,
-        "explicit_bold": 2,
-        "nearest_body": 1,
-    }[candidate_type]
     if candidate_type == "visual_title":
-        proximity_score = 0.0
+        structure_score = 32.0
     else:
-        proximity_score = max(0.0, 8.0 - distance * 2.0)
-        if direction == "before":
-            proximity_score += 1.0
-    total = priority * 100.0 + semantic_score * 50.0 + proximity_score
+        base = 31.0 if direction == "before" else 25.0
+        structure_score = max(8.0, base - max(0, distance - 1) * 7.0)
+    semantic_component = min(30.0, semantic_score * 85.0)
+    claim_score = {
+        "visual_title": 15.0,
+        "summary_sentence": 18.0,
+        "semantic_body": 9.0,
+        "explicit_bold": 12.0,
+        "nearest_body": 3.0,
+    }[candidate_type]
+    marker_score = (
+        0.0
+        if candidate_type == "visual_title"
+        else exact_marker_overlap(reference_text, text)
+    )
+    text_length = normalized_text_length(text)
+    completeness_score = (
+        8.0 if 12 <= text_length <= 90 else 5.0 if 8 <= text_length <= 120 else 2.0
+    )
+    ambiguity_penalty = 12.0 if AMBIGUOUS_REFERENCE_PATTERN.search(text) else 0.0
+    method_penalty = 12.0 if METHOD_STATEMENT_PATTERN.search(text) else 0.0
+    question_penalty = 12.0 if re.search(r"[?？]", text) else 0.0
+    total = max(
+        0.0,
+        min(
+            100.0,
+            structure_score
+            + semantic_component
+            + claim_score
+            + marker_score
+            + completeness_score
+            - ambiguity_penalty
+            - method_penalty
+            - question_penalty,
+        ),
+    )
     return {
         "total": round(total, 4),
-        "priority": priority,
+        "structure": round(structure_score, 4),
         "semantic": round(semantic_score, 4),
-        "proximity": round(proximity_score, 4),
+        "semantic_component": round(semantic_component, 4),
+        "claim": round(claim_score, 4),
+        "marker_overlap": round(marker_score, 4),
+        "completeness": round(completeness_score, 4),
+        "ambiguity_penalty": round(ambiguity_penalty, 4),
+        "method_penalty": round(method_penalty, 4),
+        "question_penalty": round(question_penalty, 4),
     }
 
 
@@ -467,13 +575,25 @@ def visual_candidates(
 ) -> list[dict[str, Any]]:
     visual = items[visual_position]
     titles = visual_titles(visual)
-    reference_text = " ".join(titles)
+    reference_text = " ".join(
+        [*titles, str(visual.get("subsection_title") or "")]
+    ).strip()
     candidates: list[dict[str, Any]] = []
 
     for title in titles:
         # A title is a high-priority safe fallback, but it should not beat a
         # nearby explanatory conclusion merely by matching itself perfectly.
-        score = score_candidate("visual_title", 0.0, "visual", 0)
+        score = score_candidate(
+            "visual_title",
+            # Do not reward a caption for matching itself.  It is a reliable
+            # medium-confidence fallback, while related analytical prose must
+            # earn its place through structure and semantic evidence.
+            0.0,
+            "visual",
+            0,
+            title,
+            reference_text,
+        )
         candidates.append(
             {
                 "paragraph_index": None,
@@ -487,7 +607,7 @@ def visual_candidates(
             }
         )
 
-    for paragraph, direction, distance in paragraph_window(items, visual_position):
+    for paragraph, direction, distance in argument_unit_window(items, visual_position):
         bold_texts = [
             text.strip().rstrip("。") + "。"
             for text in paragraph.get("bold_sentences", [])
@@ -530,6 +650,8 @@ def visual_candidates(
                 semantic_score,
                 direction,
                 distance,
+                sentence,
+                reference_text,
             )
             candidates.append(
                 {
@@ -561,6 +683,61 @@ def visual_candidates(
     )
 
 
+def confidence_label(score: float) -> str:
+    if score >= 70.0:
+        return "high"
+    if score >= 50.0:
+        return "medium"
+    return "low"
+
+
+def choose_visual_text(
+    candidates: list[dict[str, Any]],
+) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    """Choose a conclusion and an optional supporting evidence sentence."""
+
+    if not candidates:
+        return ({
+            "paragraph_index": None,
+            "paragraph_text": "",
+            "mapping_basis": "missing_candidate",
+            "candidate_type": "missing_candidate",
+            "paragraph_order_index": None,
+            "direction": None,
+            "distance": None,
+            "score": {"total": 0.0, "semantic": 0.0},
+        }, None)
+
+    primary = candidates[0]
+    # When all prose is weak, a caption is a safer audience-facing fallback.
+    if primary["score"]["total"] < 50.0:
+        title = next(
+            (item for item in candidates if item["candidate_type"] == "visual_title"),
+            None,
+        )
+        if title is not None:
+            primary = title
+
+    primary_normalized = re.sub(
+        r"[\W_]+", "", primary["paragraph_text"], flags=re.UNICODE
+    )
+    evidence = next(
+        (
+            item
+            for item in candidates
+            if item["paragraph_index"] is not None
+            and item["score"]["total"] >= 50.0
+            and not AMBIGUOUS_REFERENCE_PATTERN.search(item["paragraph_text"])
+            and not METHOD_STATEMENT_PATTERN.search(item["paragraph_text"])
+            and not re.search(r"[?？]", item["paragraph_text"])
+            and re.sub(r"[\W_]+", "", item["paragraph_text"], flags=re.UNICODE)
+            != primary_normalized
+        ),
+        None,
+    )
+    return primary, evidence
+
+
 def map_visuals_to_preceding_summaries(
     items: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
@@ -578,22 +755,9 @@ def map_visuals_to_preceding_summaries(
             continue
 
         candidates = visual_candidates(items, position)
-        candidate = candidates[0] if candidates else {
-            "paragraph_index": None,
-            "paragraph_text": "",
-            "mapping_basis": "missing_candidate",
-            "candidate_type": "missing_candidate",
-            "paragraph_order_index": None,
-            "direction": None,
-            "distance": None,
-            "score": {
-                "total": 0.0,
-                "priority": 0,
-                "semantic": 0.0,
-                "proximity": 0.0,
-            },
-        }
+        candidate, evidence = choose_visual_text(candidates)
         visual_type, visual_id = visual_mapping_id(item)
+        titles = visual_titles(item)
         mappings.append(
             {
                 "visual_type": visual_type,
@@ -603,11 +767,60 @@ def map_visuals_to_preceding_summaries(
                 "embedded_image_ids": item.get("image_indexes", []),
                 "embedded_chart_ids": item.get("chart_indexes", []),
                 "visual_order_index": item.get("order_index"),
+                "visual_title_candidates": titles,
                 **candidate,
+                "conclusion_text": candidate["paragraph_text"],
+                "evidence_text": (
+                    evidence["paragraph_text"] if evidence is not None else ""
+                ),
+                "evidence_paragraph_index": (
+                    evidence["paragraph_index"] if evidence is not None else None
+                ),
+                "evidence_score": (
+                    evidence["score"] if evidence is not None else None
+                ),
+                "confidence": confidence_label(candidate["score"]["total"]),
                 "candidate_scores": candidates,
             }
         )
     return mappings
+
+
+def visual_points_for_slide(
+    visual_mappings: list[dict[str, Any]],
+) -> list[str]:
+    """Compose page-level copy, deduplicating shared visual conclusions."""
+
+    conclusions: list[str] = []
+    seen: set[str] = set()
+    for mapping in visual_mappings:
+        text = str(mapping.get("conclusion_text") or mapping.get("paragraph_text") or "")
+        normalized = re.sub(r"[\W_]+", "", text, flags=re.UNICODE)
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        conclusions.append(text)
+
+    # A one-thesis page gets a second layer of evidence. Two distinct visuals
+    # keep one concise conclusion each to avoid turning the slide into prose.
+    if len(conclusions) == 1:
+        evidence_candidates = sorted(
+            (
+                mapping
+                for mapping in visual_mappings
+                if mapping.get("evidence_text")
+                and mapping.get("evidence_score")
+            ),
+            key=lambda mapping: mapping["evidence_score"]["total"],
+            reverse=True,
+        )
+        for mapping in evidence_candidates:
+            evidence = str(mapping["evidence_text"])
+            normalized = re.sub(r"[\W_]+", "", evidence, flags=re.UNICODE)
+            if normalized and normalized not in seen:
+                conclusions.append(evidence)
+                break
+    return conclusions[:2]
 
 
 def expand_visual_mappings(
@@ -615,21 +828,55 @@ def expand_visual_mappings(
 ) -> list[dict[str, Any]]:
     """Split multi-chart/image Word containers into atomic PPT visuals."""
 
+    def use_atomic_title(
+        item: dict[str, Any],
+        title: str,
+    ) -> None:
+        candidate = next(
+            (
+                candidate
+                for candidate in item.get("candidate_scores", [])
+                if candidate.get("candidate_type") == "visual_title"
+                and candidate.get("paragraph_text") == title
+            ),
+            None,
+        )
+        if candidate is None:
+            return
+        for key in (
+            "paragraph_index",
+            "paragraph_text",
+            "mapping_basis",
+            "candidate_type",
+            "paragraph_order_index",
+            "direction",
+            "distance",
+            "score",
+        ):
+            item[key] = candidate[key]
+        item["conclusion_text"] = title
+        item["confidence"] = confidence_label(candidate["score"]["total"])
+
     expanded: list[dict[str, Any]] = []
     for mapping in mappings:
         chart_ids = list(mapping.get("embedded_chart_ids", []))
         image_ids = list(mapping.get("embedded_image_ids", []))
+        titles = list(mapping.get("visual_title_candidates", []))
         if chart_ids:
-            for chart_id in chart_ids:
+            for index, chart_id in enumerate(chart_ids):
                 item = dict(mapping)
                 item["embedded_chart_ids"] = [chart_id]
                 item["embedded_image_ids"] = []
+                if len(titles) == len(chart_ids):
+                    use_atomic_title(item, titles[index])
                 expanded.append(item)
         elif image_ids:
-            for image_id in image_ids:
+            for index, image_id in enumerate(image_ids):
                 item = dict(mapping)
                 item["embedded_chart_ids"] = []
                 item["embedded_image_ids"] = [image_id]
+                if len(titles) == len(image_ids):
+                    use_atomic_title(item, titles[index])
                 expanded.append(item)
         else:
             expanded.append(mapping)
@@ -1276,11 +1523,7 @@ def build_plan(document: dict[str, Any], mappings: list[dict[str, Any]]) -> dict
                         if item["type"] == "body" and item.get("text")
                     ][:5]
             else:
-                points = [
-                    visual_mapping["paragraph_text"]
-                    for visual_mapping in visual_mappings
-                    if visual_mapping["paragraph_text"]
-                ]
+                points = visual_points_for_slide(visual_mappings)
                 if not points:
                     points = compact_points(
                         unit["items"],
@@ -1364,6 +1607,11 @@ def main() -> None:
             "embedded_chart_ids": mapping["embedded_chart_ids"],
             "paragraph_index": mapping["paragraph_index"],
             "paragraph_text": mapping["paragraph_text"],
+            "conclusion_text": mapping.get("conclusion_text", ""),
+            "evidence_text": mapping.get("evidence_text", ""),
+            "evidence_paragraph_index": mapping.get("evidence_paragraph_index"),
+            "evidence_score": mapping.get("evidence_score"),
+            "confidence": mapping.get("confidence"),
             "mapping_basis": mapping["mapping_basis"],
             "candidate_type": mapping["candidate_type"],
             "direction": mapping["direction"],

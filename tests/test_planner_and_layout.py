@@ -39,6 +39,7 @@ from scripts.plan_presentation_content import (
     normalize_cover_title,
     parse_sections as parse_content_sections,
     split_section_title,
+    visual_points_for_slide,
 )
 from scripts.plan_slides import build_plan
 from test_generate import count_layout_overlaps
@@ -211,7 +212,7 @@ class PlannerHeadingTests(unittest.TestCase):
             )
         )
 
-    def test_visual_mapping_respects_bold_priority_inside_local_window(self) -> None:
+    def test_visual_mapping_stops_at_previous_visual_boundary(self) -> None:
         items = [
             {
                 "type": "body",
@@ -249,9 +250,77 @@ class PlannerHeadingTests(unittest.TestCase):
         self.assertEqual(mappings[0]["mapping_basis"], "explicit_bold")
         self.assertEqual(mappings[0]["table_id"], 1)
         self.assertEqual(mappings[0]["embedded_image_ids"], [11])
-        self.assertEqual(mappings[1]["paragraph_text"], "加粗核心判断。")
-        self.assertEqual(mappings[1]["mapping_basis"], "explicit_bold")
+        self.assertEqual(mappings[1]["paragraph_text"], "第二个视觉对象前最近的解释句。")
+        self.assertEqual(mappings[1]["mapping_basis"], "nearest_body")
         self.assertEqual(mappings[1]["image_id"], 12)
+
+    def test_visual_mapping_does_not_cross_subsection_boundary(self) -> None:
+        mappings = map_visuals_to_preceding_summaries(
+            [
+                {
+                    "type": "body",
+                    "index": 1,
+                    "order_index": 1,
+                    "text": "上一小节的核心结论已经明显改善。",
+                    "bold_sentences": [],
+                    "section_title": "第一章",
+                    "subsection_title": "小节一",
+                },
+                {
+                    "type": "table",
+                    "index": 1,
+                    "order_index": 2,
+                    "rows": [["图 1：当前指标仍在下行"]],
+                    "section_title": "第一章",
+                    "subsection_title": "小节二",
+                },
+            ]
+        )
+
+        self.assertEqual(mappings[0]["mapping_basis"], "visual_title")
+        self.assertEqual(mappings[0]["paragraph_index"], None)
+
+    def test_page_level_visual_copy_deduplicates_and_adds_evidence(self) -> None:
+        mappings = [
+            {
+                "paragraph_text": "共同结论。",
+                "conclusion_text": "共同结论。",
+                "evidence_text": "支持证据。",
+                "evidence_score": {"total": 72.0},
+            },
+            {
+                "paragraph_text": "共同结论。",
+                "conclusion_text": "共同结论。",
+                "evidence_text": "次要证据。",
+                "evidence_score": {"total": 61.0},
+            },
+        ]
+
+        self.assertEqual(
+            visual_points_for_slide(mappings),
+            ["共同结论。", "支持证据。"],
+        )
+
+    def test_multi_chart_container_keeps_one_title_per_chart(self) -> None:
+        from scripts.plan_presentation_content import expand_visual_mappings
+
+        mapped = map_visuals_to_preceding_summaries(
+            [
+                {
+                    "type": "table",
+                    "index": 1,
+                    "order_index": 1,
+                    "chart_indexes": [7, 8],
+                    "rows": [["图 1：外资持仓下降", "图 2：散户承接增加"]],
+                }
+            ]
+        )
+
+        expanded = expand_visual_mappings(mapped)
+        self.assertEqual(
+            [mapping["conclusion_text"] for mapping in expanded],
+            ["外资持仓下降。", "散户承接增加。"],
+        )
 
     def test_visual_mapping_uses_container_text_when_no_paragraph_precedes(self) -> None:
         mappings = map_visuals_to_preceding_summaries(
