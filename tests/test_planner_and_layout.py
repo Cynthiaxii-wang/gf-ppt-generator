@@ -22,6 +22,7 @@ from scripts.generate_ppt import (
     order_generation_plans,
     resolve_template_path,
     replace_risk_content,
+    replace_shape_text,
     replace_summary_text,
     select_template_mapping,
     table_cell_style,
@@ -229,6 +230,25 @@ class PlannerHeadingTests(unittest.TestCase):
         self.assertEqual([paragraphs[index].text for index in (0, 2, 4)], ["甲", "乙", "丙"])
         self.assertEqual([paragraphs[index].text for index in (1, 3)], ["", ""])
         self.assertEqual(paragraphs[1].line_spacing, 1.5)
+
+    def test_body_renderer_copies_square_bullet_to_every_point(self) -> None:
+        presentation = Presentation()
+        slide = presentation.slides.add_slide(presentation.slide_layouts[6])
+        shape = slide.shapes.add_textbox(
+            Inches(1), Inches(1), Inches(10), Inches(3)
+        )
+        paragraph = shape.text_frame.paragraphs[0]
+        paragraph._p.get_or_add_pPr().append(
+            parse_xml(
+                b'<a:buChar xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" char="\xe2\x96\xaa"/>'
+            )
+        )
+        paragraph.text = "模板正文"
+        replace_shape_text(shape, "第一条\n第二条", bullet=True)
+        for rendered in shape.text_frame.paragraphs:
+            bullet_nodes = rendered._p.xpath("./a:pPr/a:buChar")
+            self.assertEqual(len(bullet_nodes), 1)
+            self.assertEqual(bullet_nodes[0].get("char"), "▪")
 
     def test_planner_omits_visual_free_body_pages(self) -> None:
         document = {

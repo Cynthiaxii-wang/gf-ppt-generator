@@ -1473,6 +1473,9 @@ def replace_shape_text(
         return
     saved = text_style_snapshot(shape)
     frame = shape.text_frame
+    bullet_properties = (
+        deepcopy(frame.paragraphs[0]._p.get_or_add_pPr()) if bullet else None
+    )
     frame.clear()
     frame.word_wrap = True
     frame.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
@@ -1480,7 +1483,12 @@ def replace_shape_text(
     for index, line in enumerate(lines):
         paragraph = frame.paragraphs[0] if index == 0 else frame.add_paragraph()
         # The template body placeholder already supplies the square bullet and
-        # indentation. A literal "•" here would create a double bullet.
+        # indentation. Copy that paragraph formatting to every independent
+        # point; a literal "•" would create a double bullet on the first one.
+        if bullet_properties is not None:
+            if paragraph._p.pPr is not None:
+                paragraph._p.remove(paragraph._p.pPr)
+            paragraph._p.insert(0, deepcopy(bullet_properties))
         paragraph.text = line
         if saved.get("alignment") is not None:
             paragraph.alignment = saved["alignment"]
