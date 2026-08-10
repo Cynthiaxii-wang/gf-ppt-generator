@@ -622,12 +622,38 @@ def visual_candidates(
     visual = items[visual_position]
     titles = visual_titles(visual)
     source_paragraphs: list[tuple[dict[str, Any], str, int]] = []
-    if visual.get("runs"):
+    visual_text = str(visual.get("text") or "").strip()
+    if visual.get("runs") and not re.match(
+        r"^(?:(?:图|表)\s*\d+\s*[：:]|(?:数据|资料)来源[：:])",
+        visual_text,
+    ):
         source_paragraphs.append((visual, "visual", 0))
-    if visual_position > 0:
-        previous = items[visual_position - 1]
-        if previous.get("type") == "body" and same_argument_unit(visual, previous):
-            source_paragraphs.append((previous, "before", 1))
+    distance = 0
+    for previous in reversed(items[:visual_position]):
+        if not same_argument_unit(visual, previous):
+            break
+        if is_visual_item(previous):
+            same_wrapper_group = (
+                visual.get("type") == "table"
+                and previous.get("type") == "table"
+                and visual.get("wrapper_group_index") is not None
+                and visual.get("wrapper_group_index")
+                == previous.get("wrapper_group_index")
+            )
+            if same_wrapper_group:
+                continue
+            break
+        if previous.get("type") != "body":
+            continue
+        distance += 1
+        previous_text = str(previous.get("text") or "").strip()
+        if re.match(
+            r"^(?:(?:图|表)\s*\d+\s*[：:]|(?:数据|资料)来源[：:])",
+            previous_text,
+        ):
+            continue
+        source_paragraphs.append((previous, "before", distance))
+        break
 
     for source_paragraph, direction, distance in source_paragraphs:
         medium_text = "".join(

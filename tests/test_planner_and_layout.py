@@ -35,6 +35,7 @@ from scripts.parse_templates import (
     paragraph_run_metadata,
     parse_docx,
     semantic_heading_level,
+    table_entries_from_block,
 )
 from scripts.plan_presentation_content import (
     build_plan as build_content_plan,
@@ -255,6 +256,34 @@ class PlannerHeadingTests(unittest.TestCase):
         self.assertFalse(runs[1]["source_han_medium"])
         self.assertIn("思源黑体 CN Medium", runs[0]["font_names"])
 
+    def test_nested_tables_are_emitted_as_separate_visuals(self) -> None:
+        document = WordDocument()
+        wrapper = document.add_table(rows=4, cols=1)
+        wrapper.cell(0, 0).text = "表 3：加息经济体"
+        first = wrapper.cell(1, 0).add_table(rows=2, cols=2)
+        first.cell(0, 0).text = "加息央行"
+        first.cell(0, 1).text = "幅度"
+        first.cell(1, 0).text = "RBA"
+        first.cell(1, 1).text = "+25bp"
+        wrapper.cell(1, 0).add_paragraph("数据来源：BIS")
+        wrapper.cell(2, 0).text = "表 4：降息经济体"
+        second = wrapper.cell(3, 0).add_table(rows=2, cols=2)
+        second.cell(0, 0).text = "降息央行"
+        second.cell(0, 1).text = "幅度"
+        second.cell(1, 0).text = "BCB"
+        second.cell(1, 1).text = "-25bp"
+        wrapper.cell(3, 0).add_paragraph("数据来源：BIS")
+
+        entries = table_entries_from_block(wrapper, 11)
+
+        self.assertEqual([entry["index"] for entry in entries], [11, 12])
+        self.assertEqual(entries[0]["rows"][0][0], "加息央行")
+        self.assertEqual(entries[1]["rows"][0][0], "降息央行")
+        self.assertEqual(entries[0]["caption"], "表 3：加息经济体")
+        self.assertEqual(entries[1]["caption"], "表 4：降息经济体")
+        self.assertEqual(entries[0]["wrapper_group_index"], 11)
+        self.assertEqual(entries[1]["wrapper_group_index"], 11)
+
     def test_body_renderer_copies_square_bullet_to_every_point(self) -> None:
         presentation = Presentation()
         slide = presentation.slides.add_slide(presentation.slide_layouts[6])
@@ -360,6 +389,48 @@ class PlannerHeadingTests(unittest.TestCase):
         self.assertEqual(mappings[1]["paragraph_text"], "第二个Medium结论。")
         self.assertEqual(mappings[1]["mapping_basis"], "source_han_medium")
         self.assertEqual(mappings[1]["image_id"], 12)
+
+    def test_visual_mapping_skips_medium_chart_caption(self) -> None:
+        mappings = map_visuals_to_preceding_summaries(
+            [
+                {
+                    "type": "body",
+                    "index": 1,
+                    "order_index": 1,
+                    "text": "另外，日央行宣布将放缓减少购债。",
+                    "runs": [
+                        {
+                            "text": "另外，日央行宣布将放缓减少购债。",
+                            "source_han_medium": True,
+                        }
+                    ],
+                },
+                {
+                    "type": "body",
+                    "index": 2,
+                    "order_index": 2,
+                    "text": "图 15：2027年4月起，日央行将放缓减少购债",
+                    "runs": [
+                        {
+                            "text": "图 15：2027年4月起，日央行将放缓减少购债",
+                            "source_han_medium": True,
+                        }
+                    ],
+                },
+                {
+                    "type": "chart",
+                    "index": 3,
+                    "order_index": 3,
+                    "chart_indexes": [1],
+                },
+            ]
+        )
+
+        self.assertEqual(
+            mappings[0]["paragraph_text"],
+            "另外，日央行宣布将放缓减少购债。",
+        )
+        self.assertEqual(mappings[0]["mapping_basis"], "source_han_medium")
 
     def test_visual_mapping_does_not_cross_subsection_boundary(self) -> None:
         mappings = map_visuals_to_preceding_summaries(

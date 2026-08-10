@@ -434,75 +434,61 @@ def document_title(
     return ""
 
 
-def table_to_dict(table: Table, index: int) -> dict[str, Any]:
+def table_entries_from_block(table: Table, start_index: int) -> list[dict[str, Any]]:
     wrapper_rows = [[cell.text for cell in row.cells] for row in table.rows]
 
-    # Brokerage reports often use a one-column wrapper table for the caption
-    # and source, with the actual editable data table nested inside its middle
-    # cell. python-docx's outer ``cell.text`` intentionally omits nested-table
-    # cells, which previously left only caption/source rows and produced an
-    # empty PPT slide. Prefer the largest multi-column nested table as the
-    # renderable payload while retaining wrapper metadata.
-    nested_candidates: list[list[list[str]]] = []
-    for nested_element in table._element.xpath(".//w:tbl"):
-        nested_table = Table(nested_element, table._parent)
-        nested_rows = [
-            [cell.text for cell in row.cells]
-            for row in nested_table.rows
-        ]
-        nested_column_count = max(
-            (len(row) for row in nested_rows),
-            default=0,
-        )
-        if len(nested_rows) >= 2 and nested_column_count >= 2:
-            nested_candidates.append(nested_rows)
+    nested_entries: list[dict[str, Any]] = []
+    latest_caption = ""
+    for row in table.rows:
+        for cell in row.cells:
+            cell_text = cell.text.strip()
+            caption_match = re.search(
+                r"(?:^|\n)((?:图|表)\s*\d+\s*[：:][^\n]+)",
+                cell_text,
+            )
+            if caption_match:
+                latest_caption = caption_match.group(1).strip()
+            source_text = next(
+                (
+                    line.strip()
+                    for line in cell_text.splitlines()
+                    if "数据来源" in line or "资料来源" in line
+                ),
+                "",
+            )
+            for nested_table in cell.tables:
+                rows = [[nested_cell.text for nested_cell in nested_row.cells] for nested_row in nested_table.rows]
+                column_count = max((len(nested_row) for nested_row in rows), default=0)
+                if len(rows) < 2 or column_count < 2:
+                    continue
+                entry = {
+                    "index": start_index + len(nested_entries),
+                    "row_count": len(rows),
+                    "column_count": column_count,
+                    "rows": rows,
+                    "wrapper_rows": wrapper_rows,
+                    "wrapper_group_index": start_index,
+                }
+                if latest_caption:
+                    entry["caption"] = latest_caption
+                if source_text:
+                    entry["source_text"] = source_text
+                nested_entries.append(entry)
 
-    rows = (
-        max(
-            nested_candidates,
-            key=lambda candidate: (
-                len(candidate)
-                * max((len(row) for row in candidate), default=0)
-            ),
-        )
-        if nested_candidates
-        else wrapper_rows
-    )
-    wrapper_texts = [
-        cell.strip()
-        for row in wrapper_rows
-        for cell in row
-        if cell.strip()
+    if nested_entries:
+        return nested_entries
+    return [
+        {
+            "index": start_index,
+            "row_count": len(wrapper_rows),
+            "column_count": max((len(row) for row in wrapper_rows), default=0),
+            "rows": wrapper_rows,
+        }
     ]
-    result = {
-        "index": index,
-        "row_count": len(rows),
-        "column_count": max((len(row) for row in rows), default=0),
-        "rows": rows,
-    }
-    if nested_candidates:
-        result["wrapper_rows"] = wrapper_rows
-        caption = next(
-            (
-                text
-                for text in wrapper_texts
-                if re.match(r"^(?:图|表)\s*\d+\s*[：:]", text)
-            ),
-            "",
-        )
-        source_text = next(
-            (
-                text
-                for text in wrapper_texts
-                if "数据来源" in text or "资料来源" in text
-            ),
-            "",
-        )
-        if caption:
-            result["caption"] = caption
-        if source_text:
-            result["source_text"] = source_text
-    return result
+
+
+def table_to_dict(table: Table, index: int) -> dict[str, Any]:
+    return table_entries_from_block(table, index)[0]
 
 
 def paragraph_run_metadata(paragraph: Paragraph) -> tuple[list[dict[str, Any]], list[str]]:
@@ -850,27 +836,28 @@ def parse_docx(path: Path, output_dir: Path) -> dict[str, Any]:
                 )
             chart_cursor += block_chart_count
         else:
-            table_index += 1
-            table_entry = table_to_dict(block, table_index)
+            table_entries = table_entries_from_block(block, table_index + 1)
+            table_index += len(table_entries)
             block_image_count = len(block._element.xpath(".//a:blip"))
             block_chart_count = len(block._element.xpath(".//c:chart"))
             if block_image_count:
-                table_entry["image_indexes"] = [
+                table_entries[0]["image_indexes"] = [
                     image["index"]
                     for image in images[image_cursor : image_cursor + block_image_count]
                 ]
             if block_chart_count:
-                table_entry["chart_indexes"] = [
+                table_entries[0]["chart_indexes"] = [
                     chart["index"]
                     for chart in charts[chart_cursor : chart_cursor + block_chart_count]
                 ]
-            tables.append(table_entry)
-            append_content({"type": "table", **table_entry})
+            for table_entry in table_entries:
+                tables.append(table_entry)
+                append_content({"type": "table", **table_entry})
             if block_image_count:
                 append_block_images(
                     block_image_count,
                     "table",
-                    table_index,
+                    table_entries[0]["index"],
                 )
             chart_cursor += block_chart_count
 

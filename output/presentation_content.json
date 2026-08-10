@@ -1,6 +1,6 @@
 {
   "source_document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
-  "slide_count": 27,
+  "slide_count": 28,
   "slides": [
     {
       "slide_number": 1,
@@ -42,8 +42,6 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          2,
-          3,
           4,
           5,
           6,
@@ -52,7 +50,10 @@
           9,
           10,
           11,
-          12
+          12,
+          13,
+          14,
+          15
         ],
         "instruction": null
       },
@@ -108,8 +109,6 @@
           113
         ],
         "table_indexes": [
-          2,
-          3,
           4,
           5,
           6,
@@ -118,7 +117,10 @@
           9,
           10,
           11,
-          12
+          12,
+          13,
+          14,
+          15
         ],
         "image_indexes": [
           2,
@@ -178,8 +180,6 @@
           113
         ],
         "table_indexes": [
-          2,
-          3,
           4,
           5,
           6,
@@ -188,7 +188,10 @@
           9,
           10,
           11,
-          12
+          12,
+          13,
+          14,
+          15
         ]
       }
     },
@@ -651,8 +654,6 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          2,
-          3,
           4,
           5,
           6,
@@ -661,7 +662,10 @@
           9,
           10,
           11,
-          12
+          12,
+          13,
+          14,
+          15
         ],
         "instruction": null
       },
@@ -717,8 +721,6 @@
           113
         ],
         "table_indexes": [
-          2,
-          3,
           4,
           5,
           6,
@@ -727,7 +729,10 @@
           9,
           10,
           11,
-          12
+          12,
+          13,
+          14,
+          15
         ],
         "image_indexes": [
           2,
@@ -787,8 +792,6 @@
           113
         ],
         "table_indexes": [
-          2,
-          3,
           4,
           5,
           6,
@@ -797,7 +800,10 @@
           9,
           10,
           11,
-          12
+          12,
+          13,
+          14,
+          15
         ]
       }
     },
@@ -819,10 +825,10 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          2,
-          3,
           4,
-          5
+          5,
+          6,
+          7
         ],
         "instruction": null
       },
@@ -839,10 +845,10 @@
           55
         ],
         "table_indexes": [
-          2,
-          3,
           4,
-          5
+          5,
+          6,
+          7
         ],
         "image_indexes": []
       },
@@ -859,10 +865,10 @@
           55
         ],
         "table_indexes": [
-          2,
-          3,
           4,
-          5
+          5,
+          6,
+          7
         ]
       },
       "subtitle": "5月美国非农与CPI回顾"
@@ -884,19 +890,19 @@
       "table_requirement": {
         "required": true,
         "source_table_indexes": [
-          2
+          4
         ],
         "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 2,
-          "table_id": 2,
+          "visual_id": 4,
+          "table_id": 4,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
-          "visual_order_index": 47,
+          "visual_order_index": 49,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "非农增长主要来自地方政府、医疗保健等防御性分项支撑。"
@@ -905,7 +911,7 @@
           "paragraph_text": "5月的非农数据显示出就业市场明显回暖的迹象，且先前广泛担忧的AI对就业市场的负向扰动尚未发生。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 46,
+          "paragraph_order_index": 48,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -925,7 +931,7 @@
               "paragraph_text": "5月的非农数据显示出就业市场明显回暖的迹象，且先前广泛担忧的AI对就业市场的负向扰动尚未发生。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 46,
+              "paragraph_order_index": 48,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -946,20 +952,20 @@
           48
         ],
         "table_indexes": [
-          2
+          4
         ],
         "image_indexes": []
       },
-      "display_source": "资料来源：Bureau of Labor Statistics，广发证券发展研究中心",
+      "display_source": "资料来源：广发证券发展研究中心",
       "source": {
-        "document": "Bureau of Labor Statistics，广发证券发展研究中心",
+        "document": "广发证券发展研究中心",
         "section": null,
         "subsection": null,
         "paragraph_indexes": [
           48
         ],
         "table_indexes": [
-          2
+          4
         ]
       },
       "content_mode": "bullets"
@@ -984,22 +990,22 @@
       "table_requirement": {
         "required": true,
         "source_table_indexes": [
-          3,
-          4
+          5,
+          6
         ],
         "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 3,
-          "table_id": 3,
+          "visual_id": 5,
+          "table_id": 5,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             1
           ],
-          "visual_order_index": 50,
+          "visual_order_index": 52,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国5月CPI同比绝对数值较高（10月美国政府停摆导致CPI数据断更）。"
@@ -1008,7 +1014,7 @@
           "paragraph_text": "美国5月CPI表面高位通胀，但实际上持平预期，已进入定价。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 49,
+          "paragraph_order_index": 51,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1028,7 +1034,7 @@
               "paragraph_text": "美国5月CPI表面高位通胀，但实际上持平预期，已进入定价。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 49,
+              "paragraph_order_index": 51,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1042,12 +1048,12 @@
         },
         {
           "visual_type": "table",
-          "visual_id": 4,
-          "table_id": 4,
+          "visual_id": 6,
+          "table_id": 6,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
-          "visual_order_index": 52,
+          "visual_order_index": 54,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "5月CPI与预期差别不大，主要受能源项推升，核心CPI目前维持温和。"
@@ -1056,7 +1062,7 @@
           "paragraph_text": "能源项推升headline CPI，但核心CPI相对温和。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 51,
+          "paragraph_order_index": 53,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1076,7 +1082,7 @@
               "paragraph_text": "能源项推升headline CPI，但核心CPI相对温和。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 51,
+              "paragraph_order_index": 53,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1098,14 +1104,14 @@
           52
         ],
         "table_indexes": [
-          3,
-          4
+          5,
+          6
         ],
         "image_indexes": []
       },
-      "display_source": "资料来源：Wind、Bureau of Labor Statistics，广发证券发展研究中心",
+      "display_source": "资料来源：Wind，广发证券发展研究中心",
       "source": {
-        "document": "Wind、Bureau of Labor Statistics，广发证券发展研究中心",
+        "document": "Wind，广发证券发展研究中心",
         "section": null,
         "subsection": null,
         "paragraph_indexes": [
@@ -1113,8 +1119,8 @@
           52
         ],
         "table_indexes": [
-          3,
-          4
+          5,
+          6
         ]
       },
       "content_mode": "bullets"
@@ -1138,21 +1144,21 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          5
+          7
         ],
         "instruction": null
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 5,
-          "table_id": 5,
+          "visual_id": 7,
+          "table_id": 7,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             2
           ],
-          "visual_order_index": 56,
+          "visual_order_index": 58,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国职位空缺/失业人数比值领先雇佣成本指数。"
@@ -1161,7 +1167,7 @@
           "paragraph_text": "因而，Q4公布的2026Q3 ECI数据有一定可能转而上行。一旦这一数据拐点出现，工资重新加速，便会坐实通胀压力从外部冲击转向更顽固的内生性通胀，从而迫使美联储考虑加速加息的节奏。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 55,
+          "paragraph_order_index": 57,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1181,7 +1187,7 @@
               "paragraph_text": "因而，Q4公布的2026Q3 ECI数据有一定可能转而上行。一旦这一数据拐点出现，工资重新加速，便会坐实通胀压力从外部冲击转向更顽固的内生性通胀，从而迫使美联储考虑加速加息的节奏。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 55,
+              "paragraph_order_index": 57,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1203,7 +1209,7 @@
           55
         ],
         "table_indexes": [
-          5
+          7
         ],
         "image_indexes": []
       },
@@ -1217,7 +1223,7 @@
           55
         ],
         "table_indexes": [
-          5
+          7
         ]
       },
       "content_mode": "bullets"
@@ -1245,10 +1251,10 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          6,
-          7,
           8,
-          9
+          9,
+          10,
+          11
         ],
         "instruction": null
       },
@@ -1270,10 +1276,10 @@
           70
         ],
         "table_indexes": [
-          6,
-          7,
           8,
-          9
+          9,
+          10,
+          11
         ],
         "image_indexes": [
           2,
@@ -1299,10 +1305,10 @@
           70
         ],
         "table_indexes": [
-          6,
-          7,
           8,
-          9
+          9,
+          10,
+          11
         ]
       },
       "subtitle": null
@@ -1327,22 +1333,22 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          6,
-          6
+          8,
+          8
         ],
         "instruction": null
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 6,
-          "table_id": 6,
+          "visual_id": 8,
+          "table_id": 8,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             3
           ],
-          "visual_order_index": 60,
+          "visual_order_index": 62,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国GDP增长不减，但通胀显著过热。",
@@ -1352,7 +1358,7 @@
           "paragraph_text": "6月FOMC会议的利率决议本身并不意外，美联储以12-0全票通过，维持联邦基金目标利率区间在3.50%–3.75%不变。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 59,
+          "paragraph_order_index": 61,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1372,7 +1378,7 @@
               "paragraph_text": "6月FOMC会议的利率决议本身并不意外，美联储以12-0全票通过，维持联邦基金目标利率区间在3.50%–3.75%不变。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 59,
+              "paragraph_order_index": 61,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1386,14 +1392,14 @@
         },
         {
           "visual_type": "table",
-          "visual_id": 6,
-          "table_id": 6,
+          "visual_id": 8,
+          "table_id": 8,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             4
           ],
-          "visual_order_index": 60,
+          "visual_order_index": 62,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "美国GDP增长不减，但通胀显著过热。",
@@ -1403,7 +1409,7 @@
           "paragraph_text": "6月FOMC会议的利率决议本身并不意外，美联储以12-0全票通过，维持联邦基金目标利率区间在3.50%–3.75%不变。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 59,
+          "paragraph_order_index": 61,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1423,7 +1429,7 @@
               "paragraph_text": "6月FOMC会议的利率决议本身并不意外，美联储以12-0全票通过，维持联邦基金目标利率区间在3.50%–3.75%不变。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 59,
+              "paragraph_order_index": 61,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1444,7 +1450,7 @@
           58
         ],
         "table_indexes": [
-          6
+          8
         ],
         "image_indexes": []
       },
@@ -1457,7 +1463,7 @@
           58
         ],
         "table_indexes": [
-          6
+          8
         ]
       },
       "content_mode": "bullets"
@@ -1466,7 +1472,7 @@
       "slide_number": 9,
       "title": "利率决议——按兵不动",
       "key_points": [
-        "6月最新点阵图显示，半数投票委员预计今年加息，5位预期2次。"
+        "更值得关注的是，美联储的沟通方式出现明显变化。此次议息声明篇幅被大幅压缩，接近缩减三分之二，整体表述更加克制，减少了对未来路径的暗示。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -1491,36 +1497,36 @@
           "image_id": 2,
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
-          "visual_order_index": 63,
+          "visual_order_index": 65,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 60,
-          "paragraph_text": "6月最新点阵图显示，半数投票委员预计今年加息，5位预期2次。",
+          "paragraph_index": 59,
+          "paragraph_text": "更值得关注的是，美联储的沟通方式出现明显变化。此次议息声明篇幅被大幅压缩，接近缩减三分之二，整体表述更加克制，减少了对未来路径的暗示。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 62,
+          "paragraph_order_index": 63,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "6月最新点阵图显示，半数投票委员预计今年加息，5位预期2次。",
+          "conclusion_text": "更值得关注的是，美联储的沟通方式出现明显变化。此次议息声明篇幅被大幅压缩，接近缩减三分之二，整体表述更加克制，减少了对未来路径的暗示。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 60,
-              "paragraph_text": "6月最新点阵图显示，半数投票委员预计今年加息，5位预期2次。",
+              "paragraph_index": 59,
+              "paragraph_text": "更值得关注的是，美联储的沟通方式出现明显变化。此次议息声明篇幅被大幅压缩，接近缩减三分之二，整体表述更加克制，减少了对未来路径的暗示。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 62,
+              "paragraph_order_index": 63,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -1576,19 +1582,19 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          7
+          9
         ],
         "instruction": null
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 7,
-          "table_id": 7,
+          "visual_id": 9,
+          "table_id": 9,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
-          "visual_order_index": 67,
+          "visual_order_index": 69,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "Warsh宣布成立五个专项工作组。"
@@ -1597,7 +1603,7 @@
           "paragraph_text": "记者会上的“Warsh新政”是本次会议后记者会上最关键的增量信息。Warsh在开场声明中宣布成立五个专项工作组。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 66,
+          "paragraph_order_index": 68,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1617,7 +1623,7 @@
               "paragraph_text": "记者会上的“Warsh新政”是本次会议后记者会上最关键的增量信息。Warsh在开场声明中宣布成立五个专项工作组。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 66,
+              "paragraph_order_index": 68,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1638,7 +1644,7 @@
           64
         ],
         "table_indexes": [
-          7
+          9
         ],
         "image_indexes": []
       },
@@ -1651,7 +1657,7 @@
           64
         ],
         "table_indexes": [
-          7
+          9
         ]
       },
       "content_mode": "bullets"
@@ -1676,22 +1682,22 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          8,
-          8
+          10,
+          10
         ],
         "instruction": null
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 8,
-          "table_id": 8,
+          "visual_id": 10,
+          "table_id": 10,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             5
           ],
-          "visual_order_index": 69,
+          "visual_order_index": 71,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "FOMC发布会开始后，美债收益率与美元指数直线攀升（T时刻是美东时间6月17日9：30）。",
@@ -1701,7 +1707,7 @@
           "paragraph_text": "短期看，这不会立刻改变政策规则，但会显著提高政策的不确定性；而在通胀本就高于目标的背景下，不确定性本身对风险资产并不友好。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 68,
+          "paragraph_order_index": 70,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1721,7 +1727,7 @@
               "paragraph_text": "短期看，这不会立刻改变政策规则，但会显著提高政策的不确定性；而在通胀本就高于目标的背景下，不确定性本身对风险资产并不友好。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 68,
+              "paragraph_order_index": 70,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1735,14 +1741,14 @@
         },
         {
           "visual_type": "table",
-          "visual_id": 8,
-          "table_id": 8,
+          "visual_id": 10,
+          "table_id": 10,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             6
           ],
-          "visual_order_index": 69,
+          "visual_order_index": 71,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "FOMC发布会开始后，美债收益率与美元指数直线攀升（T时刻是美东时间6月17日9：30）。",
@@ -1752,7 +1758,7 @@
           "paragraph_text": "短期看，这不会立刻改变政策规则，但会显著提高政策的不确定性；而在通胀本就高于目标的背景下，不确定性本身对风险资产并不友好。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 68,
+          "paragraph_order_index": 70,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1772,7 +1778,7 @@
               "paragraph_text": "短期看，这不会立刻改变政策规则，但会显著提高政策的不确定性；而在通胀本就高于目标的背景下，不确定性本身对风险资产并不友好。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 68,
+              "paragraph_order_index": 70,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1793,7 +1799,7 @@
           65
         ],
         "table_indexes": [
-          8
+          10
         ],
         "image_indexes": []
       },
@@ -1806,7 +1812,7 @@
           65
         ],
         "table_indexes": [
-          8
+          10
         ]
       },
       "content_mode": "bullets"
@@ -1831,22 +1837,22 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          9,
-          9
+          11,
+          11
         ],
         "instruction": null
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 9,
-          "table_id": 9,
+          "visual_id": 11,
+          "table_id": 11,
           "image_id": null,
           "embedded_image_ids": [
             3
           ],
           "embedded_chart_ids": [],
-          "visual_order_index": 71,
+          "visual_order_index": 73,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "市场同样预期，年末加息（12月9日）概率略大于按兵不动。",
@@ -1856,7 +1862,7 @@
           "paragraph_text": "记者会后续Q&A环节进一步确认了这一鹰派方向。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 70,
+          "paragraph_order_index": 72,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1876,7 +1882,7 @@
               "paragraph_text": "记者会后续Q&A环节进一步确认了这一鹰派方向。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 70,
+              "paragraph_order_index": 72,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1890,14 +1896,14 @@
         },
         {
           "visual_type": "table",
-          "visual_id": 9,
-          "table_id": 9,
+          "visual_id": 11,
+          "table_id": 11,
           "image_id": null,
           "embedded_image_ids": [
             4
           ],
           "embedded_chart_ids": [],
-          "visual_order_index": 71,
+          "visual_order_index": 73,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "市场同样预期，年末加息（12月9日）概率略大于按兵不动。",
@@ -1907,7 +1913,7 @@
           "paragraph_text": "记者会后续Q&A环节进一步确认了这一鹰派方向。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 70,
+          "paragraph_order_index": 72,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -1927,7 +1933,7 @@
               "paragraph_text": "记者会后续Q&A环节进一步确认了这一鹰派方向。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 70,
+              "paragraph_order_index": 72,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -1948,7 +1954,7 @@
           66
         ],
         "table_indexes": [
-          9
+          11
         ],
         "image_indexes": [
           3,
@@ -1964,7 +1970,7 @@
           66
         ],
         "table_indexes": [
-          9
+          11
         ]
       },
       "content_mode": "bullets"
@@ -1994,8 +2000,9 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          10,
-          11
+          12,
+          13,
+          14
         ],
         "instruction": null
       },
@@ -2031,8 +2038,9 @@
           105
         ],
         "table_indexes": [
-          10,
-          11
+          12,
+          13,
+          14
         ],
         "image_indexes": []
       },
@@ -2068,8 +2076,9 @@
           105
         ],
         "table_indexes": [
-          10,
-          11
+          12,
+          13,
+          14
         ]
       },
       "subtitle": null
@@ -2078,7 +2087,7 @@
       "slide_number": 14,
       "title": "日本：“加息了，但没能救日元”",
       "key_points": [
-        "日本央行自1995年以来，首次将政策利率重提至1%。"
+        "6月16日的利率决议中，日本央行将政策利率从0.75%上调至1%，创下日本时隔三十一年来最高利率水平。自1995年以来，该行首次重返1%利率时代。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2105,36 +2114,36 @@
           "embedded_chart_ids": [
             7
           ],
-          "visual_order_index": 82,
+          "visual_order_index": 84,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 74,
-          "paragraph_text": "日本央行自1995年以来，首次将政策利率重提至1%。",
+          "paragraph_index": 73,
+          "paragraph_text": "6月16日的利率决议中，日本央行将政策利率从0.75%上调至1%，创下日本时隔三十一年来最高利率水平。自1995年以来，该行首次重返1%利率时代。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 81,
+          "paragraph_order_index": 82,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "日本央行自1995年以来，首次将政策利率重提至1%。",
+          "conclusion_text": "6月16日的利率决议中，日本央行将政策利率从0.75%上调至1%，创下日本时隔三十一年来最高利率水平。自1995年以来，该行首次重返1%利率时代。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 74,
-              "paragraph_text": "日本央行自1995年以来，首次将政策利率重提至1%。",
+              "paragraph_index": 73,
+              "paragraph_text": "6月16日的利率决议中，日本央行将政策利率从0.75%上调至1%，创下日本时隔三十一年来最高利率水平。自1995年以来，该行首次重返1%利率时代。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 81,
+              "paragraph_order_index": 82,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -2191,22 +2200,22 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          10,
-          10
+          12,
+          12
         ],
         "instruction": null
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 10,
-          "table_id": 10,
+          "visual_id": 12,
+          "table_id": 12,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             8
           ],
-          "visual_order_index": 85,
+          "visual_order_index": 87,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "日本通胀有所下落，但仍在2%左右。",
@@ -2216,7 +2225,7 @@
           "paragraph_text": "日本央行本次加息，核心是应对日元贬值与通胀内生化的双重压力。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 84,
+          "paragraph_order_index": 86,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -2236,7 +2245,7 @@
               "paragraph_text": "日本央行本次加息，核心是应对日元贬值与通胀内生化的双重压力。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 84,
+              "paragraph_order_index": 86,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -2250,14 +2259,14 @@
         },
         {
           "visual_type": "table",
-          "visual_id": 10,
-          "table_id": 10,
+          "visual_id": 12,
+          "table_id": 12,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [
             9
           ],
-          "visual_order_index": 85,
+          "visual_order_index": 87,
           "visual_slot_cost": 1,
           "visual_title_candidates": [
             "日本通胀有所下落，但仍在2%左右。",
@@ -2267,7 +2276,7 @@
           "paragraph_text": "日本央行本次加息，核心是应对日元贬值与通胀内生化的双重压力。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 84,
+          "paragraph_order_index": 86,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -2287,7 +2296,7 @@
               "paragraph_text": "日本央行本次加息，核心是应对日元贬值与通胀内生化的双重压力。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 84,
+              "paragraph_order_index": 86,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -2308,7 +2317,7 @@
           77
         ],
         "table_indexes": [
-          10
+          12
         ],
         "image_indexes": []
       },
@@ -2321,7 +2330,7 @@
           77
         ],
         "table_indexes": [
-          10
+          12
         ]
       },
       "content_mode": "bullets"
@@ -2330,7 +2339,7 @@
       "slide_number": 16,
       "title": "日本：“加息了，但没能救日元”",
       "key_points": [
-        "日央行加息对日元汇率和美元指数影响都不大。"
+        "然而市场反应较为清淡。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2357,36 +2366,36 @@
           "embedded_chart_ids": [
             10
           ],
-          "visual_order_index": 88,
+          "visual_order_index": 90,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 79,
-          "paragraph_text": "日央行加息对日元汇率和美元指数影响都不大。",
+          "paragraph_index": 78,
+          "paragraph_text": "然而市场反应较为清淡。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 87,
+          "paragraph_order_index": 88,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "日央行加息对日元汇率和美元指数影响都不大。",
+          "conclusion_text": "然而市场反应较为清淡。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 79,
-              "paragraph_text": "日央行加息对日元汇率和美元指数影响都不大。",
+              "paragraph_index": 78,
+              "paragraph_text": "然而市场反应较为清淡。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 87,
+              "paragraph_order_index": 88,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -2427,7 +2436,7 @@
       "slide_number": 17,
       "title": "日本：“加息了，但没能救日元”",
       "key_points": [
-        "2027年4月起，日央行将放缓减少购债的步伐。"
+        "另外，日央行宣布从2027年4月起暂停缩减购债，将日本国债每月购买规模维持在约2万亿日元，边际削弱了加息对日元的利好。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2454,36 +2463,36 @@
           "embedded_chart_ids": [
             11
           ],
-          "visual_order_index": 93,
+          "visual_order_index": 95,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 84,
-          "paragraph_text": "2027年4月起，日央行将放缓减少购债的步伐。",
+          "paragraph_index": 83,
+          "paragraph_text": "另外，日央行宣布从2027年4月起暂停缩减购债，将日本国债每月购买规模维持在约2万亿日元，边际削弱了加息对日元的利好。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 92,
+          "paragraph_order_index": 93,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "2027年4月起，日央行将放缓减少购债的步伐。",
+          "conclusion_text": "另外，日央行宣布从2027年4月起暂停缩减购债，将日本国债每月购买规模维持在约2万亿日元，边际削弱了加息对日元的利好。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 84,
-              "paragraph_text": "2027年4月起，日央行将放缓减少购债的步伐。",
+              "paragraph_index": 83,
+              "paragraph_text": "另外，日央行宣布从2027年4月起暂停缩减购债，将日本国债每月购买规模维持在约2万亿日元，边际削弱了加息对日元的利好。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 92,
+              "paragraph_order_index": 93,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -2526,7 +2535,7 @@
       "slide_number": 18,
       "title": "日本：“加息了，但没能救日元”",
       "key_points": [
-        "市场目前定价，BOJ年内最可能在12月加息一次。"
+        "会议过后，OIS定价显示市场倾向于将下一次25bp加息放在年末附近。这个结果对日元并不算强支撑，因此单次25bp并不足以改变汇率趋势。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2553,36 +2562,36 @@
           "embedded_chart_ids": [
             12
           ],
-          "visual_order_index": 97,
+          "visual_order_index": 99,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 88,
-          "paragraph_text": "市场目前定价，BOJ年内最可能在12月加息一次。",
+          "paragraph_index": 87,
+          "paragraph_text": "会议过后，OIS定价显示市场倾向于将下一次25bp加息放在年末附近。这个结果对日元并不算强支撑，因此单次25bp并不足以改变汇率趋势。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 96,
+          "paragraph_order_index": 97,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "市场目前定价，BOJ年内最可能在12月加息一次。",
+          "conclusion_text": "会议过后，OIS定价显示市场倾向于将下一次25bp加息放在年末附近。这个结果对日元并不算强支撑，因此单次25bp并不足以改变汇率趋势。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 88,
-              "paragraph_text": "市场目前定价，BOJ年内最可能在12月加息一次。",
+              "paragraph_index": 87,
+              "paragraph_text": "会议过后，OIS定价显示市场倾向于将下一次25bp加息放在年末附近。这个结果对日元并不算强支撑，因此单次25bp并不足以改变汇率趋势。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 96,
+              "paragraph_order_index": 97,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -2623,7 +2632,7 @@
       "slide_number": 19,
       "title": "欧元区：“G7加息的第一枪”",
       "key_points": [
-        "欧央行已在6月11日上调三大政策利率。"
+        "欧洲央行在6月11日会议上率先加息25bp，同步上调三大关键利率，是G7中首个重启加息的央行。然而会后，欧洲主要股指与成长股指并无下跌，甚至次日有所反弹，体现出预期内加息的“Sell rumors, buy facts”特征。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2650,36 +2659,36 @@
           "embedded_chart_ids": [
             13
           ],
-          "visual_order_index": 102,
+          "visual_order_index": 104,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 93,
-          "paragraph_text": "欧央行已在6月11日上调三大政策利率。",
+          "paragraph_index": 92,
+          "paragraph_text": "欧洲央行在6月11日会议上率先加息25bp，同步上调三大关键利率，是G7中首个重启加息的央行。然而会后，欧洲主要股指与成长股指并无下跌，甚至次日有所反弹，体现出预期内加息的“Sell rumors, buy facts”特征。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 101,
+          "paragraph_order_index": 102,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "欧央行已在6月11日上调三大政策利率。",
+          "conclusion_text": "欧洲央行在6月11日会议上率先加息25bp，同步上调三大关键利率，是G7中首个重启加息的央行。然而会后，欧洲主要股指与成长股指并无下跌，甚至次日有所反弹，体现出预期内加息的“Sell rumors, buy facts”特征。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 93,
-              "paragraph_text": "欧央行已在6月11日上调三大政策利率。",
+              "paragraph_index": 92,
+              "paragraph_text": "欧洲央行在6月11日会议上率先加息25bp，同步上调三大关键利率，是G7中首个重启加息的央行。然而会后，欧洲主要股指与成长股指并无下跌，甚至次日有所反弹，体现出预期内加息的“Sell rumors, buy facts”特征。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 101,
+              "paragraph_order_index": 102,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -2720,7 +2729,7 @@
       "slide_number": 20,
       "title": "欧元区：“G7加息的第一枪”",
       "key_points": [
-        "欧元区面临滞胀压力。"
+        "在滞胀约束下，欧央行选择优先稳住通胀预期，意味着短期政策重心仍将更多放在压制价格压力，而非托底增长。这也是当前全球央行政策优先级的普遍转向。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2747,36 +2756,36 @@
           "embedded_chart_ids": [
             14
           ],
-          "visual_order_index": 106,
+          "visual_order_index": 108,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 97,
-          "paragraph_text": "欧元区面临滞胀压力。",
+          "paragraph_index": 96,
+          "paragraph_text": "在滞胀约束下，欧央行选择优先稳住通胀预期，意味着短期政策重心仍将更多放在压制价格压力，而非托底增长。这也是当前全球央行政策优先级的普遍转向。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 105,
+          "paragraph_order_index": 106,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "欧元区面临滞胀压力。",
+          "conclusion_text": "在滞胀约束下，欧央行选择优先稳住通胀预期，意味着短期政策重心仍将更多放在压制价格压力，而非托底增长。这也是当前全球央行政策优先级的普遍转向。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 97,
-              "paragraph_text": "欧元区面临滞胀压力。",
+              "paragraph_index": 96,
+              "paragraph_text": "在滞胀约束下，欧央行选择优先稳住通胀预期，意味着短期政策重心仍将更多放在压制价格压力，而非托底增长。这也是当前全球央行政策优先级的普遍转向。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 105,
+              "paragraph_order_index": 106,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -2830,19 +2839,19 @@
       "table_requirement": {
         "required": true,
         "source_table_indexes": [
-          11
+          13
         ],
         "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 11,
-          "table_id": 11,
+          "visual_id": 13,
+          "table_id": 13,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
-          "visual_order_index": 110,
+          "visual_order_index": 112,
           "visual_slot_cost": 2,
           "visual_title_candidates": [
             "2026年Q2加息的主要经济体。"
@@ -2851,7 +2860,7 @@
           "paragraph_text": "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 109,
+          "paragraph_order_index": 111,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -2871,7 +2880,7 @@
               "paragraph_text": "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 109,
+              "paragraph_order_index": 111,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -2892,7 +2901,7 @@
           101
         ],
         "table_indexes": [
-          11
+          13
         ],
         "image_indexes": []
       },
@@ -2905,7 +2914,7 @@
           101
         ],
         "table_indexes": [
-          11
+          13
         ]
       },
       "content_mode": "bullets"
@@ -2914,7 +2923,102 @@
       "slide_number": 22,
       "title": "全球流动性风向：央行再紧缩信号升温",
       "key_points": [
-        "欧、日、澳、菲律宾已进入加息周期，美联储距离加息亦不遥远。"
+        "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。"
+      ],
+      "rich_text": [],
+      "chart_requirement": {
+        "required": false,
+        "source_image_indexes": [],
+        "source_chart_indexes": [],
+        "recommended_type": null,
+        "instruction": null
+      },
+      "table_requirement": {
+        "required": true,
+        "source_table_indexes": [
+          14
+        ],
+        "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
+      },
+      "visual_mappings": [
+        {
+          "visual_type": "table",
+          "visual_id": 14,
+          "table_id": 14,
+          "image_id": null,
+          "embedded_image_ids": [],
+          "embedded_chart_ids": [],
+          "visual_order_index": 113,
+          "visual_slot_cost": 1,
+          "visual_title_candidates": [
+            "2026年Q2降息的主要经济体。"
+          ],
+          "paragraph_index": 101,
+          "paragraph_text": "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。",
+          "mapping_basis": "source_han_medium",
+          "candidate_type": "source_han_medium",
+          "paragraph_order_index": 111,
+          "direction": "before",
+          "distance": 1,
+          "score": {
+            "total": 100.0,
+            "semantic": 1.0,
+            "structure": 40.0,
+            "claim": 40.0
+          },
+          "conclusion_text": "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。",
+          "evidence_text": "",
+          "evidence_paragraph_index": null,
+          "evidence_score": null,
+          "confidence": "high",
+          "candidate_scores": [
+            {
+              "paragraph_index": 101,
+              "paragraph_text": "全球央行正在从先前的降息周期切向再紧缩，全球流动性的宽松周期或已进入尾声。",
+              "mapping_basis": "source_han_medium",
+              "candidate_type": "source_han_medium",
+              "paragraph_order_index": 111,
+              "direction": "before",
+              "distance": 1,
+              "score": {
+                "total": 100.0,
+                "semantic": 1.0,
+                "structure": 40.0,
+                "claim": 40.0
+              }
+            }
+          ]
+        }
+      ],
+      "source_trace": {
+        "document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
+        "section": "三、世界其他央行加息步伐，或带来全球流动性收紧",
+        "subsection": "（三）全球流动性风向：央行再紧缩信号升温",
+        "paragraph_indexes": [],
+        "table_indexes": [
+          14
+        ],
+        "image_indexes": []
+      },
+      "display_source": "资料来源：国际清算银行，广发证券发展研究中心",
+      "source": {
+        "document": "国际清算银行，广发证券发展研究中心",
+        "section": null,
+        "subsection": null,
+        "paragraph_indexes": [],
+        "table_indexes": [
+          14
+        ]
+      },
+      "content_mode": "bullets"
+    },
+    {
+      "slide_number": 23,
+      "title": "全球流动性风向：央行再紧缩信号升温",
+      "key_points": [
+        "在加息周期迫近的背景下，贵金属、工业金属等利率敏感型资产后续可能承压。",
+        "图 19：欧、日、澳、菲律宾已进入加息周期，美联储距离加息亦不遥远。",
+        "数据来源：Bloomberg、广发证券发展研究中心。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -2941,44 +3045,26 @@
           "embedded_chart_ids": [
             15
           ],
-          "visual_order_index": 113,
+          "visual_order_index": 116,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 103,
-          "paragraph_text": "欧、日、澳、菲律宾已进入加息周期，美联储距离加息亦不遥远。",
-          "mapping_basis": "source_han_medium",
-          "candidate_type": "source_han_medium",
-          "paragraph_order_index": 112,
-          "direction": "before",
-          "distance": 1,
+          "paragraph_index": null,
+          "paragraph_text": "",
+          "mapping_basis": "missing_candidate",
+          "candidate_type": "missing_candidate",
+          "paragraph_order_index": null,
+          "direction": null,
+          "distance": null,
           "score": {
-            "total": 100.0,
-            "semantic": 1.0,
-            "structure": 40.0,
-            "claim": 40.0
+            "total": 0.0,
+            "semantic": 0.0
           },
-          "conclusion_text": "欧、日、澳、菲律宾已进入加息周期，美联储距离加息亦不遥远。",
+          "conclusion_text": "",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
-          "confidence": "high",
-          "candidate_scores": [
-            {
-              "paragraph_index": 103,
-              "paragraph_text": "欧、日、澳、菲律宾已进入加息周期，美联储距离加息亦不遥远。",
-              "mapping_basis": "source_han_medium",
-              "candidate_type": "source_han_medium",
-              "paragraph_order_index": 112,
-              "direction": "before",
-              "distance": 1,
-              "score": {
-                "total": 100.0,
-                "semantic": 1.0,
-                "structure": 40.0,
-                "claim": 40.0
-              }
-            }
-          ]
+          "confidence": "low",
+          "candidate_scores": []
         }
       ],
       "source_trace": {
@@ -3008,7 +3094,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 23,
+      "slide_number": 24,
       "title": "流动性拐点之际，如何定价大类资产",
       "key_points": [],
       "rich_text": [],
@@ -3024,7 +3110,7 @@
       "table_requirement": {
         "required": false,
         "source_table_indexes": [
-          12
+          15
         ],
         "instruction": null
       },
@@ -3041,7 +3127,7 @@
           113
         ],
         "table_indexes": [
-          12
+          15
         ],
         "image_indexes": []
       },
@@ -3058,13 +3144,13 @@
           113
         ],
         "table_indexes": [
-          12
+          15
         ]
       },
       "subtitle": null
     },
     {
-      "slide_number": 24,
+      "slide_number": 25,
       "title": "黄金短期通常承压",
       "key_points": [
         "黄金短期通常承压。"
@@ -3080,19 +3166,19 @@
       "table_requirement": {
         "required": true,
         "source_table_indexes": [
-          12
+          15
         ],
         "instruction": "保留原表核心字段与关键数值；矩阵页保持资产类别、方向与推演关系。"
       },
       "visual_mappings": [
         {
           "visual_type": "table",
-          "visual_id": 12,
-          "table_id": 12,
+          "visual_id": 15,
+          "table_id": 15,
           "image_id": null,
           "embedded_image_ids": [],
           "embedded_chart_ids": [],
-          "visual_order_index": 118,
+          "visual_order_index": 121,
           "visual_slot_cost": 2,
           "visual_title_candidates": [
             "倘若全球超预期紧缩，资产价格的边际变化。"
@@ -3101,7 +3187,7 @@
           "paragraph_text": "黄金短期通常承压。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 117,
+          "paragraph_order_index": 120,
           "direction": "before",
           "distance": 1,
           "score": {
@@ -3121,7 +3207,7 @@
               "paragraph_text": "黄金短期通常承压。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 117,
+              "paragraph_order_index": 120,
               "direction": "before",
               "distance": 1,
               "score": {
@@ -3143,7 +3229,7 @@
           109
         ],
         "table_indexes": [
-          12
+          15
         ],
         "image_indexes": []
       },
@@ -3157,16 +3243,16 @@
           109
         ],
         "table_indexes": [
-          12
+          15
         ]
       },
       "content_mode": "bullets"
     },
     {
-      "slide_number": 25,
-      "title": "IT设备投资占GDP比重不算很高，产业仍在扩张",
+      "slide_number": 26,
+      "title": "流动性拐点之际，如何定价大类资产",
       "key_points": [
-        "IT设备投资占GDP比重不算很高，产业仍在扩张。"
+        "权益资产理论上会在短期受到负向冲击，但半导体与AI产业基本面仍支撑下，短暂下跌可能带来布局机会。后续可能从单边上涨行情切换为更高波、更依赖盈利确认的震荡上行市。"
       ],
       "rich_text": [],
       "chart_requirement": {
@@ -3193,36 +3279,36 @@
           "embedded_chart_ids": [
             16
           ],
-          "visual_order_index": 121,
+          "visual_order_index": 124,
           "visual_slot_cost": 1,
           "visual_title_candidates": [],
-          "paragraph_index": 111,
-          "paragraph_text": "IT设备投资占GDP比重不算很高，产业仍在扩张。",
+          "paragraph_index": 110,
+          "paragraph_text": "权益资产理论上会在短期受到负向冲击，但半导体与AI产业基本面仍支撑下，短暂下跌可能带来布局机会。后续可能从单边上涨行情切换为更高波、更依赖盈利确认的震荡上行市。",
           "mapping_basis": "source_han_medium",
           "candidate_type": "source_han_medium",
-          "paragraph_order_index": 120,
+          "paragraph_order_index": 122,
           "direction": "before",
-          "distance": 1,
+          "distance": 2,
           "score": {
             "total": 100.0,
             "semantic": 1.0,
             "structure": 40.0,
             "claim": 40.0
           },
-          "conclusion_text": "IT设备投资占GDP比重不算很高，产业仍在扩张。",
+          "conclusion_text": "权益资产理论上会在短期受到负向冲击，但半导体与AI产业基本面仍支撑下，短暂下跌可能带来布局机会。后续可能从单边上涨行情切换为更高波、更依赖盈利确认的震荡上行市。",
           "evidence_text": "",
           "evidence_paragraph_index": null,
           "evidence_score": null,
           "confidence": "high",
           "candidate_scores": [
             {
-              "paragraph_index": 111,
-              "paragraph_text": "IT设备投资占GDP比重不算很高，产业仍在扩张。",
+              "paragraph_index": 110,
+              "paragraph_text": "权益资产理论上会在短期受到负向冲击，但半导体与AI产业基本面仍支撑下，短暂下跌可能带来布局机会。后续可能从单边上涨行情切换为更高波、更依赖盈利确认的震荡上行市。",
               "mapping_basis": "source_han_medium",
               "candidate_type": "source_han_medium",
-              "paragraph_order_index": 120,
+              "paragraph_order_index": 122,
               "direction": "before",
-              "distance": 1,
+              "distance": 2,
               "score": {
                 "total": 100.0,
                 "semantic": 1.0,
@@ -3260,7 +3346,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 26,
+      "slide_number": 27,
       "title": "风险提示",
       "key_points": [
         "海外通胀及工资压力超预期，美联储加息节奏快于预期。",
@@ -3308,7 +3394,7 @@
       "content_mode": "bullets"
     },
     {
-      "slide_number": 27,
+      "slide_number": 28,
       "title": "",
       "key_points": [],
       "rich_text": [],
