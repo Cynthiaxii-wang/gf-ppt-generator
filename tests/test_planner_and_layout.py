@@ -7,6 +7,8 @@ import zipfile
 from pathlib import Path
 
 import yaml
+from docx import Document as WordDocument
+from docx.oxml.ns import qn
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
@@ -30,6 +32,7 @@ from scripts.generate_ppt import (
 )
 from scripts.parse_templates import (
     heading_classification,
+    paragraph_run_metadata,
     parse_docx,
     semantic_heading_level,
 )
@@ -229,7 +232,28 @@ class PlannerHeadingTests(unittest.TestCase):
         paragraphs = shape.text_frame.paragraphs
         self.assertEqual([paragraphs[index].text for index in (0, 2, 4)], ["甲", "乙", "丙"])
         self.assertEqual([paragraphs[index].text for index in (1, 3)], ["", ""])
+        self.assertEqual(paragraphs[0].line_spacing, 1.5)
+        self.assertEqual(paragraphs[2].line_spacing, 1.5)
+        self.assertEqual(paragraphs[4].line_spacing, 1.5)
         self.assertEqual(paragraphs[1].line_spacing, 1.5)
+
+    def test_docx_run_metadata_detects_source_han_medium(self) -> None:
+        document = WordDocument()
+        paragraph = document.add_paragraph()
+        medium_run = paragraph.add_run("图 1：Medium结论")
+        medium_run._r.get_or_add_rPr().get_or_add_rFonts().set(
+            qn("w:eastAsia"), "思源黑体 CN Medium"
+        )
+        regular_run = paragraph.add_run("普通补充")
+        regular_run._r.get_or_add_rPr().get_or_add_rFonts().set(
+            qn("w:eastAsia"), "思源黑体 CN Regular"
+        )
+
+        runs, _ = paragraph_run_metadata(paragraph)
+
+        self.assertTrue(runs[0]["source_han_medium"])
+        self.assertFalse(runs[1]["source_han_medium"])
+        self.assertIn("思源黑体 CN Medium", runs[0]["font_names"])
 
     def test_body_renderer_copies_square_bullet_to_every_point(self) -> None:
         presentation = Presentation()
@@ -287,6 +311,12 @@ class PlannerHeadingTests(unittest.TestCase):
                 "order_index": 1,
                 "text": "普通说明。",
                 "bold_sentences": ["加粗核心判断"],
+                "runs": [
+                    {
+                        "text": "图 1：Medium核心判断",
+                        "source_han_medium": True,
+                    }
+                ],
             },
             {
                 "type": "table",
@@ -300,6 +330,16 @@ class PlannerHeadingTests(unittest.TestCase):
                 "order_index": 3,
                 "text": "第二个视觉对象前最近的解释句。后续细节。",
                 "bold_sentences": [],
+                "runs": [
+                    {
+                        "text": "图 2：第二个Medium结论",
+                        "source_han_medium": True,
+                    },
+                    {
+                        "text": "不应提取的普通文字",
+                        "source_han_medium": False,
+                    },
+                ],
             },
             {
                 "type": "image",
@@ -313,12 +353,12 @@ class PlannerHeadingTests(unittest.TestCase):
         mappings = map_visuals_to_preceding_summaries(items)
 
         self.assertEqual(len(mappings), 2)
-        self.assertEqual(mappings[0]["paragraph_text"], "加粗核心判断。")
-        self.assertEqual(mappings[0]["mapping_basis"], "explicit_bold")
+        self.assertEqual(mappings[0]["paragraph_text"], "Medium核心判断。")
+        self.assertEqual(mappings[0]["mapping_basis"], "source_han_medium")
         self.assertEqual(mappings[0]["table_id"], 1)
         self.assertEqual(mappings[0]["embedded_image_ids"], [11])
-        self.assertEqual(mappings[1]["paragraph_text"], "第二个视觉对象前最近的解释句。")
-        self.assertEqual(mappings[1]["mapping_basis"], "nearest_body")
+        self.assertEqual(mappings[1]["paragraph_text"], "第二个Medium结论。")
+        self.assertEqual(mappings[1]["mapping_basis"], "source_han_medium")
         self.assertEqual(mappings[1]["image_id"], 12)
 
     def test_visual_mapping_does_not_cross_subsection_boundary(self) -> None:
@@ -431,11 +471,8 @@ class PlannerHeadingTests(unittest.TestCase):
         )
 
         self.assertEqual(len(mappings), 1)
-        self.assertEqual(
-            mappings[0]["paragraph_text"],
-            "信用融资余额仍处于历史较高水平。",
-        )
-        self.assertNotEqual(mappings[0]["mapping_basis"], "explicit_bold")
+        self.assertEqual(mappings[0]["paragraph_text"], "")
+        self.assertEqual(mappings[0]["mapping_basis"], "missing_candidate")
 
     def test_docx_content_order_contains_visual_parent_relationships(self) -> None:
         input_files = sorted((PROJECT_ROOT / "test" / "input").glob("*.docx"))

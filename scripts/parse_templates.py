@@ -292,17 +292,34 @@ def marker_rows(document: DocumentObject, marker: str, count: int = 1) -> list[l
 
 def _run_uses_emphasis_font(run: Any) -> bool:
     """Recognize Word emphasis stored as a font weight instead of w:b."""
-    run_properties = run._r.rPr
-    if run_properties is None or run_properties.rFonts is None:
-        return False
-    font_names = [
-        run_properties.rFonts.get(qn(f"w:{attribute}")) or ""
-        for attribute in ("ascii", "hAnsi", "eastAsia", "cs")
-    ]
+    font_names = run_font_names(run)
     return any(
         re.search(r"(?:bold|semibold|demibold|medium|heavy|black)", name, re.I)
         for name in font_names
     )
+
+
+def run_font_names(run: Any) -> list[str]:
+    """Return direct Word run fonts, including the East Asian font slot."""
+    names: list[str] = []
+    if run.font.name:
+        names.append(run.font.name)
+    run_properties = run._r.rPr
+    if run_properties is not None and run_properties.rFonts is not None:
+        names.extend(
+            run_properties.rFonts.get(qn(f"w:{attribute}")) or ""
+            for attribute in ("ascii", "hAnsi", "eastAsia", "cs")
+        )
+    return list(dict.fromkeys(name.strip() for name in names if name.strip()))
+
+
+def run_uses_source_han_medium(run: Any) -> bool:
+    for font_name in run_font_names(run):
+        normalized = re.sub(r"[\s_-]+", "", font_name).lower()
+        is_source_han = "思源黑体" in normalized or "sourcehansans" in normalized
+        if is_source_han and "medium" in normalized:
+            return True
+    return False
 
 
 def run_is_emphasized(run: Any) -> bool:
@@ -497,11 +514,14 @@ def paragraph_run_metadata(paragraph: Paragraph) -> tuple[list[dict[str, Any]], 
         if not text:
             continue
         is_bold = run_is_emphasized(run)
+        font_names = run_font_names(run)
         runs.append(
             {
                 "text": text,
                 "bold": is_bold,
                 "italic": run.italic is True,
+                "font_names": font_names,
+                "source_han_medium": run_uses_source_han_medium(run),
             }
         )
         if is_bold:

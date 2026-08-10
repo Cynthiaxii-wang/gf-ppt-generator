@@ -1,12 +1,12 @@
 {
-  "source_document": "【广发策略】从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？V3(1).docx",
-  "planned_slide_count": 34,
+  "source_document": "【广发策略】全球流动性走到哪里了？——央行加息步伐与资产定价V3.docx",
+  "planned_slide_count": 27,
   "planning_metrics": {
     "heading_1_count": 5,
-    "heading_2_count": 7,
-    "body_character_count": 6187,
-    "table_count": 37,
-    "image_chart_count": 14,
+    "heading_2_count": 9,
+    "body_character_count": 4538,
+    "table_count": 20,
+    "image_chart_count": 6,
     "risk_page_count": 1,
     "section_page_count": 4
   },
@@ -26,9 +26,10 @@
       "slide_number": 1,
       "section": "封面",
       "page_type": "cover",
-      "source_heading": "从杠杆繁荣到筹码松动：韩国杠杆去化走到哪一步？",
+      "source_heading": "全球流动性走到哪里了？——央行加息步伐与资产定价",
       "reason": "模板约束：每份报告固定生成1页封面。",
-      "estimated_content_length": 23
+      "estimated_content_length": 24,
+      "source_order_indexes": []
     },
     {
       "slide_number": 2,
@@ -36,263 +37,315 @@
       "page_type": "summary",
       "source_heading": "全文核心结论",
       "reason": "模板约束：每份报告固定生成1页摘要；覆盖主要一级标题的核心结论。",
-      "estimated_content_length": 700
+      "estimated_content_length": 700,
+      "source_order_indexes": []
     },
     {
       "slide_number": 3,
-      "section": "低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "section": "FOMC会议受瞩目的数据背景——5月美国非农与CPI回顾",
       "page_type": "section",
-      "source_heading": "一、低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
+      "source_heading": "一、FOMC会议受瞩目的数据背景——5月美国非农与CPI回顾",
       "reason": "一级标题对应1页章节页。",
-      "estimated_content_length": 31
+      "estimated_content_length": 28,
+      "source_order_indexes": []
     },
     {
       "slide_number": 4,
-      "section": "低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
-      "page_type": "chart_analysis",
-      "source_heading": "一、低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
-      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到1个图片/图表资源。",
-      "estimated_content_length": 369
+      "section": "FOMC会议受瞩目的数据背景——5月美国非农与CPI回顾",
+      "page_type": "chart_table",
+      "source_heading": "（一）非农超预期，不过就业还未全面升温",
+      "reason": "预计承载约469字；包含1个数据表；本节分配到1个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 469,
+      "source_order_indexes": [
+        46,
+        47
+      ]
     },
     {
       "slide_number": 5,
-      "section": "低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
-      "page_type": "chart_analysis",
-      "source_heading": "一、低估值为何挡不住深回撤？KOSPI呈现“估值低、恐慌高”的背离",
-      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到1个图片/图表资源。",
-      "estimated_content_length": 111
+      "section": "FOMC会议受瞩目的数据背景——5月美国非农与CPI回顾",
+      "page_type": "chart_table",
+      "source_heading": "（二）CPI绝对数值高涨，不过内部结构不算坏",
+      "reason": "预计承载约577字；包含1个数据表；包含1个图形容器；本节分配到1个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 577,
+      "source_order_indexes": [
+        49,
+        50,
+        51,
+        52
+      ]
     },
     {
       "slide_number": 6,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
-      "page_type": "section",
-      "source_heading": "二、韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
-      "reason": "一级标题对应1页章节页。",
-      "estimated_content_length": 27
+      "section": "FOMC会议受瞩目的数据背景——5月美国非农与CPI回顾",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）CPI的隐忧",
+      "reason": "预计承载约382字；包含1个图形容器；本节分配到1个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 382,
+      "source_order_indexes": [
+        54,
+        55,
+        56
+      ]
     },
     {
       "slide_number": 7,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
-      "page_type": "chart_analysis",
-      "source_heading": "（一）  信用融资杠杆：融资维持高位，下跌或触发追保正反馈",
-      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源。",
-      "estimated_content_length": 373
+      "section": "6月17日美联储FOMC：“没加息，但更鹰了”",
+      "page_type": "section",
+      "source_heading": "二、6月17日美联储FOMC：“没加息，但更鹰了”",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 23,
+      "source_order_indexes": []
     },
     {
       "slide_number": 8,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "6月17日美联储FOMC：“没加息，但更鹰了”",
       "page_type": "chart_analysis",
-      "source_heading": "（一）  信用融资杠杆：融资维持高位，下跌或触发追保正反馈",
-      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源。",
-      "estimated_content_length": 53
+      "source_heading": "（一）利率决议——按兵不动",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 282,
+      "source_order_indexes": [
+        59,
+        60
+      ]
     },
     {
       "slide_number": 9,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
-      "page_type": "chart_table",
-      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
-      "reason": "正文信息密度较高，拆分为5页中的第1页；包含1个数据表；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 282
+      "section": "6月17日美联储FOMC：“没加息，但更鹰了”",
+      "page_type": "chart_analysis",
+      "source_heading": "（一）利率决议——按兵不动",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 322,
+      "source_order_indexes": [
+        61,
+        62,
+        63,
+        64
+      ]
     },
     {
       "slide_number": 10,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
-      "page_type": "chart_table",
-      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
-      "reason": "正文信息密度较高，拆分为5页中的第2页；包含1个数据表；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 554
+      "section": "6月17日美联储FOMC：“没加息，但更鹰了”",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）FOMC后记者会——Warsh新政",
+      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 556,
+      "source_order_indexes": [
+        66,
+        67
+      ]
     },
     {
       "slide_number": 11,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "6月17日美联储FOMC：“没加息，但更鹰了”",
       "page_type": "chart_analysis",
-      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
-      "reason": "正文信息密度较高，拆分为5页中的第3页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 291
+      "source_heading": "（二）FOMC后记者会——Warsh新政",
+      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 378,
+      "source_order_indexes": [
+        68,
+        69
+      ]
     },
     {
       "slide_number": 12,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "6月17日美联储FOMC：“没加息，但更鹰了”",
       "page_type": "chart_analysis",
-      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
-      "reason": "正文信息密度较高，拆分为5页中的第4页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 285
+      "source_heading": "（二）FOMC后记者会——Warsh新政",
+      "reason": "正文信息密度较高，拆分为3页中的第3页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 349,
+      "source_order_indexes": [
+        70,
+        71,
+        72,
+        73
+      ]
     },
     {
       "slide_number": 13,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
-      "page_type": "chart_analysis",
-      "source_heading": "（二） 杠杆ETF：单股产品扩容，日度再平衡放大市场波动",
-      "reason": "正文信息密度较高，拆分为5页中的第5页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 67
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
+      "page_type": "section",
+      "source_heading": "三、世界其他央行加息步伐，或带来全球流动性收紧",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 21,
+      "source_order_indexes": []
     },
     {
       "slide_number": 14,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
-      "source_heading": "（三） 场内衍生品杠杆：外资与机构主导，风险敞口升至历史高位",
-      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 542
+      "source_heading": "（一）日本：“加息了，但没能救日元”",
+      "reason": "正文信息密度较高，拆分为5页中的第1页；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 132,
+      "source_order_indexes": [
+        80,
+        81,
+        82,
+        83
+      ]
     },
     {
       "slide_number": 15,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
-      "source_heading": "（三） 场内衍生品杠杆：外资与机构主导，风险敞口升至历史高位",
-      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 61
+      "source_heading": "（一）日本：“加息了，但没能救日元”",
+      "reason": "正文信息密度较高，拆分为5页中的第2页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 275,
+      "source_order_indexes": [
+        84,
+        85
+      ]
     },
     {
       "slide_number": 16,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
-      "source_heading": "（四）持仓结构：外资撤、散户接，筹码加速向居民部门转移",
-      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个图形容器；本节分配到6个图片/图表资源。",
-      "estimated_content_length": 294
+      "source_heading": "（一）日本：“加息了，但没能救日元”",
+      "reason": "正文信息密度较高，拆分为5页中的第3页；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 156,
+      "source_order_indexes": [
+        86,
+        87,
+        88,
+        89
+      ]
     },
     {
       "slide_number": 17,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
-      "source_heading": "（四）持仓结构：外资撤、散户接，筹码加速向居民部门转移",
-      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个图形容器；本节分配到6个图片/图表资源。",
-      "estimated_content_length": 150
+      "source_heading": "（一）日本：“加息了，但没能救日元”",
+      "reason": "正文信息密度较高，拆分为5页中的第4页；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 322,
+      "source_order_indexes": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
     },
     {
       "slide_number": 18,
-      "section": "韩国股市谁在加杠杆、谁在承接？三类杠杆与资金对手盘全景",
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
-      "source_heading": "（四）持仓结构：外资撤、散户接，筹码加速向居民部门转移",
-      "reason": "正文信息密度较高，拆分为3页中的第3页；包含1个图形容器；本节分配到6个图片/图表资源。",
-      "estimated_content_length": 39
+      "source_heading": "（一）日本：“加息了，但没能救日元”",
+      "reason": "正文信息密度较高，拆分为5页中的第5页；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 271,
+      "source_order_indexes": [
+        95,
+        96,
+        97,
+        98
+      ]
     },
     {
       "slide_number": 19,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "section",
-      "source_heading": "三、韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "reason": "一级标题对应1页章节页。",
-      "estimated_content_length": 38
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
+      "page_type": "chart_analysis",
+      "source_heading": "（二）欧元区：“G7加息的第一枪”",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 229,
+      "source_order_indexes": [
+        100,
+        101,
+        102,
+        103
+      ]
     },
     {
       "slide_number": 20,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
       "page_type": "chart_analysis",
-      "source_heading": "信用融资：尚未出现2015年A股式的集中出清",
-      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 358
+      "source_heading": "（二）欧元区：“G7加息的第一枪”",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；本节分配到2个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 174,
+      "source_order_indexes": [
+        104,
+        105,
+        106,
+        107
+      ]
     },
     {
       "slide_number": 21,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "chart_analysis",
-      "source_heading": "信用融资：尚未出现2015年A股式的集中出清",
-      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 400
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
+      "page_type": "chart_table",
+      "source_heading": "（三）全球流动性风向：央行再紧缩信号升温",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 785,
+      "source_order_indexes": [
+        109,
+        110
+      ]
     },
     {
       "slide_number": 22,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "chart_table",
-      "source_heading": "（二）杠杆ETF：去化幅度接近美股首轮，但出清时间仍短",
-      "reason": "正文信息密度较高，拆分为3页中的第1页；包含1个数据表；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 502
+      "section": "世界其他央行加息步伐，或带来全球流动性收紧",
+      "page_type": "chart_analysis",
+      "source_heading": "（三）全球流动性风向：央行再紧缩信号升温",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
+      "estimated_content_length": 179,
+      "source_order_indexes": [
+        111,
+        112,
+        113,
+        114
+      ]
     },
     {
       "slide_number": 23,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "chart_analysis",
-      "source_heading": "（二）杠杆ETF：去化幅度接近美股首轮，但出清时间仍短",
-      "reason": "正文信息密度较高，拆分为3页中的第2页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 413
+      "section": "流动性拐点之际，如何定价大类资产",
+      "page_type": "section",
+      "source_heading": "四、流动性拐点之际，如何定价大类资产",
+      "reason": "一级标题对应1页章节页。",
+      "estimated_content_length": 16,
+      "source_order_indexes": []
     },
     {
       "slide_number": 24,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "chart_analysis",
-      "source_heading": "（二）杠杆ETF：去化幅度接近美股首轮，但出清时间仍短",
-      "reason": "正文信息密度较高，拆分为3页中的第3页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
-      "estimated_content_length": 259
+      "section": "流动性拐点之际，如何定价大类资产",
+      "page_type": "matrix",
+      "source_heading": "四、流动性拐点之际，如何定价大类资产",
+      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个数据表；本节分配到1个图片/图表资源；内容重要度高，保留更多论据与关键数据；表格呈现资产/情景与方向关系，匹配matrix模板。",
+      "estimated_content_length": 785,
+      "source_order_indexes": [
+        116,
+        117,
+        118
+      ]
     },
     {
       "slide_number": 25,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "chart_table",
-      "source_heading": "（三）历史经验：首轮急降并非终点，完整去化往往持续一年",
-      "reason": "正文信息密度较高，拆分为2页中的第1页；包含1个数据表；本节分配到5个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 616
+      "section": "流动性拐点之际，如何定价大类资产",
+      "page_type": "chart_analysis",
+      "source_heading": "四、流动性拐点之际，如何定价大类资产",
+      "reason": "正文信息密度较高，拆分为2页中的第2页；本节分配到1个图片/图表资源；内容重要度高，保留更多论据与关键数据。",
+      "estimated_content_length": 214,
+      "source_order_indexes": [
+        119,
+        120,
+        121,
+        122
+      ]
     },
     {
       "slide_number": 26,
-      "section": "韩国这轮资金面去杠杆走到哪里了？——来自2015年A股与2022年美股的经验",
-      "page_type": "chart_analysis",
-      "source_heading": "（三）历史经验：首轮急降并非终点，完整去化往往持续一年",
-      "reason": "正文信息密度较高，拆分为2页中的第2页；包含1个图形容器；本节分配到5个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 254
-    },
-    {
-      "slide_number": 27,
-      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "page_type": "section",
-      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "reason": "一级标题对应1页章节页。",
-      "estimated_content_length": 25
-    },
-    {
-      "slide_number": 28,
-      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "page_type": "chart_table",
-      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "reason": "正文信息密度较高，拆分为5页中的第1页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 437
-    },
-    {
-      "slide_number": 29,
-      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "page_type": "chart_analysis",
-      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "reason": "正文信息密度较高，拆分为5页中的第2页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 172
-    },
-    {
-      "slide_number": 30,
-      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "page_type": "chart_table",
-      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "reason": "正文信息密度较高，拆分为5页中的第3页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 183
-    },
-    {
-      "slide_number": 31,
-      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "page_type": "chart_table",
-      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "reason": "正文信息密度较高，拆分为5页中的第4页；包含1个数据表；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 489
-    },
-    {
-      "slide_number": 32,
-      "section": "如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "page_type": "chart_analysis",
-      "source_heading": "四、如何识别二次冲击？KOSPI风险与杠杆去化监测框架",
-      "reason": "正文信息密度较高，拆分为5页中的第5页；包含1个图形容器；本节分配到2个图片/图表资源；内容重要度中高，适度展开。",
-      "estimated_content_length": 48
-    },
-    {
-      "slide_number": 33,
       "section": "风险提示",
       "page_type": "risk",
       "source_heading": "五、风险提示",
       "reason": "风险提示不生成编号章节页，直接匹配模板风险提示及免责声明页。",
-      "estimated_content_length": 2687
+      "estimated_content_length": 2920,
+      "source_order_indexes": []
     },
     {
-      "slide_number": 34,
+      "slide_number": 27,
       "section": "致谢",
       "page_type": "thanks",
       "source_heading": "模板致谢页",
       "reason": "模板约束：每份报告固定生成1页致谢页，并始终置于最终页。",
-      "estimated_content_length": 0
+      "estimated_content_length": 0,
+      "source_order_indexes": []
     }
   ]
 }

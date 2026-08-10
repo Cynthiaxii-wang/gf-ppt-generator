@@ -1574,9 +1574,7 @@ def replace_summary_text(
         if paragraph._p.pPr is not None:
             paragraph._p.remove(paragraph._p.pPr)
         paragraph._p.insert(0, deepcopy(bullet_properties))
-        # Keep compact leading inside each bullet; the following paragraph
-        # supplies the template's separate blank-line rhythm.
-        paragraph.line_spacing = 1.15
+        paragraph.line_spacing = 1.5
         paragraph.space_after = Pt(0)
         runs = source_paragraph.get("runs") or [
             {"text": source_paragraph.get("text", ""), "bold": False}

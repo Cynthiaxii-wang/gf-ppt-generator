@@ -621,24 +621,55 @@ def visual_candidates(
 ) -> list[dict[str, Any]]:
     visual = items[visual_position]
     titles = visual_titles(visual)
-    reference_text = " ".join(
-        [*titles, str(visual.get("subsection_title") or "")]
-    ).strip()
-    candidates: list[dict[str, Any]] = []
+    source_paragraphs: list[tuple[dict[str, Any], str, int]] = []
+    if visual.get("runs"):
+        source_paragraphs.append((visual, "visual", 0))
+    if visual_position > 0:
+        previous = items[visual_position - 1]
+        if previous.get("type") == "body" and same_argument_unit(visual, previous):
+            source_paragraphs.append((previous, "before", 1))
 
+    for source_paragraph, direction, distance in source_paragraphs:
+        medium_text = "".join(
+            str(run.get("text") or "")
+            for run in source_paragraph.get("runs", [])
+            if run.get("source_han_medium")
+        ).strip()
+        medium_text = re.sub(
+            r"^(?:图|表)\s*\d+\s*[：:]\s*",
+            "",
+            medium_text,
+        ).strip()
+        if medium_text:
+            if not re.search(r"[。！？；.!?;]$", medium_text):
+                medium_text += "。"
+            return [
+                {
+                    "paragraph_index": source_paragraph.get("index"),
+                    "paragraph_text": medium_text,
+                    "mapping_basis": "source_han_medium",
+                    "candidate_type": "source_han_medium",
+                    "paragraph_order_index": source_paragraph.get("order_index"),
+                    "direction": direction,
+                    "distance": distance,
+                    "score": {
+                        "total": 100.0,
+                        "semantic": 1.0,
+                        "structure": 40.0,
+                        "claim": 40.0,
+                    },
+                }
+            ]
+
+    candidates: list[dict[str, Any]] = []
     for title in titles:
-        # A title is a high-priority safe fallback, but it should not beat a
-        # nearby explanatory conclusion merely by matching itself perfectly.
         score = score_candidate(
             "visual_title",
-            # Do not reward a caption for matching itself.  It is a reliable
-            # medium-confidence fallback, while related analytical prose must
-            # earn its place through structure and semantic evidence.
             0.0,
             "visual",
             0,
             title,
-            reference_text,
+            title,
         )
         candidates.append(
             {
@@ -652,86 +683,7 @@ def visual_candidates(
                 "score": score,
             }
         )
-
-    for paragraph, direction, distance in argument_unit_window(items, visual_position):
-        bold_texts = [
-            text.strip().rstrip("。") + "。"
-            for text in paragraph.get("bold_sentences", [])
-            if valid_bold_text(text)
-        ]
-        bold_normalized = {
-            re.sub(r"[\W_]+", "", text, flags=re.UNICODE)
-            for text in bold_texts
-        }
-        sentences = sentence_candidates(paragraph.get("text", ""))
-        for bold_text in bold_texts:
-            if bold_text not in sentences:
-                sentences.append(bold_text)
-        for sentence in sentences:
-            sentence = sentence.rstrip("。") + "。"
-            sentence = re.sub(
-                r"^(?:图|表)\s*\d+\s*[：:]\s*",
-                "",
-                sentence,
-            )
-            normalized_sentence = re.sub(
-                r"[\W_]+", "", sentence, flags=re.UNICODE
-            )
-            semantic_score = semantic_similarity(reference_text, sentence)
-            is_bold = any(
-                bold
-                and (
-                    bold in normalized_sentence
-                    or normalized_sentence in bold
-                )
-                for bold in bold_normalized
-            )
-            if is_summary_sentence(sentence) and (
-                semantic_score >= 0.08 or not reference_text
-            ):
-                candidate_type = "summary_sentence"
-            elif semantic_score >= 0.12:
-                candidate_type = "semantic_body"
-            elif is_bold:
-                candidate_type = "explicit_bold"
-            else:
-                candidate_type = "nearest_body"
-            score = score_candidate(
-                candidate_type,
-                semantic_score,
-                direction,
-                distance,
-                sentence,
-                reference_text,
-            )
-            candidates.append(
-                {
-                    "paragraph_index": paragraph["index"],
-                    "paragraph_text": sentence,
-                    "mapping_basis": candidate_type,
-                    "candidate_type": candidate_type,
-                    "paragraph_order_index": paragraph.get("order_index"),
-                    "direction": direction,
-                    "distance": distance,
-                    "score": score,
-                }
-            )
-
-    unique: dict[tuple[int | None, str, str], dict[str, Any]] = {}
-    for candidate in candidates:
-        key = (
-            candidate["paragraph_index"],
-            candidate["paragraph_text"],
-            candidate["candidate_type"],
-        )
-        previous = unique.get(key)
-        if previous is None or candidate["score"]["total"] > previous["score"]["total"]:
-            unique[key] = candidate
-    return sorted(
-        unique.values(),
-        key=lambda candidate: candidate["score"]["total"],
-        reverse=True,
-    )
+    return candidates
 
 
 def confidence_label(score: float) -> str:
