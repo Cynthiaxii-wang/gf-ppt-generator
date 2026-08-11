@@ -48,7 +48,7 @@ from scripts.plan_presentation_content import (
     split_section_title,
     visual_points_for_slide,
 )
-from scripts.plan_slides import build_plan
+from scripts.plan_slides import build_plan, split_items
 from test_generate import count_layout_overlaps
 
 
@@ -331,6 +331,22 @@ class PlannerHeadingTests(unittest.TestCase):
             "（一）只有文字",
             [slide["source_heading"] for slide in analytical],
         )
+
+    def test_multi_chart_container_adds_nonempty_capacity_pages(self) -> None:
+        table = {
+            "type": "table",
+            "index": 1,
+            "order_index": 10,
+            "row_count": 6,
+            "column_count": 1,
+            "rows": [["图表容器"]],
+            "chart_indexes": [1, 2, 3, 4],
+        }
+
+        chunks = split_items("商业闭环出现缺口", [table], image_pressure=0)
+
+        self.assertEqual(len(chunks), 2)
+        self.assertTrue(all(chunk == [table] for chunk in chunks))
 
     def test_visual_mapping_stops_at_previous_visual_boundary(self) -> None:
         items = [

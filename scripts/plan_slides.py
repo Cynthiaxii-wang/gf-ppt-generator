@@ -281,6 +281,21 @@ def split_items(
     flush()
     chunks = chunks or [[]]
 
+    expanded_chunks: list[list[dict[str, Any]]] = []
+    for chunk in chunks:
+        expanded_chunks.append(chunk)
+        chunk_visuals = sum(item_visual_count(item) for item in chunk)
+        extra_pages = max(
+            0,
+            math.ceil(chunk_visuals / MAX_VISUALS_PER_SLIDE) - 1,
+        )
+        if extra_pages:
+            continuation_item = next(
+                item for item in reversed(chunk) if item_visual_count(item)
+            )
+            expanded_chunks.extend([[continuation_item] for _ in range(extra_pages)])
+    chunks = expanded_chunks
+
     # Text-length splitting alone is insufficient for chart-heavy reports.
     # Reserve enough pages so content planning can assign no more than two
     # charts/images/tables to each slide. Extra pages intentionally reuse the
@@ -289,8 +304,20 @@ def split_items(
     required_visual_pages = math.ceil(
         visual_count / MAX_VISUALS_PER_SLIDE
     )
-    if len(chunks) < required_visual_pages:
-        chunks.extend([[] for _ in range(required_visual_pages - len(chunks))])
+    visual_page_count = sum(
+        any(item_visual_count(item) for item in chunk)
+        for chunk in chunks
+    )
+    if visual_page_count < required_visual_pages:
+        visual_items = [item for item in items if item_visual_count(item)]
+        continuation_item = visual_items[-1] if visual_items else None
+        if continuation_item is not None:
+            chunks.extend(
+                [
+                    [continuation_item]
+                    for _ in range(required_visual_pages - visual_page_count)
+                ]
+            )
     return chunks
 
 
