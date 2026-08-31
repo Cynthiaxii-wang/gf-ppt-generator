@@ -975,11 +975,27 @@ def validate_chart_relationships(
             )
 
 
+def set_chart_text_size(chart_xml: Any, font_size_pt: float) -> Any:
+    """Set all editable chart text to the PPT legibility standard."""
+
+    drawing_namespace = (
+        "http://schemas.openxmlformats.org/drawingml/2006/main"
+    )
+    size = str(int(round(font_size_pt * 100)))
+    for local_name in ("defRPr", "rPr", "endParaRPr"):
+        for element in chart_xml.findall(
+            f".//{{{drawing_namespace}}}{local_name}"
+        ):
+            element.set("sz", size)
+    return chart_xml
+
+
 def add_docx_chart(
     slide: Any,
     chart_item: dict[str, Any],
     box: dict[str, int],
     project_root: Path,
+    font_size_pt: float,
 ) -> Any:
     """Transfer a Word chart as a native PowerPoint chart while filling layout box."""
 
@@ -989,6 +1005,7 @@ def add_docx_chart(
     sanitize_chart_extensions(chart_xml)
     normalize_chart_axis_ids(chart_xml)
     freeze_source_chart_colors(chart_xml, chart_item, project_root)
+    set_chart_text_size(chart_xml, font_size_pt)
 
     chart_data = CategoryChartData()
     chart_data.categories = ["原文数据"]
@@ -1164,16 +1181,23 @@ def split_visual_boxes(
 
 def grouped_table_boxes(
     box: dict[str, int],
-    visual_items: list[tuple[str, Any]],
+    visual_items: list[tuple[str, Any, str]],
 ) -> list[dict[str, int]] | None:
-    if len(visual_items) < 2 or any(kind != "table" for kind, _ in visual_items):
+    if len(visual_items) < 2 or any(
+        kind != "table" for kind, _, _ in visual_items
+    ):
         return None
-    group_indexes = {item.get("wrapper_group_index") for _, item in visual_items}
+    group_indexes = {
+        item.get("wrapper_group_index") for _, item, _ in visual_items
+    }
     if len(group_indexes) != 1 or None in group_indexes:
         return None
     gap = 100000
     available_height = box["height"] - gap * (len(visual_items) - 1)
-    row_counts = [max(1, int(item.get("row_count", 1))) for _, item in visual_items]
+    row_counts = [
+        max(1, int(item.get("row_count", 1)))
+        for _, item, _ in visual_items
+    ]
     total_rows = sum(row_counts)
     boxes: list[dict[str, int]] = []
     top = box["top"]
@@ -1217,6 +1241,92 @@ def add_fitted_picture(slide: Any, path: Path, box: dict[str, int]) -> Any:
     return shape
 
 
+def visual_caption(
+    mapping: dict[str, Any],
+    table: dict[str, Any] | None,
+    kind: str,
+    source_id: int | None,
+) -> str:
+    """Return the source caption, omitting the report's figure number."""
+
+    captions: list[str] = []
+    if table is not None:
+        texts = [str(table.get("caption") or "")]
+        texts.extend(
+            str(cell)
+            for row in table.get("wrapper_rows", table.get("rows", []))
+            for cell in row
+        )
+        captions = [
+            re.sub(r"\s+", " ", text).strip()
+            for text in texts
+            if re.match(r"^\s*(?:图|表)\s*\d+\s*[：:]", str(text))
+        ]
+        captions = list(dict.fromkeys(captions))
+    if captions:
+        source_ids = (
+            table.get("chart_indexes", [])
+            if kind == "chart"
+            else table.get("image_indexes", [])
+            if kind == "image"
+            else []
+        )
+        position = source_ids.index(source_id) if source_id in source_ids else 0
+        caption = captions[min(position, len(captions) - 1)]
+    else:
+        candidate = str(mapping.get("paragraph_text") or "").strip()
+        if (
+            mapping.get("mapping_basis") != "visual_title"
+            and not re.match(r"^(?:图|表)\s*\d+\s*[：:]", candidate)
+        ):
+            return ""
+        caption = candidate
+    label = "表" if kind == "table" else "图"
+    caption = re.sub(
+        r"^(?:图|表)\s*\d+\s*[：:]\s*",
+        f"{label} ：",
+        caption,
+    )
+    if not re.match(r"^(?:图|表)\s*[：:]", caption):
+        caption = f"{label} ：{caption}"
+    return caption.rstrip("。")
+
+
+def add_visual_title(
+    slide: Any,
+    text: str,
+    box: dict[str, int],
+) -> Any | None:
+    if not text:
+        return None
+    shape = slide.shapes.add_textbox(
+        Emu(box["left"]),
+        Emu(box["top"]),
+        Emu(box["width"]),
+        Emu(box["height"]),
+    )
+    shape.name = "source_visual_title"
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = RGBColor.from_string("F2F2F2")
+    shape.line.fill.background()
+    frame = shape.text_frame
+    frame.clear()
+    frame.margin_left = 0
+    frame.margin_right = 0
+    frame.margin_top = 0
+    frame.margin_bottom = 0
+    frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+    paragraph = frame.paragraphs[0]
+    paragraph.alignment = PP_ALIGN.CENTER
+    run = paragraph.add_run()
+    run.text = text
+    run.font.name = "Source Han Sans CN Regular"
+    run.font.size = Pt(11)
+    run.font.bold = True
+    run.font.color.rgb = RGBColor.from_string("000000")
+    return shape
+
+
 def add_source_visuals(
     slide: Any,
     visual_mappings: list[dict[str, Any]],
@@ -1228,7 +1338,7 @@ def add_source_visuals(
     tables = {item["index"]: item for item in document.get("tables", [])}
     images = {item["index"]: item for item in document.get("images", [])}
     charts = {item["index"]: item for item in document.get("charts", [])}
-    visual_items: list[tuple[str, Any]] = []
+    visual_items: list[tuple[str, Any, str]] = []
     for mapping in visual_mappings:
         table = tables.get(mapping.get("table_id"))
         chart_ids = list(mapping.get("embedded_chart_ids", []))
@@ -1237,35 +1347,102 @@ def add_source_visuals(
             chart_ids = chart_ids or table.get("chart_indexes", [])
             image_ids = image_ids or table.get("image_indexes", [])
         if chart_ids:
-            visual_items.extend(("chart", charts[index]) for index in chart_ids if index in charts)
+            visual_items.extend(
+                (
+                    "chart",
+                    charts[index],
+                    visual_caption(mapping, table, "chart", index),
+                )
+                for index in chart_ids
+                if index in charts
+            )
         elif image_ids:
-            visual_items.extend(("image", images[index]) for index in image_ids if index in images)
+            visual_items.extend(
+                (
+                    "image",
+                    images[index],
+                    visual_caption(mapping, table, "image", index),
+                )
+                for index in image_ids
+                if index in images
+            )
         elif mapping.get("image_id") in images:
-            visual_items.append(("image", images[mapping["image_id"]]))
+            image_id = mapping["image_id"]
+            visual_items.append(
+                (
+                    "image",
+                    images[image_id],
+                    visual_caption(mapping, table, "image", image_id),
+                )
+            )
         elif table is not None:
-            visual_items.append(("table", table))
+            visual_items.append(
+                (
+                    "table",
+                    table,
+                    visual_caption(mapping, table, "table", table["index"]),
+                )
+            )
     boxes = grouped_table_boxes(box, visual_items) or split_visual_boxes(
         box, len(visual_items)
     )
     rendered = 0
-    for (kind, item), item_box in zip(visual_items, boxes):
+    chart_font_size = 12 if len(visual_items) == 1 else 10
+    title_height = 261610
+    title_gap = 45000
+    for (kind, item, caption), item_box in zip(visual_items, boxes):
+        content_box = dict(item_box)
+        if caption:
+            content_box["top"] += title_height + title_gap
+            content_box["height"] = max(
+                1,
+                content_box["height"] - title_height - title_gap,
+            )
+        visual_shape = None
         if kind == "chart":
-            add_docx_chart(
+            visual_shape = add_docx_chart(
                 slide,
                 item,
-                item_box,
+                content_box,
                 project_root,
+                chart_font_size,
             )
             rendered += 1
         elif kind == "image":
-            add_fitted_picture(
+            visual_shape = add_fitted_picture(
                 slide,
                 project_root / item["extracted_path"],
-                item_box,
+                content_box,
             )
             rendered += 1
-        elif add_table_from_rows(slide, item_box, item.get("rows", []), table_styles):
-            rendered += 1
+        else:
+            visual_shape = add_table_from_rows(
+                slide,
+                content_box,
+                item.get("rows", []),
+                table_styles,
+            )
+            if visual_shape is not None:
+                rendered += 1
+        if caption and visual_shape is not None:
+            add_visual_title(
+                slide,
+                caption,
+                {
+                    "left": (
+                        int(visual_shape.left)
+                        if kind == "image"
+                        else item_box["left"]
+                    ),
+                    "top": item_box["top"],
+                    "width": (
+                        int(visual_shape.width)
+                        if kind == "image"
+                        else item_box["width"]
+                    ),
+                    "height": title_height,
+                },
+            )
     return rendered
 
 

@@ -1382,9 +1382,9 @@ def extract_source_organizations(items: list[dict[str, Any]]) -> list[str]:
 def display_source(items: list[dict[str, Any]]) -> str:
     organizations = extract_source_organizations(items)
     if organizations == ["广发证券发展研究中心"]:
-        return "资料来源：广发证券发展研究中心"
+        return "数据来源：广发证券发展研究中心"
     return (
-        "资料来源："
+        "数据来源："
         + "、".join(organizations[:-1])
         + "，"
         + organizations[-1]
@@ -1412,7 +1412,7 @@ def make_slide(
     # credits only; filename and heading paths remain exclusively in source_trace.
     source_compatibility = {
         "document": (
-            source_display.removeprefix("资料来源：")
+                source_display.removeprefix("数据来源：")
             if source_display
             else ""
         ),
