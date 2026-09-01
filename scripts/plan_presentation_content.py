@@ -281,6 +281,11 @@ def split_section_title(text: str) -> tuple[str, str | None]:
 
 def normalize_cover_title(text: str) -> str:
     """Preserve the report title while normalizing accidental whitespace."""
+    text = re.split(
+        r"(?:数据|资料)来源\s*[：:]?",
+        text,
+        maxsplit=1,
+    )[0]
     normalized = re.sub(
         r"[ \t]+", " ", text.replace("\r", "").replace("\n", "")
     ).strip()
@@ -1646,11 +1651,12 @@ def build_plan(document: dict[str, Any], mappings: list[dict[str, Any]]) -> dict
                         minimum=1,
                         maximum=3,
                     )
-                title = takeaway_title_for_unit(
-                    unit,
-                    visual_mappings,
-                    points,
-                    title,
+                # Content-page titles follow the Word heading hierarchy:
+                # use the level-2 heading when present; otherwise repeat the
+                # owning level-1 heading.  Do not replace it with an extracted
+                # takeaway sentence from the body or visual caption.
+                title = strip_numbering(
+                    unit["subsection"] or unit["section"]
                 )
             planned_slide = make_slide(
                 mapping,

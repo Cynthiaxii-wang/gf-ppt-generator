@@ -13,6 +13,23 @@ import streamlit as st
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 
+
+def user_facing_pipeline_error(stderr: str, stdout: str) -> str:
+    """Return a concise upload-facing message instead of a raw traceback."""
+
+    details = (stderr or stdout or "").strip()
+    for line in reversed(details.splitlines()):
+        normalized = line.strip()
+        if "图片“" in normalized and any(
+            marker in normalized
+            for marker in ("文件过大", "分辨率过高", "无法识别", "已损坏")
+        ):
+            return normalized.split(":", 1)[-1].strip()
+    if "DecompressionBomb" in details:
+        return "报告中存在超高分辨率图片，请在Word中压缩图片后重新上传。"
+    return "PPT生成失败，请检查上传的DOCX文件；技术详情已记录在服务日志中。"
+
+
 st.set_page_config(page_title="广发策略PPT自动生成器", page_icon="📊")
 st.title("广发策略PPT自动生成器")
 
@@ -51,10 +68,17 @@ if uploaded_file is not None:
                     )
 
                     if result.returncode != 0:
-                        raise RuntimeError(
+                        technical_details = (
                             result.stderr.strip()
                             or result.stdout.strip()
                             or "PPT 生成失败"
+                        )
+                        print(technical_details, file=sys.stderr)
+                        raise RuntimeError(
+                            user_facing_pipeline_error(
+                                result.stderr,
+                                result.stdout,
+                            )
                         )
 
                     st.session_state.generated_pptx = output_path.read_bytes()

@@ -8,7 +8,9 @@ import json
 import math
 import re
 import secrets
+import threading
 import uuid
+from contextlib import contextmanager
 from copy import deepcopy
 from collections import defaultdict
 from pathlib import Path
@@ -34,6 +36,9 @@ EMU_PER_INCH = 914400
 EMU_PER_POINT = 12700
 MIN_VISUAL_HEIGHT = 320000
 REGION_GAP = 120000
+MAX_EMBEDDED_IMAGE_BYTES = 100 * 1024 * 1024
+MAX_EMBEDDED_IMAGE_PIXELS = 500_000_000
+_PIL_IMAGE_LIMIT_LOCK = threading.RLock()
 
 FIXED_DISCLAIMER_PARAGRAPHS = (
     "广发证券股份有限公司（以下简称“广发证券”）具备证券投资咨询业务资格。本报告只发送给广发证券重点客户，不对外公开发布，只有接收客户才可以使用，且对于接收客户而言具有相关保密义务。广发证券并不因相关人员通过其他途径收到或阅读本报告而视其为广发证券的客户。本报告的内容、观点或建议并未考虑个别客户的特定状况，不应被视为对特定客户关于特定证券或金融工具的投资建议。本报告发送给某客户是基于该客户被认为有能力独立评估投资风险、独立行使投资决策并独立承担相应风险。",
@@ -41,6 +46,28 @@ FIXED_DISCLAIMER_PARAGRAPHS = (
     "广发证券可发出其它与本报告所载信息不一致及有不同结论的报告。本报告反映研究人员的不同观点、见解及分析方法，并不代表广发证券或其附属机构的立场。报告所载资料、意见及推测仅反映研究人员于发出本报告当日的判断，可随时更改且不予通告。",
     "本报告旨在发送给广发证券的特定客户及其它专业人士。未经广发证券事先书面许可，任何机构或个人不得以任何形式翻版、复制、刊登、转载和引用，否则由此造成的一切不良后果及法律责任由私自翻版、复制、刊登、转载和引用者承担。",
 )
+
+
+class EmbeddedImageError(ValueError):
+    """An extracted Word image cannot be embedded safely."""
+
+
+@contextmanager
+def allow_large_image_metadata():
+    """Temporarily bypass Pillow's pixel warning while reading image headers.
+
+    The lock keeps Pillow's process-global setting isolated across concurrent
+    Streamlit sessions.  Callers must still enforce the explicit hard limits
+    above and must not decode the full raster while this context is active.
+    """
+
+    with _PIL_IMAGE_LIMIT_LOCK:
+        previous_limit = Image.MAX_IMAGE_PIXELS
+        Image.MAX_IMAGE_PIXELS = None
+        try:
+            yield
+        finally:
+            Image.MAX_IMAGE_PIXELS = previous_limit
 
 
 def rgb(value: Any, fallback: str = DEFAULT_COLOR) -> RGBColor:
@@ -51,6 +78,51 @@ def rgb(value: Any, fallback: str = DEFAULT_COLOR) -> RGBColor:
 
 def numeric(value: Any, fallback: float) -> float:
     return float(value) if isinstance(value, (int, float)) else fallback
+
+
+def set_run_fonts(
+    run: Any,
+    chinese_font: str,
+    latin_font: str = "Arial",
+) -> None:
+    """Assign the correct primary font to a single-script PowerPoint run."""
+
+    drawing_namespace = (
+        "http://schemas.openxmlformats.org/drawingml/2006/main"
+    )
+    chinese_font = chinese_font.replace(
+        "Source Han Sans CN",
+        "思源黑体 CN",
+    )
+    is_chinese = bool(
+        re.search(r"[\u2e80-\u9fff\uf900-\ufaff\uff00-\uffef]", run.text)
+    )
+    primary_font = chinese_font if is_chinese else latin_font
+    run.font.name = primary_font
+    properties = run._r.get_or_add_rPr()
+    latin = properties.find(f"{{{drawing_namespace}}}latin")
+    if latin is None:
+        latin = etree.SubElement(
+            properties,
+            f"{{{drawing_namespace}}}latin",
+        )
+    latin.set("typeface", primary_font)
+    east_asian = properties.find(f"{{{drawing_namespace}}}ea")
+    if east_asian is None:
+        east_asian = etree.Element(f"{{{drawing_namespace}}}ea")
+        latin.addnext(east_asian)
+    east_asian.set("typeface", chinese_font)
+    properties.set("lang", "zh-CN" if is_chinese else "en-US")
+
+
+def script_segments(text: str) -> list[str]:
+    """Split mixed Chinese/Latin text so PowerPoint can show each font."""
+
+    return re.findall(
+        r"[\u2e80-\u9fff\uf900-\ufaff\uff00-\uffef]+"
+        r"|[^\u2e80-\u9fff\uf900-\ufaff\uff00-\uffef]+",
+        text,
+    ) or [""]
 
 
 def load_inputs(output_dir: Path) -> dict[str, Any]:
@@ -469,7 +541,7 @@ def add_text_box(
         paragraph.space_after = Pt(5)
         paragraph.line_spacing = 1.08
         for run in paragraph.runs:
-            run.font.name = font_name
+            set_run_fonts(run, font_name)
             run.font.size = Pt(font_size)
             run.font.color.rgb = color
             run.font.bold = bold
@@ -502,7 +574,7 @@ def add_chart_placeholder(
     paragraph.text = "图表区域（待生成）"
     paragraph.alignment = PP_ALIGN.CENTER
     run = paragraph.runs[0]
-    run.font.name = font_name
+    set_run_fonts(run, font_name)
     run.font.size = Pt(font_size)
     run.font.color.rgb = title_color
 
@@ -600,7 +672,7 @@ def add_table_placeholder(
             for paragraph in cell.text_frame.paragraphs:
                 paragraph.alignment = cell_style["alignment"]
                 for run in paragraph.runs:
-                    run.font.name = cell_style["font_name"]
+                    set_run_fonts(run, cell_style["font_name"])
                     run.font.size = Pt(cell_style["font_size"])
                     run.font.color.rgb = cell_style["text_color"]
                     run.font.bold = cell_style["bold"]
@@ -687,7 +759,7 @@ def add_table_from_rows(
             for paragraph in cell.text_frame.paragraphs:
                 paragraph.alignment = cell_style["alignment"]
                 for run in paragraph.runs:
-                    run.font.name = cell_style["font_name"]
+                    set_run_fonts(run, cell_style["font_name"])
                     run.font.size = Pt(cell_style["font_size"])
                     run.font.color.rgb = cell_style["text_color"]
                     run.font.bold = cell_style["bold"]
@@ -976,7 +1048,7 @@ def validate_chart_relationships(
 
 
 def set_chart_text_size(chart_xml: Any, font_size_pt: float) -> Any:
-    """Set all editable chart text to the PPT legibility standard."""
+    """Set editable chart size plus Latin/East Asian font families."""
 
     drawing_namespace = (
         "http://schemas.openxmlformats.org/drawingml/2006/main"
@@ -987,6 +1059,18 @@ def set_chart_text_size(chart_xml: Any, font_size_pt: float) -> Any:
             f".//{{{drawing_namespace}}}{local_name}"
         ):
             element.set("sz", size)
+            latin = element.find(f"{{{drawing_namespace}}}latin")
+            if latin is None:
+                latin = etree.SubElement(
+                    element,
+                    f"{{{drawing_namespace}}}latin",
+                )
+            latin.set("typeface", "Arial")
+            east_asian = element.find(f"{{{drawing_namespace}}}ea")
+            if east_asian is None:
+                east_asian = etree.Element(f"{{{drawing_namespace}}}ea")
+                latin.addnext(east_asian)
+            east_asian.set("typeface", "思源黑体 CN Normal")
     return chart_xml
 
 
@@ -1221,22 +1305,71 @@ def grouped_table_boxes(
     return boxes
 
 
-def add_fitted_picture(slide: Any, path: Path, box: dict[str, int]) -> Any:
-    with Image.open(path) as image:
-        source_width, source_height = image.size
-    scale = min(
-        box["width"] / max(1, source_width),
-        box["height"] / max(1, source_height),
-    )
-    width = int(source_width * scale)
-    height = int(source_height * scale)
-    shape = slide.shapes.add_picture(
-        str(path),
-        Emu(box["left"] + (box["width"] - width) // 2),
-        Emu(box["top"]),
-        Emu(width),
-        Emu(height),
-    )
+def add_fitted_picture(
+    slide: Any,
+    path: Path,
+    box: dict[str, int],
+    width_emu: int | None = None,
+    height_emu: int | None = None,
+    fill_box: bool = False,
+) -> Any:
+    file_size = path.stat().st_size
+    if file_size > MAX_EMBEDDED_IMAGE_BYTES:
+        raise EmbeddedImageError(
+            f"图片“{path.name}”文件过大（{file_size / 1024 / 1024:.1f} MB），"
+            "请在Word中压缩该图片后重新上传。"
+        )
+
+    # Pillow checks the declared pixel count while opening the header, even
+    # though neither this function nor python-pptx needs to decode the raster.
+    # Temporarily lift that global check under a lock, validate against our own
+    # hard limits, and embed the original bytes without resampling.
+    with allow_large_image_metadata():
+        try:
+            with Image.open(path) as image:
+                pixel_width, pixel_height = image.size
+        except (OSError, ValueError) as exc:
+            raise EmbeddedImageError(
+                f"图片“{path.name}”无法识别或已损坏，请替换后重新上传。"
+            ) from exc
+
+        pixel_count = pixel_width * pixel_height
+        if pixel_count > MAX_EMBEDDED_IMAGE_PIXELS:
+            raise EmbeddedImageError(
+                f"图片“{path.name}”分辨率过高"
+                f"（{pixel_width}×{pixel_height}，约{pixel_count / 1_000_000:.0f}百万像素），"
+                "请在Word中压缩图片至220ppi或更低后重新上传。"
+            )
+
+        # The Word drawing extent is the authoritative display aspect ratio.
+        # Pixel dimensions are only a fallback for malformed/missing extents.
+        source_width = int(width_emu or pixel_width)
+        source_height = int(height_emu or pixel_height)
+        if fill_box:
+            # A single raster visual follows the sell-side template's
+            # full-width treatment: fill the allocated visual region exactly,
+            # aligned with the body bullet on the left and the same margin on
+            # the right. Multi-image pages continue to preserve aspect ratio.
+            width = box["width"]
+            height = box["height"]
+        else:
+            scale = min(
+                box["width"] / max(1, source_width),
+                box["height"] / max(1, source_height),
+            )
+            width = int(source_width * scale)
+            height = int(source_height * scale)
+        shape = slide.shapes.add_picture(
+            str(path),
+            Emu(
+                box["left"]
+                if fill_box
+                else box["left"] + (box["width"] - width) // 2
+            ),
+            Emu(box["top"]),
+            Emu(width),
+            Emu(height),
+        )
     shape.name = "source_docx_image"
     return shape
 
@@ -1281,6 +1414,15 @@ def visual_caption(
         ):
             return ""
         caption = candidate
+    # A Word wrapper cell can contain both the caption and a following source
+    # line.  Only the caption belongs in the grey title strip.
+    caption = re.split(
+        r"\s*(?:数据|资料)来源\s*[：:]?",
+        caption,
+        maxsplit=1,
+    )[0].strip()
+    if not caption:
+        return ""
     label = "表" if kind == "table" else "图"
     caption = re.sub(
         r"^(?:图|表)\s*\d+\s*[：:]\s*",
@@ -1320,7 +1462,7 @@ def add_visual_title(
     paragraph.alignment = PP_ALIGN.CENTER
     run = paragraph.add_run()
     run.text = text
-    run.font.name = "Source Han Sans CN Regular"
+    set_run_fonts(run, "Source Han Sans CN Regular")
     run.font.size = Pt(11)
     run.font.bold = True
     run.font.color.rgb = RGBColor.from_string("000000")
@@ -1334,6 +1476,7 @@ def add_source_visuals(
     box: dict[str, int],
     table_styles: dict[str, dict[str, Any]],
     project_root: Path,
+    single_visual_box: dict[str, int] | None = None,
 ) -> int:
     tables = {item["index"]: item for item in document.get("tables", [])}
     images = {item["index"]: item for item in document.get("images", [])}
@@ -1383,8 +1526,14 @@ def add_source_visuals(
                     visual_caption(mapping, table, "table", table["index"]),
                 )
             )
-    boxes = grouped_table_boxes(box, visual_items) or split_visual_boxes(
-        box, len(visual_items)
+    layout_box = dict(box)
+    grouped_tables = grouped_table_boxes(layout_box, visual_items)
+    is_single_visual_group = len(visual_items) == 1 or grouped_tables is not None
+    if is_single_visual_group and single_visual_box is not None:
+        layout_box.update(single_visual_box)
+        grouped_tables = grouped_table_boxes(layout_box, visual_items)
+    boxes = grouped_tables or split_visual_boxes(
+        layout_box, len(visual_items)
     )
     rendered = 0
     chart_font_size = 12 if len(visual_items) == 1 else 10
@@ -1413,6 +1562,9 @@ def add_source_visuals(
                 slide,
                 project_root / item["extracted_path"],
                 content_box,
+                item.get("width_emu"),
+                item.get("height_emu"),
+                fill_box=is_single_visual_group,
             )
             rendered += 1
         else:
@@ -1532,7 +1684,7 @@ def clone_text_shape(
     paragraph = frame.paragraphs[0]
     paragraph.text = text
     for run in paragraph.runs:
-        run.font.name = font_name
+        set_run_fonts(run, font_name)
         run.font.size = Pt(font_size)
         run.font.color.rgb = color
         run.font.bold = bold
@@ -1703,22 +1855,63 @@ def replace_shape_text(
             if paragraph._p.pPr is not None:
                 paragraph._p.remove(paragraph._p.pPr)
             paragraph._p.insert(0, deepcopy(bullet_properties))
-        paragraph.text = line
         if saved.get("alignment") is not None:
             paragraph.alignment = saved["alignment"]
-        for run in paragraph.runs:
-            effective_name = font_name or saved.get("font_name")
-            effective_size = Pt(font_size) if font_size is not None else saved.get("font_size")
-            effective_color = color or saved.get("font_color")
-            effective_bold = bold if bold is not None else saved.get("font_bold")
+        effective_name = font_name or saved.get("font_name")
+        effective_size = Pt(font_size) if font_size is not None else saved.get("font_size")
+        effective_color = color or saved.get("font_color")
+        effective_bold = bold if bold is not None else saved.get("font_bold")
+        for segment in script_segments(line):
+            run = paragraph.add_run()
+            run.text = segment
             if effective_name:
-                run.font.name = effective_name
+                set_run_fonts(run, effective_name)
             if effective_size:
                 run.font.size = effective_size
             if effective_color:
                 run.font.color.rgb = effective_color
             if effective_bold is not None:
                 run.font.bold = effective_bold
+
+
+def align_bullet_text_with_title(
+    content_shape: Any | None,
+    title_shape: Any | None,
+) -> None:
+    """Align bullet text with the visible title start, keeping bullets left."""
+
+    if (
+        content_shape is None
+        or title_shape is None
+        or not getattr(content_shape, "has_text_frame", False)
+        or not getattr(title_shape, "has_text_frame", False)
+    ):
+        return
+    content_frame = content_shape.text_frame
+    title_frame = title_shape.text_frame
+    title_text_left = (
+        int(title_shape.left) + int(title_frame.margin_left or 0)
+    )
+    content_inner_left = (
+        int(content_shape.left) + int(content_frame.margin_left or 0)
+    )
+    text_indent = max(0, title_text_left - content_inner_left)
+    for paragraph in content_frame.paragraphs:
+        properties = paragraph._p.get_or_add_pPr()
+        properties.set("marL", str(text_indent))
+        properties.set("indent", str(-text_indent))
+
+
+def bullet_left_edge(content_shape: Any | None) -> int | None:
+    """Return the visible bullet-square left edge for visual alignment."""
+
+    if content_shape is None or not getattr(
+        content_shape, "has_text_frame", False
+    ):
+        return None
+    return int(content_shape.left) + int(
+        content_shape.text_frame.margin_left or 0
+    )
 
 
 def split_summary_point(text: str) -> tuple[str, str]:
@@ -1800,8 +1993,11 @@ def replace_summary_text(
             emphasized = bool(source_run.get("bold"))
             target_run = paragraph.add_run()
             target_run.text = text
-            target_run.font.name = (
-                "思源黑体 CN Bold" if emphasized else "思源黑体 CN Regular"
+            set_run_fonts(
+                target_run,
+                "思源黑体 CN Bold"
+                if emphasized
+                else "思源黑体 CN Regular",
             )
             target_run.font.size = Pt(12)
             target_run.font.bold = emphasized
@@ -1838,7 +2034,7 @@ def _replace_paragraph_text(
     run = paragraph.add_run()
     run.text = text
     if font_name:
-        run.font.name = font_name
+        set_run_fonts(run, font_name)
     if font_size is not None:
         run.font.size = Pt(font_size)
     if color is not None:
@@ -2220,12 +2416,21 @@ def build_presentation(
             replace_shape_text(
                 title_shape,
                 content["title"],
+                font_name=title_font,
+                font_size=fitted_title_size,
+                color=title_color,
+                bold=True,
             )
             replace_shape_text(
                 content_shape,
                 "\n".join(points),
                 bullet=content.get("content_mode") != "disclaimer",
+                font_name=fonts["body_style"],
+                font_size=body_size,
+                color=body_color,
+                bold=False,
             )
+            align_bullet_text_with_title(content_shape, title_shape)
             replace_shape_text(
                 source_shape,
                 template_source_text(content) if allowed_source else "",
@@ -2264,6 +2469,15 @@ def build_presentation(
                 visual_box["left"] = int(prs.slide_width * 0.05)
                 visual_box["width"] = int(prs.slide_width * 0.90)
 
+            single_visual_left = bullet_left_edge(content_shape)
+            single_visual_box = (
+                {
+                    "left": single_visual_left,
+                    "width": int(prs.slide_width) - 2 * single_visual_left,
+                }
+                if single_visual_left is not None
+                else None
+            )
             rendered_visual_count = add_source_visuals(
                 slide,
                 visual_mappings,
@@ -2276,6 +2490,7 @@ def build_presentation(
                         Path(__file__).resolve().parent.parent,
                     )
                 ),
+                single_visual_box,
             )
 
         if layout_debug is not None:

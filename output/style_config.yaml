@@ -4,7 +4,7 @@ style:
     title_style: Source Han Sans CN Normal
     cover_title_style: 思源黑体 CN Bold
     section_title_style: Source Han Sans CN Regular
-    body_style: Source Han Sans CN Medium
+    body_style: 思源黑体 CN Regular
     table_style: 思源黑体 CN Medium
     chart_style: Arial
     source_style: Arial
@@ -141,10 +141,10 @@ style:
       bold: unknown
       status: observed
     body:
-      font_family: Source Han Sans CN Medium
+      font_family: 思源黑体 CN Regular
       font_candidates:
       - Arial
-      - Source Han Sans CN Medium
+      - 思源黑体 CN Regular
       - Source Han Sans CN Normal
       - Source Han Sans CN Regular
       - 思源黑体 CN Bold
