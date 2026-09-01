@@ -9,6 +9,7 @@ import math
 import re
 import secrets
 import threading
+import unicodedata
 import uuid
 from contextlib import contextmanager
 from copy import deepcopy
@@ -38,6 +39,8 @@ MIN_VISUAL_HEIGHT = 320000
 REGION_GAP = 120000
 MAX_EMBEDDED_IMAGE_BYTES = 100 * 1024 * 1024
 MAX_EMBEDDED_IMAGE_PIXELS = 500_000_000
+AUTO_COMPRESS_IMAGE_PIXELS = 40_000_000
+TARGET_IMAGE_PPI = 220
 _PIL_IMAGE_LIMIT_LOCK = threading.RLock()
 
 FIXED_DISCLAIMER_PARAGRAPHS = (
@@ -372,6 +375,24 @@ def title_style_for_page(
     if page_type == "section":
         return fonts["section_title_style"], numeric(sizes["section_title_pt"], 40)
     return fonts["title_style"], numeric(sizes["body_title_pt"], 32)
+
+
+def section_title_fits_one_line(
+    text: str,
+    maximum_full_width_units: float = 20.0,
+) -> bool:
+    """Estimate section-title width without treating narrow ASCII as CJK."""
+
+    if "\n" in text:
+        return False
+    visual_units = sum(
+        1.0
+        if unicodedata.east_asian_width(character) in {"W", "F"}
+        else 0.55
+        for character in text
+        if not character.isspace()
+    )
+    return visual_units <= maximum_full_width_units
 
 
 def dynamic_layout(
@@ -1477,31 +1498,36 @@ def add_fitted_picture(
     fill_box: bool = False,
 ) -> Any:
     file_size = path.stat().st_size
-    if file_size > MAX_EMBEDDED_IMAGE_BYTES:
-        raise EmbeddedImageError(
-            f"图片“{path.name}”文件过大（{file_size / 1024 / 1024:.1f} MB），"
-            "请在Word中压缩该图片后重新上传。"
-        )
 
     # Pillow checks the declared pixel count while opening the header, even
-    # though neither this function nor python-pptx needs to decode the raster.
-    # Temporarily lift that global check under a lock, validate against our own
-    # hard limits, and embed the original bytes without resampling.
+    # though EMF/WMF files use vector coordinates rather than raster pixels.
+    # Temporarily lift that global check under a lock, then apply pixel limits
+    # only to actual raster images.
     with allow_large_image_metadata():
         try:
             with Image.open(path) as image:
                 pixel_width, pixel_height = image.size
+                image_format = (image.format or "").upper()
         except (OSError, ValueError) as exc:
             raise EmbeddedImageError(
                 f"图片“{path.name}”无法识别或已损坏，请替换后重新上传。"
             ) from exc
 
+        is_vector = (
+            path.suffix.lower() in {".emf", ".wmf"}
+            or image_format in {"EMF", "WMF"}
+        )
         pixel_count = pixel_width * pixel_height
-        if pixel_count > MAX_EMBEDDED_IMAGE_PIXELS:
+        if not is_vector and pixel_count > MAX_EMBEDDED_IMAGE_PIXELS:
             raise EmbeddedImageError(
                 f"图片“{path.name}”分辨率过高"
                 f"（{pixel_width}×{pixel_height}，约{pixel_count / 1_000_000:.0f}百万像素），"
-                "请在Word中压缩图片至220ppi或更低后重新上传。"
+                "超出服务器安全压缩范围，请在Word中压缩后重新上传。"
+            )
+        if is_vector and file_size > MAX_EMBEDDED_IMAGE_BYTES:
+            raise EmbeddedImageError(
+                f"矢量图“{path.name}”文件过大"
+                f"（{file_size / 1024 / 1024:.1f} MB），请简化后重新上传。"
             )
 
         # The Word drawing extent is the authoritative display aspect ratio.
@@ -1522,8 +1548,56 @@ def add_fitted_picture(
             )
             width = int(source_width * scale)
             height = int(source_height * scale)
+
+        picture_path = path
+        needs_raster_compression = not is_vector and (
+            file_size > MAX_EMBEDDED_IMAGE_BYTES
+            or pixel_count > AUTO_COMPRESS_IMAGE_PIXELS
+        )
+        if needs_raster_compression:
+            target_width_px = max(
+                1,
+                int(math.ceil(width / EMU_PER_INCH * TARGET_IMAGE_PPI)),
+            )
+            target_height_px = max(
+                1,
+                int(math.ceil(height / EMU_PER_INCH * TARGET_IMAGE_PPI)),
+            )
+            output_suffix = ".jpg" if image_format == "JPEG" else ".png"
+            picture_path = path.with_name(
+                f"{path.stem}_ppt_{target_width_px}x{target_height_px}"
+                f"{output_suffix}"
+            )
+            if not picture_path.is_file():
+                try:
+                    with Image.open(path) as image:
+                        if image_format == "JPEG":
+                            image.draft(
+                                "RGB",
+                                (target_width_px, target_height_px),
+                            )
+                        image.thumbnail(
+                            (target_width_px, target_height_px),
+                            Image.Resampling.LANCZOS,
+                        )
+                        if output_suffix == ".jpg":
+                            if image.mode != "RGB":
+                                image = image.convert("RGB")
+                            image.save(
+                                picture_path,
+                                "JPEG",
+                                quality=88,
+                                optimize=True,
+                            )
+                        else:
+                            image.save(picture_path, "PNG", optimize=True)
+                except (OSError, ValueError) as exc:
+                    raise EmbeddedImageError(
+                        f"图片“{path.name}”自动压缩失败，"
+                        "请在Word中压缩后重新上传。"
+                    ) from exc
         shape = slide.shapes.add_picture(
-            str(path),
+            str(picture_path),
             Emu(
                 box["left"]
                 if fill_box
@@ -2507,7 +2581,7 @@ def build_presentation(
                 # titles (slide 23) and a higher box for two-line titles
                 # (slide 3). Preserve that distinction while retaining the
                 # fixed section background/decorations from slide 3.
-                if len(re.sub(r"\s+", "", section_display_title)) <= 20:
+                if section_title_fits_one_line(section_display_title):
                     title_shape.top = Emu(1736726)
                     title_shape.height = Emu(799645)
                 else:
