@@ -1560,10 +1560,14 @@ def build_plan(document: dict[str, Any], mappings: list[dict[str, Any]]) -> dict
             for section in non_risk_sections:
                 source_items.extend(section["items"])
             metadata = document.get("report_metadata", {})
-            summary_paragraphs = compact_summary_paragraphs(
-                metadata.get("summary_paragraphs") or [],
-                maximum=5,
-            )
+            # The summary is a transport page: preserve every Word paragraph
+            # before “风险提示” as one independent PPT bullet.  Do not
+            # merge or rewrite source conclusions to fit a fixed bullet count.
+            summary_paragraphs = [
+                dict(paragraph)
+                for paragraph in metadata.get("summary_paragraphs") or []
+                if str(paragraph.get("text", "")).strip()
+            ]
             if summary_paragraphs:
                 points = [paragraph["text"] for paragraph in summary_paragraphs]
             else:

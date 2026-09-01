@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import subprocess
 import sys
 import tempfile
@@ -34,13 +35,23 @@ st.set_page_config(page_title="广发策略PPT自动生成器", page_icon="📊"
 st.title("广发策略PPT自动生成器")
 
 uploaded_file = st.file_uploader("上传一个 DOCX 文件", type=["docx"])
+current_upload_hash: str | None = None
 
 if uploaded_file is not None:
+    uploaded_bytes = uploaded_file.getvalue()
+    current_upload_hash = hashlib.sha256(uploaded_bytes).hexdigest()
+    if st.session_state.get("uploaded_docx_hash") != current_upload_hash:
+        st.session_state.pop("generated_pptx", None)
+        st.session_state.pop("generated_name", None)
+        st.session_state.pop("generated_input_hash", None)
+        st.session_state.uploaded_docx_hash = current_upload_hash
+
     st.caption(f"已选择：{uploaded_file.name}")
 
     if st.button("生成 PPT", type="primary"):
         st.session_state.pop("generated_pptx", None)
         st.session_state.pop("generated_name", None)
+        st.session_state.pop("generated_input_hash", None)
 
         with st.status("正在生成 PPT，请稍候……", expanded=True) as status:
             try:
@@ -48,7 +59,7 @@ if uploaded_file is not None:
                     temp_path = Path(temp_dir)
                     input_path = temp_path / "input.docx"
                     output_path = temp_path / f"{Path(uploaded_file.name).stem}.pptx"
-                    input_path.write_bytes(uploaded_file.getvalue())
+                    input_path.write_bytes(uploaded_bytes)
 
                     result = subprocess.run(
                         [
@@ -83,12 +94,17 @@ if uploaded_file is not None:
 
                     st.session_state.generated_pptx = output_path.read_bytes()
                     st.session_state.generated_name = output_path.name
+                    st.session_state.generated_input_hash = current_upload_hash
                     status.update(label="PPT 生成完成", state="complete")
             except Exception as exc:
                 status.update(label="PPT 生成失败", state="error")
                 st.error(str(exc))
 
-if st.session_state.get("generated_pptx"):
+if (
+    current_upload_hash is not None
+    and st.session_state.get("generated_pptx")
+    and st.session_state.get("generated_input_hash") == current_upload_hash
+):
     st.download_button(
         "下载生成的 PPT",
         data=st.session_state.generated_pptx,
