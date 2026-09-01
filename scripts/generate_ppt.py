@@ -1047,11 +1047,18 @@ def validate_chart_relationships(
             )
 
 
-def set_chart_text_size(chart_xml: Any, font_size_pt: float) -> Any:
-    """Set editable chart size plus Latin/East Asian font families."""
+def set_chart_text_size(
+    chart_xml: Any,
+    font_size_pt: float,
+    chart_width_emu: int | None = None,
+) -> Any:
+    """Set chart fonts while keeping dense category axes legible."""
 
     drawing_namespace = (
         "http://schemas.openxmlformats.org/drawingml/2006/main"
+    )
+    chart_namespace = (
+        "http://schemas.openxmlformats.org/drawingml/2006/chart"
     )
     size = str(int(round(font_size_pt * 100)))
     for local_name in ("defRPr", "rPr", "endParaRPr"):
@@ -1071,6 +1078,162 @@ def set_chart_text_size(chart_xml: Any, font_size_pt: float) -> Any:
                 east_asian = etree.Element(f"{{{drawing_namespace}}}ea")
                 latin.addnext(east_asian)
             east_asian.set("typeface", "思源黑体 CN Normal")
+
+    # Word charts often contain every daily/weekly category label.  Enlarging
+    # all chart text to 10/12 pt makes those labels overlap in PowerPoint, even
+    # though the chart data itself is valid.  Keep the requested size for the
+    # title, legend and data labels, but size and thin category-axis labels
+    # independently.  This only changes what labels are displayed; no source
+    # categories or workbook data are removed.
+    namespaces = {"c": chart_namespace, "a": drawing_namespace}
+    category_count = 0
+    for series in chart_xml.findall(".//c:ser", namespaces):
+        counts: list[int] = []
+        for count_node in series.findall(
+            "./c:cat//c:ptCount", namespaces
+        ):
+            try:
+                counts.append(int(count_node.get("val", "0")))
+            except ValueError:
+                continue
+        if not counts:
+            counts.append(
+                len(series.findall("./c:cat//c:pt", namespaces))
+            )
+        category_count = max(category_count, *counts)
+
+    if category_count:
+        if category_count > 80:
+            axis_font_size = 7.0
+        elif category_count > 40:
+            axis_font_size = 8.0
+        else:
+            axis_font_size = min(float(font_size_pt), 9.0)
+        axis_size = str(int(round(axis_font_size * 100)))
+
+        width_inches = (
+            float(chart_width_emu) / EMU_PER_INCH
+            if chart_width_emu
+            else 8.0
+        )
+        max_visible_labels = max(8, min(16, int(width_inches * 1.3)))
+        label_skip = max(1, math.ceil(category_count / max_visible_labels))
+
+        category_axes = chart_xml.findall(".//c:catAx", namespaces)
+        date_axes = chart_xml.findall(".//c:dateAx", namespaces)
+        for category_axis in category_axes + date_axes:
+            for local_name in ("defRPr", "rPr", "endParaRPr"):
+                for element in category_axis.findall(
+                    f".//a:{local_name}", namespaces
+                ):
+                    element.set("sz", axis_size)
+
+        for category_axis in category_axes:
+            if label_skip <= 1:
+                continue
+            no_multi_level = category_axis.find(
+                "c:noMultiLvlLbl", namespaces
+            )
+            for local_name in ("tickLblSkip", "tickMarkSkip"):
+                element = category_axis.find(
+                    f"c:{local_name}", namespaces
+                )
+                if element is None:
+                    element = etree.Element(
+                        f"{{{chart_namespace}}}{local_name}"
+                    )
+                    if no_multi_level is None:
+                        category_axis.append(element)
+                    else:
+                        no_multi_level.addprevious(element)
+                try:
+                    existing_skip = int(element.get("val", "1"))
+                except ValueError:
+                    existing_skip = 1
+                element.set("val", str(max(existing_skip, label_skip)))
+
+        # A date axis does not support tickLblSkip.  Use its major interval
+        # instead, calculated from the cached Excel date values.  This keeps
+        # every observation while PowerPoint renders only a readable number
+        # of date labels.
+        date_values: list[float] = []
+        for value_node in chart_xml.findall(
+            ".//c:ser/c:cat/c:numRef/c:numCache/c:pt/c:v",
+            namespaces,
+        ):
+            try:
+                date_values.append(float(value_node.text or ""))
+            except ValueError:
+                continue
+        date_span_days = (
+            max(date_values) - min(date_values)
+            if len(date_values) >= 2
+            else 0.0
+        )
+        if date_axes and date_span_days > 0:
+            target_days = date_span_days / max_visible_labels
+            if target_days >= 365:
+                major_unit = max(1, math.ceil(target_days / 365.25))
+                major_time_unit = "years"
+            elif target_days >= 28:
+                major_unit = max(1, math.ceil(target_days / 30.4375))
+                major_time_unit = "months"
+            else:
+                major_unit = max(1, math.ceil(target_days))
+                major_time_unit = "days"
+
+            for date_axis in date_axes:
+                major_unit_element = date_axis.find(
+                    "c:majorUnit", namespaces
+                )
+                major_time_element = date_axis.find(
+                    "c:majorTimeUnit", namespaces
+                )
+                if major_unit_element is None:
+                    major_unit_element = etree.Element(
+                        f"{{{chart_namespace}}}majorUnit"
+                    )
+                    insertion_point = next(
+                        (
+                            date_axis.find(f"c:{name}", namespaces)
+                            for name in (
+                                "minorUnit",
+                                "minorTimeUnit",
+                                "extLst",
+                            )
+                            if date_axis.find(f"c:{name}", namespaces)
+                            is not None
+                        ),
+                        None,
+                    )
+                    if insertion_point is None:
+                        date_axis.append(major_unit_element)
+                    else:
+                        insertion_point.addprevious(major_unit_element)
+                if major_time_element is None:
+                    major_time_element = etree.Element(
+                        f"{{{chart_namespace}}}majorTimeUnit"
+                    )
+                    major_unit_element.addnext(major_time_element)
+
+                try:
+                    existing_unit = float(
+                        major_unit_element.get("val", "0")
+                    )
+                except ValueError:
+                    existing_unit = 0.0
+                existing_time_unit = major_time_element.get("val")
+                unit_days = {
+                    "days": 1.0,
+                    "months": 30.4375,
+                    "years": 365.25,
+                }
+                existing_interval_days = (
+                    existing_unit * unit_days.get(existing_time_unit, 0.0)
+                )
+                if existing_interval_days < target_days:
+                    major_unit_element.set("val", str(major_unit))
+                    major_time_element.set("val", major_time_unit)
     return chart_xml
 
 
@@ -1089,7 +1252,7 @@ def add_docx_chart(
     sanitize_chart_extensions(chart_xml)
     normalize_chart_axis_ids(chart_xml)
     freeze_source_chart_colors(chart_xml, chart_item, project_root)
-    set_chart_text_size(chart_xml, font_size_pt)
+    set_chart_text_size(chart_xml, font_size_pt, box.get("width"))
 
     chart_data = CategoryChartData()
     chart_data.categories = ["原文数据"]
